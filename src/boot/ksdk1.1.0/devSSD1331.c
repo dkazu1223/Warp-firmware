@@ -126,11 +126,11 @@ devSSD1331init(void)
 	writeCommand(kSSD1331CommandVCOMH);		// 0xBE
 	writeCommand(0x3E);
 	writeCommand(kSSD1331CommandMASTERCURRENT);	// 0x87
-	writeCommand(0x06);
+	writeCommand(0x0F);
 	writeCommand(kSSD1331CommandCONTRASTA);		// 0x81
 	writeCommand(0x91);
 	writeCommand(kSSD1331CommandCONTRASTB);		// 0x82
-	writeCommand(0x50);
+	writeCommand(0xFF);
 	writeCommand(kSSD1331CommandCONTRASTC);		// 0x83
 	writeCommand(0x7D);
 	writeCommand(kSSD1331CommandDISPLAYON);		// Turn on oled panel
@@ -159,12 +159,24 @@ devSSD1331init(void)
 	 *	Read the manual for the SSD1331 (SSD1331_1.2.pdf) to figure
 	 *	out how to fill the entire screen with the brightest shade
 	 *	of green.
-	 */
+	 */   
 
-	...
+	SEGGER_RTT_WriteString(0, "\r\n\tDone with enabling fill...\n");
+
+	writeCommand(0X22);
+	writeCommand(0x00);
+        writeCommand(0x00);
+        writeCommand(95);
+        writeCommand(63);
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
 
 
-//	SEGGER_RTT_WriteString(0, "\r\n\tDone with draw rectangle...\n");
+	SEGGER_RTT_WriteString(0, "\r\n\tDone with draw rectangle...\n");
 
 
 

@@ -1355,7 +1355,7 @@ main(void)
 	 *	Notreached
 	 */
 #endif
-
+	devSSD1331init();
 	while (1)
 	{
 		/*
