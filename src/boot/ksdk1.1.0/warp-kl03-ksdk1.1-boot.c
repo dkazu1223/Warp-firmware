@@ -2229,13 +2229,13 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\n\tSomething!\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
-				/*writeSensorRegisterINA219(0x00,)
-				writeSensorRegisterINA219(0x05,)*/
+				writeSensorRegisterINA219(0x00,)
+				writeSensorRegisterINA219(0x05,)
 				
-				uint16_t shunt;
-				uint16_t bus;
-				uint16_t power;
-				uint16_t current;
+				int shunt;
+				int bus;
+				int power;
+				int current;
 								
 				shunt = readSensorRegisterINA219(0x01,2);
 				bus = readSensorRegisterINA219(0x02,2);
