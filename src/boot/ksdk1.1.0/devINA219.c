@@ -137,7 +137,7 @@ WarpStatus
 readSensorRegisterINA219(uint8_t deviceRegister, int numberOfBytes)
 {
 	uint8_t		cmdBuf[1] = {0xFF};
-	uint16_t	out
+	uint16_t	out;
 	i2c_status_t	status;
 
 
