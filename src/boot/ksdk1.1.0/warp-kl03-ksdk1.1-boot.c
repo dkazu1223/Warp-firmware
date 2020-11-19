@@ -86,7 +86,7 @@
 #else
 #	include "devMMA8451Q.h"
 #       include "devSSD1331.h"
-#	include "devINA219.h
+#	include "devINA219.h"
 #endif
 
 
