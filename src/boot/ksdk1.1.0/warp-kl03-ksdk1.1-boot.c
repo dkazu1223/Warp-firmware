@@ -2835,7 +2835,7 @@ printAllSensors(bool printHeadersAndCalibration, bool hexModeFlag, int menuDelay
 		#endif
 //added				
 		#ifdef WARP_BUILD_ENABLE_DEVINA219
-		printSensorDataINA219(hexModeFlag);
+		//printSensorDataINA219(hexModeFlag);
 		#endif
 		
 		
