@@ -2250,6 +2250,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
 				SEGGER_RTT_printf(0, shunt, bus, power, current);
 				
+				/*
 			
 				bool		autoIncrement, chatty;
 				int		spinDelay, repetitionsPerAddress, chunkReadsPerAddress;
@@ -2278,7 +2279,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 					/*baseAddress */
 					/*autoIncrement*/
 					
-								
+				*/				
 				
 				OSA_TimeDelay(10000);
 				SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
