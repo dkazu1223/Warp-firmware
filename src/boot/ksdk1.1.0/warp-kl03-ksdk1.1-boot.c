@@ -2233,18 +2233,20 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				
+				SEGGER_RTT_printf(0, "\r\n\tSomething!\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
 				/*writeSensorRegisterINA219(0x00,)
 				writeSensorRegisterINA219(0x05,)*/
 				
-				shunt = readSensorRegisterINA219(0x01,2)
-				bus = readSensorRegisterINA219(0x02,2)
-				power = readSensorRegisterINA219(0x03,2)
-				current = readSensorRegisterINA219(0x04,2)
+				shunt = readSensorRegisterINA219(0x01,2);
+				bus = readSensorRegisterINA219(0x02,2);
+				power = readSensorRegisterINA219(0x03,2);
+				current = readSensorRegisterINA219(0x04,2);
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
-				SEGGER_RTT_WriteString(0, shunt, bus, power, current);
+				SEGGER_RTT_printf(0, shunt, bus, power, current);
+				
 				
 				bool		autoIncrement, chatty;
 				int		spinDelay, repetitionsPerAddress, chunkReadsPerAddress;
