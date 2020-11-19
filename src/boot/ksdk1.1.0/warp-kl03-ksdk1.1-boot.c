@@ -2223,10 +2223,10 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 
 				
 				
-				
+//Added					
 				
 			case 'w':
-//Added			{
+			{
 				SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
@@ -2276,9 +2276,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 					/*warpSensorDevice*/
 					/*baseAddress */
 					/*autoIncrement*/
-					;
-				
-			}		
+					
 								
 				
 				OSA_TimeDelay(10000);
@@ -2289,9 +2287,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				
 				
-				
-
-	
+		
 	
 				
 				
