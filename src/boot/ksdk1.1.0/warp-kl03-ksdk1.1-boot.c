@@ -65,7 +65,7 @@
 #ifndef WARP_FRDMKL03
 //#	include "devBMX055.h"
 #	include "devMMA8451Q.h"
-#	include "devINA219.h
+#	include "devINA219.h"
 //#	include "devHDC1000.h"
 //#	include "devMAG3110.h"
 //#	include "devL3GD20H.h"
@@ -2233,6 +2233,11 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				/*writeSensorRegisterINA219(0x00,)
 				writeSensorRegisterINA219(0x05,)*/
 				
+				int shunt;
+				int bus;
+				int power;
+				int current;
+								
 				shunt = readSensorRegisterINA219(0x01,2);
 				bus = readSensorRegisterINA219(0x02,2);
 				power = readSensorRegisterINA219(0x03,2);
