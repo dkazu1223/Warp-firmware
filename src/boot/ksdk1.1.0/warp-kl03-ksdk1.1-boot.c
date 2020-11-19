@@ -2519,17 +2519,17 @@ main(void)
 #ifdef WARP_BUILD_ENABLE_DEVINA219
 			case '0':
 			{  
-				/*
+				
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				
 				enableI2Cpins(menuI2cPullupValue);
-				
+				/*
 				shunt = readSensorRegisterINA219(0x01,2)
 				bus = readSensorRegisterINA219(0x02,2)
 				power = readSensorRegisterINA219(0x03,2)
-				current = readSensorRegisterINA219(0x04,2)
+				current = readSensorRegisterINA219(0x04,2)*/
 				
-				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n"); */
+				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
 				
 				bool		autoIncrement, chatty;
 				int		spinDelay, repetitionsPerAddress, chunkReadsPerAddress;
@@ -2547,7 +2547,13 @@ main(void)
 									menuSupplyVoltage,
 									adaptiveSssupplyMaxMillivolts,
 									referenceByte
-								);
+								)
+				#ifdef WARP_BUILD_ENABLE_DEVINA219
+				printSensorDataINA219(hexModeFlag);
+				#endif					
+					
+					
+					;
 				
 			}
 #endif
