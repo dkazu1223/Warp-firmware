@@ -1447,7 +1447,7 @@ main(void)
 
 		SEGGER_RTT_WriteString(0, "\r- 'k': sleep until reset.\n");
 		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
-		SEGGER_RTT_WriteString(0, "\r- 'l': ReadINA219.\n");
+		SEGGER_RTT_WriteString(0, "\r- 'l': send repeated byte on I2C.\n");
 		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
 		SEGGER_RTT_WriteString(0, "\r- 'm': send repeated byte on SPI.\n");
 		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
@@ -1475,6 +1475,12 @@ main(void)
 		SEGGER_RTT_WriteString(0, "\r- 'v': Enter VLLS0 low-power mode for 3s, then reset\n");
 		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
 #endif
+		
+		SEGGER_RTT_WriteString(0, "\r- 'w': Read INA219.\n");
+		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
+		
+		
+		
 		SEGGER_RTT_WriteString(0, "\r- 'x': disable SWD and spin for 10 secs.\n");
 		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
 
@@ -2083,57 +2089,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				
 			case 'l':
-//Added
-				
-				
-#ifdef WARP_BUILD_ENABLE_DEVINA219
-			{  
-				
-				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
-				
-				enableI2Cpins(menuI2cPullupValue);
-				/*
-				shunt = readSensorRegisterINA219(0x01,2)
-				bus = readSensorRegisterINA219(0x02,2)
-				power = readSensorRegisterINA219(0x03,2)
-				current = readSensorRegisterINA219(0x04,2)*/
-				
-				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
-				
-				bool		autoIncrement, chatty;
-				int		spinDelay, repetitionsPerAddress, chunkReadsPerAddress;
-				int		adaptiveSssupplyMaxMillivolts;
-				uint8_t		referenceByte;
-				
-				repeatRegisterReadForDeviceAndAddress(	menuTargetSensor /*warpSensorDevice*/,
-									menuRegisterAddress /*baseAddress */,
-									menuI2cPullupValue,
-									autoIncrement /*autoIncrement*/,
-									chunkReadsPerAddress,
-									chatty,
-									spinDelay,
-									repetitionsPerAddress,
-									menuSupplyVoltage,
-									adaptiveSssupplyMaxMillivolts,
-									referenceByte
-								)
-				#ifdef WARP_BUILD_ENABLE_DEVINA219
-				printSensorDataINA219(hexModeFlag);
-				#endif					
-					
-					
-					;
-				
-			}
-#endif
-				
 	
-				
-				
-				
-				
-				
-				
+						
 				
 				
 			case 'm':
@@ -2263,6 +2220,71 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_WriteString(0, "\r\n\tThis should never happen...\n");
 			}
 #endif
+				
+			case 'w':
+			{
+				SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
+				
+//Added
+				
+				
+#ifdef WARP_BUILD_ENABLE_DEVINA219
+			{  
+				
+				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
+				
+				enableI2Cpins(menuI2cPullupValue);
+				/*
+				shunt = readSensorRegisterINA219(0x01,2)
+				bus = readSensorRegisterINA219(0x02,2)
+				power = readSensorRegisterINA219(0x03,2)
+				current = readSensorRegisterINA219(0x04,2)*/
+				
+				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
+				
+				bool		autoIncrement, chatty;
+				int		spinDelay, repetitionsPerAddress, chunkReadsPerAddress;
+				int		adaptiveSssupplyMaxMillivolts;
+				uint8_t		referenceByte;
+				
+				repeatRegisterReadForDeviceAndAddress(	menuTargetSensor /*warpSensorDevice*/,
+									menuRegisterAddress /*baseAddress */,
+									menuI2cPullupValue,
+									autoIncrement /*autoIncrement*/,
+									chunkReadsPerAddress,
+									chatty,
+									spinDelay,
+									repetitionsPerAddress,
+									menuSupplyVoltage,
+									adaptiveSssupplyMaxMillivolts,
+									referenceByte
+								)
+				#ifdef WARP_BUILD_ENABLE_DEVINA219
+				printSensorDataINA219(hexModeFlag);
+				#endif					
+					
+					
+					;
+				
+			}
+#endif				
+				
+				
+				
+				
+				
+				OSA_TimeDelay(10000);
+				SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
+
+				break;
+			}	
+				
+				
+				
+				
+				
+				
+				
 			/*
 			 *	Simply spin for 10 seconds. Since the SWD pins should only be enabled when we are waiting for key at top of loop (or toggling after printf), during this time there should be no interference from the SWD.
 			 */
