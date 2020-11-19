@@ -2232,19 +2232,20 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				/*writeSensorRegisterINA219(0x00,)
 				writeSensorRegisterINA219(0x05,)*/
 				
-				int shunt;
-				int bus;
-				int power;
-				int current;
+				uint16_t shunt;
+				uint16_t bus;
+				uint16_t power;
+				uint16_t current;
 								
 				shunt = readSensorRegisterINA219(0x01,2);
 				bus = readSensorRegisterINA219(0x02,2);
 				power = readSensorRegisterINA219(0x03,2);
 				current = readSensorRegisterINA219(0x04,2);
 				
-				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
-				SEGGER_RTT_printf(0, shunt, bus, power, current);
+				SEGGER_RTT_printf(0, "\r\n\tehehehe\n");
 				
+				SEGGER_RTT_printf(0," 0x%02x 0x%02x,", shunt, bus);
+				SEGGER_RTT_printf(0," 0x%02x 0x%02x,", current, power);
 				/*
 			
 				bool		autoIncrement, chatty;
@@ -2274,7 +2275,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 					/*baseAddress */
 					/*autoIncrement*/
 					
-				
+				disableI2Cpins();
 				
 				OSA_TimeDelay(10000);
 				SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
