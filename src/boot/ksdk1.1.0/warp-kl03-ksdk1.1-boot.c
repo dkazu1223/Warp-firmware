@@ -2223,8 +2223,6 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 			case 'w':
 //Added			{
-#ifdef WARP_BUILD_ENABLE_DEVINA219
-				
 				SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
@@ -2271,12 +2269,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 					/*autoIncrement*/
 					;
 				
-			}
-#endif				
-				
-				
-				
-				
+			}		
+								
 				
 				OSA_TimeDelay(10000);
 				SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
