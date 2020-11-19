@@ -1479,8 +1479,7 @@ main(void)
 		SEGGER_RTT_WriteString(0, "\r- 'w': Read INA219.\n");
 		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
 		
-		
-		
+				
 		SEGGER_RTT_WriteString(0, "\r- 'x': disable SWD and spin for 10 secs.\n");
 		OSA_TimeDelay(gWarpMenuPrintDelayMilliseconds);
 
@@ -2242,7 +2241,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
 				SEGGER_RTT_printf(0, shunt, bus, power, current);
 				
-				/*
+			
 				bool		autoIncrement, chatty;
 				int		spinDelay, repetitionsPerAddress, chunkReadsPerAddress;
 				int		adaptiveSssupplyMaxMillivolts;
@@ -2263,7 +2262,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				#ifdef WARP_BUILD_ENABLE_DEVINA219
 				printSensorDataINA219(hexModeFlag);
 				#endif	
-				*/
+				
 				
 					/*warpSensorDevice*/
 					/*baseAddress */
