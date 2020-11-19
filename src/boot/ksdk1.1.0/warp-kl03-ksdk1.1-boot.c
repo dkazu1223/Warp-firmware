@@ -2220,6 +2220,10 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 			}
 #endif
 				
+
+				
+				
+				
 				
 			case 'w':
 //Added			{
@@ -2264,7 +2268,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 									adaptiveSssupplyMaxMillivolts,
 									referenceByte
 								)
-				#ifdef WARP_BUILD_ENABLE_DEVINA219
+				#ifdef WARP_BUILD_ENABLE_DEVINA219;
 				printSensorDataINA219(hexModeFlag);
 				#endif	
 				
@@ -2286,7 +2290,9 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				
 				
-				
+
+	
+	
 				
 				
 			/*
