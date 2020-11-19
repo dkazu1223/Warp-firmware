@@ -2220,9 +2220,11 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 			}
 #endif
 				
-#ifdef WARP_BUILD_ENABLE_DEVINA219				
+				
 			case 'w':
 //Added			{
+#ifdef WARP_BUILD_ENABLE_DEVINA219
+				
 				SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
