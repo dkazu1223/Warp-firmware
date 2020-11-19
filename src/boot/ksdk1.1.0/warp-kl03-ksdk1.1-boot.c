@@ -2221,15 +2221,10 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 			}
 #endif
 				
+#ifdef WARP_BUILD_ENABLE_DEVINA219				
 			case 'w':
-			{
+//Added			{
 				SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
-				
-//Added
-				
-				
-#ifdef WARP_BUILD_ENABLE_DEVINA219
-			{  
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				
@@ -2247,16 +2242,16 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_WriteString(0, "\r\n\tehehehe\n");
 				SEGGER_RTT_printf(0, shunt, bus, power, current);
 				
-				
+				/*
 				bool		autoIncrement, chatty;
 				int		spinDelay, repetitionsPerAddress, chunkReadsPerAddress;
 				int		adaptiveSssupplyMaxMillivolts;
 				uint8_t		referenceByte;
 				
-				repeatRegisterReadForDeviceAndAddress(	menuTargetSensor /*warpSensorDevice*/,
-									menuRegisterAddress /*baseAddress */,
+				repeatRegisterReadForDeviceAndAddress(	menuTargetSensor ,
+									menuRegisterAddress ,
 									menuI2cPullupValue,
-									autoIncrement /*autoIncrement*/,
+									autoIncrement ,
 									chunkReadsPerAddress,
 									chatty,
 									spinDelay,
@@ -2267,9 +2262,12 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 								)
 				#ifdef WARP_BUILD_ENABLE_DEVINA219
 				printSensorDataINA219(hexModeFlag);
-				#endif					
-					
-					
+				#endif	
+				*/
+				
+					/*warpSensorDevice*/
+					/*baseAddress */
+					/*autoIncrement*/
 					;
 				
 			}
