@@ -2269,12 +2269,12 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				//printSensorDataINA219(hexModeFlag);
 				#endif	
 				
-				
+				*/
 					/*warpSensorDevice*/
 					/*baseAddress */
 					/*autoIncrement*/
 					
-				*/				
+				
 				
 				OSA_TimeDelay(10000);
 				SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
