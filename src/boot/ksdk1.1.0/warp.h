@@ -44,6 +44,12 @@ typedef enum
 	kWarpTypeMaskTotalVOC		= (1 << 28),
 	kWarpTypeMaskEquivalentCO2	= (1 << 29),
 
+        kWarpTypeMaskConfiguration      = (1 << 31),
+        kWarpTypeMaskShuntVoltage       = (1 << 32),
+        kWarpTypeMaskBusVoltage         = (1 << 33),
+        kWarpTypeMaskPower              = (1 << 34),
+        kWarpTypeMaskCurrent            = (1 << 35),
+        kWarpTypeMaskCalibration        = (1 << 36),
 
 	/*
 	 *	Always keep these two as the last items.
@@ -155,6 +161,7 @@ typedef enum
 	kWarpSensorAS7262,
 	kWarpSensorAS7263,
 	kWarpSensorSCD30,
+	kWarpSensorINA219,
 } WarpSensorDevice;
 
 typedef enum
@@ -223,6 +230,9 @@ typedef enum
 	kWarpSensorConfigurationRegisterBME680CalibrationRegion1End	= 0xA2,
 	kWarpSensorConfigurationRegisterBME680CalibrationRegion2Start	= 0xE1,
 	kWarpSensorConfigurationRegisterBME680CalibrationRegion2End	= 0xF2,
+
+	kWarpSensorConfigurationRegisterINA219_SETUP                    = 0x00,
+	kWarpSensorConfigurationRegisterINA219CTRL_REG1                 = 0x00,
 } WarpSensorConfigurationRegister;
 
 typedef enum
@@ -233,6 +243,12 @@ typedef enum
 	kWarpSensorOutputRegisterMMA8451QOUT_Y_LSB			= 0x04,
 	kWarpSensorOutputRegisterMMA8451QOUT_Z_MSB			= 0x05,
 	kWarpSensorOutputRegisterMMA8451QOUT_Z_LSB			= 0x06,
+
+        kWarpSensorOutputRegisterINA219ShuntVoltage                     = 0x01,
+        kWarpSensorOutputRegisterINA219BusVoltage                       = 0x02,
+        kWarpSensorOutputRegisterINA219Power                            = 0x03,
+        kWarpSensorOutputRegisterINA219Current                          = 0x04,
+
 
 	kWarpSensorOutputRegisterMAG3110OUT_X_MSB			= 0x01,
 	kWarpSensorOutputRegisterMAG3110OUT_X_LSB			= 0x02,

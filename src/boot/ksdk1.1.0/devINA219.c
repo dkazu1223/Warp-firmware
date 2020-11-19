@@ -73,23 +73,15 @@ initINA219(const uint8_t i2cAddress, WarpI2CDeviceState volatile *  deviceStateP
 }
 
 WarpStatus
-writeSensorRegisterINA219(uint8_t deviceRegister, uint8_t payload, uint16_t menuI2cPullupValue)
+writeSensorRegisterINA219(uint8_t deviceRegister, uint16_t payload, uint16_t menuI2cPullupValue)
 {
-	uint8_t		payloadByte[1], commandByte[1];
+	uint8_t		payloadByte[2], commandByte[1];
 	i2c_status_t	status;
 
 	switch (deviceRegister)
 	{
 		case 0x00: case 0x01: case 0x02: case 0x03: 
-		case 0x04: case 0x05: case 0x09: case 0x0a:
-		case 0x0e: case 0x0f: case 0x11: case 0x12: 
-		case 0x13: case 0x14: case 0x15: case 0x17:
-		case 0x18: case 0x1d:
-		case 0x1f: case 0x20: case 0x21: case 0x23:
-		case 0x24: case 0x25: case 0x26: case 0x27:
-		case 0x28: case 0x29: case 0x2a: case 0x2b:
-		case 0x2c: case 0x2d: case 0x2e: case 0x2f:
-		case 0x30: case 0x31:
+		case 0x04: case 0x05:
 		{
 			/* OK */
 			break;
@@ -103,7 +95,7 @@ writeSensorRegisterINA219(uint8_t deviceRegister, uint8_t payload, uint16_t menu
 
 	i2c_device_t slave =
 	{
-		.address = deviceINA219.i2cAddress,
+		.address = deviceINA219State.i2cAddress,
 		.baudRate_kbps = gWarpI2cBaudRateKbps
 	};
 
@@ -115,7 +107,7 @@ writeSensorRegisterINA219(uint8_t deviceRegister, uint8_t payload, uint16_t menu
 							commandByte,
 							1,
 							payloadByte,
-							1,
+							2,
 							gWarpI2cTimeoutMilliseconds);
 	if (status != kStatus_I2C_Success)
 	{
@@ -189,109 +181,4 @@ readSensorRegisterINA219(uint8_t deviceRegister, int numberOfBytes)
 	}
 
 	return kWarpStatusOK;
-}
-
-void
-printSensorDataINA219(bool hexModeFlag)
-{
-	uint16_t	readSensorRegisterValueLSB;
-	uint16_t	readSensorRegisterValueMSB;
-	int16_t		readSensorRegisterValueCombined;
-	WarpStatus	i2cReadStatus;
-
-
-	/*
-	 *	From the MMA8451Q datasheet:
-	 *
-	 *		"A random read access to the LSB registers is not possible.
-	 *		Reading the MSB register and then the LSB register in sequence
-	 *		ensures that both bytes (LSB and MSB) belong to the same data
-	 *		sample, even if a new data sample arrives between reading the
-	 *		MSB and the LSB byte."
-	 *
-	 *	We therefore do 2-byte read transactions, for each of the registers.
-	 *	We could also improve things by doing a 6-byte read transaction.
-	 */
-	i2cReadStatus = readSensorRegisterINA219(kWarpSensorOutputRegisterINA219_MSB, 2 /* numberOfBytes */);
-	readSensorRegisterValueMSB = deviceINA219State.i2cBuffer[0];
-	readSensorRegisterValueLSB = deviceINA219State.i2cBuffer[1];
-	readSensorRegisterValueCombined = ((readSensorRegisterValueMSB & 0xFF) << 6) | (readSensorRegisterValueLSB >> 2);
-
-	/*
-	 *	Sign extend the 14-bit value based on knowledge that upper 2 bit are 0:
-	 */
-	readSensorRegisterValueCombined = (readSensorRegisterValueCombined ^ (1 << 13)) - (1 << 13);
-
-
-	if (i2cReadStatus != kWarpStatusOK)
-	{
-		SEGGER_RTT_WriteString(0, " ----,");
-	}
-	else
-	{
-		if (hexModeFlag)
-		{
-			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
-		}
-		else
-		{
-			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
-		}
-	}
-
-
-	i2cReadStatus = readSensorRegisterINA219(kWarpSensorOutputRegisterINA219_MSB, 2 /* numberOfBytes */);
-	readSensorRegisterValueMSB = deviceINA219State.i2cBuffer[0];
-	readSensorRegisterValueLSB = deviceINA219State.i2cBuffer[1];
-	readSensorRegisterValueCombined = ((readSensorRegisterValueMSB & 0xFF) << 6) | (readSensorRegisterValueLSB >> 2);
-
-	/*
-	 *	Sign extend the 14-bit value based on knowledge that upper 2 bit are 0:
-	 */
-	readSensorRegisterValueCombined = (readSensorRegisterValueCombined ^ (1 << 13)) - (1 << 13);
-
-
-	if (i2cReadStatus != kWarpStatusOK)
-	{
-		SEGGER_RTT_WriteString(0, " ----,");
-	}
-	else
-	{
-		if (hexModeFlag)
-		{
-			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
-		}
-		else
-		{
-			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
-		}
-	}
-
-
-	i2cReadStatus = readSensorRegisterINA219(kWarpSensorOutputRegisterINA219, 2 /* numberOfBytes */);
-	readSensorRegisterValueMSB = deviceINA219State.i2cBuffer[0];
-	readSensorRegisterValueLSB = deviceINA219State.i2cBuffer[1];
-	readSensorRegisterValueCombined = ((readSensorRegisterValueMSB & 0xFF) << 6) | (readSensorRegisterValueLSB >> 2);
-
-	/*
-	 *	Sign extend the 14-bit value based on knowledge that upper 2 bit are 0:
-	 */
-	readSensorRegisterValueCombined = (readSensorRegisterValueCombined ^ (1 << 13)) - (1 << 13);
-
-
-	if (i2cReadStatus != kWarpStatusOK)
-	{
-		SEGGER_RTT_WriteString(0, " ----,");
-	}
-	else
-	{
-		if (hexModeFlag)
-		{
-			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
-		}
-		else
-		{
-			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
-		}
-	}
 }
