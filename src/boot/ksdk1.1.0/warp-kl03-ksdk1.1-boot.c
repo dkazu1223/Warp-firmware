@@ -2263,7 +2263,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				}
 				while (p<30)
 				{
-				p++
+				p++;
 				shunt = readSensorRegisterINA219(0x01,2);
 				bus = readSensorRegisterINA219(0x02,2);
 				power = readSensorRegisterINA219(0x03,2);
