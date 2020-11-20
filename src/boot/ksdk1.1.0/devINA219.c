@@ -181,7 +181,7 @@ readSensorRegisterINA219(uint8_t deviceRegister, int numberOfBytes)
 		return kWarpStatusDeviceCommunicationFailed;
 	}
 	
-	out = (deviceINA219State.i2cBuffer[0] << 8) | (deviceINA219State.i2cBuffer[1] & 0xFF);
+	out = ((deviceINA219State.i2cBuffer[0] & 0xFF) << 8) | (deviceINA219State.i2cBuffer[1] & 0xFF);
 	
 //	return kWarpStatusOK;
 	return out;
