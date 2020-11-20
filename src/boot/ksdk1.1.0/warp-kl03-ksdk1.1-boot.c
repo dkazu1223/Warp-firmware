@@ -2250,13 +2250,12 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				power = readSensorRegisterINA219(0x03,2);
 				current = readSensorRegisterINA219(0x04,2);
 				
-				SEGGER_RTT_printf(0, "\r\n\tread\n");
-				SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n");
-				SEGGER_RTT_printf(0," %d %d,", shunt);					
-				SEGGER_RTT_printf(0, "\r\n\Current\n");	
-				SEGGER_RTT_printf(0," %d %d,", current);
+				//SEGGER_RTT_printf(0, "\r\n\tread\n");
+				//SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); SEGGER_RTT_printf(0, "\r\n\Current\n");	
+				SEGGER_RTT_printf(0," %d,", shunt);				
+				SEGGER_RTT_printf(0," %d,", current);
 				
-				SEGGER_RTT_printf(0, "\r\n\printed\n");
+				//SEGGER_RTT_printf(0, "\r\n\printed\n");
 				}
 					
 					/*
