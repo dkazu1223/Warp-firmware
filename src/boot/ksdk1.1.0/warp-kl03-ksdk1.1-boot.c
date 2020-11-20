@@ -2229,10 +2229,10 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
-				// for 5v across a 27k resistor the lsb was of the order 10-9 so took 1*10^-9 as lsb -> cal of 0x186A0000
-				//currents then multiplies by 10^-9 for results
+				//1*10^-3 as lsb -> cal of 0x199
+				//current then multiplies by 10^-3 for results+
 				
-				writeSensorRegisterINA219(0x05,0x186A0000,menuI2cPullupValue);
+				writeSensorRegisterINA219(0x05,0x199,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
 				int k;
 				k=0;
