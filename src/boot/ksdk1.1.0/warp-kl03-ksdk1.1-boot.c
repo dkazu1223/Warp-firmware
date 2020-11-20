@@ -2262,7 +2262,9 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				
 				
-				while (p<1000)
+				SEGGER_RTT_printf(0, "\r\n\Current\n");
+				
+				while (p<1001)
 				{
 				p++;
 				shunt = readSensorRegisterINA219(0x01,2);
