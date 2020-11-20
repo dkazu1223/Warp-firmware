@@ -2238,13 +2238,14 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				int p;
 				k=0;
 				p=0;
-				while( k < 30 ) 
-				{
-				k++;
 				int shunt;
 				int bus;
 				int power;
 				int current;
+				while( k < 30 ) 
+				{
+				k++;
+				
 				OSA_TimeDelay(100);
 				
 				shunt = readSensorRegisterINA219(0x01,2);
