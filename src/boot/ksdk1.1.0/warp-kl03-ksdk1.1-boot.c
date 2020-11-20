@@ -2229,7 +2229,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
-				writeSensorRegisterINA219(0x05,8192,menuI2cPullupValue);
+				writeSensorRegisterINA219(0x05,74565404,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
 				int k;
 				k=0;
