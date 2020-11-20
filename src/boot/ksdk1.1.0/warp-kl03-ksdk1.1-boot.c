@@ -2239,11 +2239,12 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				int bus;
 				int power;
 				int current;
+				SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); 
 				while( k < 1001 ) 
 				{
 				k++;
 				
-				OSA_TimeDelay(1);
+				//OSA_TimeDelay(1);
 				
 				shunt = readSensorRegisterINA219(0x01,2);
 				bus = readSensorRegisterINA219(0x02,2);
@@ -2251,14 +2252,17 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				current = readSensorRegisterINA219(0x04,2);
 				
 				//SEGGER_RTT_printf(0, "\r\n\tread\n");
-				//SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); 
+				
 				//SEGGER_RTT_printf(0, "\r\n\Current\n");	
 				SEGGER_RTT_printf(0," %d,", shunt);				
 				//SEGGER_RTT_printf(0," %d,", current);
 				
 				//SEGGER_RTT_printf(0, "\r\n\printed\n");
 				}
-				while (p<30)
+				
+				SEGGER_RTT_printf(0," %d,", current);
+				
+				while (p<1000)
 				{
 				p++;
 				shunt = readSensorRegisterINA219(0x01,2);
@@ -2270,7 +2274,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				//SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n");
 				SEGGER_RTT_printf(0, "\r\n\Current\n");	
 				//SEGGER_RTT_printf(0," %d,", shunt);				
-				SEGGER_RTT_printf(0," %d,", current);
+				
 				
 				//SEGGER_RTT_printf(0, "\r\n\printed\n");	
 					
