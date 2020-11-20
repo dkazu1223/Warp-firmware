@@ -2257,7 +2257,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0," %d,", shunt);				
 				//SEGGER_RTT_printf(0," %d,", current);
 				
-				//SEGGER_RTT_printf(0, "\r\n\printed\n");
+				SEGGER_RTT_printf(0, "\r\n\ \n");
 				}
 				
 				
@@ -2278,7 +2278,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				//SEGGER_RTT_printf(0," %d,", shunt);				
 				
 				
-				//SEGGER_RTT_printf(0, "\r\n\printed\n");	
+				SEGGER_RTT_printf(0, "\r\n\ \n");	
 					
 					
 					
