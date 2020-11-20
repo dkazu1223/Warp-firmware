@@ -2229,10 +2229,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
-				//1*10^-3 as lsb -> cal of 0x199
-				//current then multiplies by 10^-3 for results
-				
-				writeSensorRegisterINA219(0x05,0x199,menuI2cPullupValue);
+				writeSensorRegisterINA219(0x05,8192,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
 				int k;
 				int p;
