@@ -2230,7 +2230,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
 				//1*10^-3 as lsb -> cal of 0x199
-				//current then multiplies by 10^-3 for results+
+				//current then multiplies by 10^-3 for results
 				
 				writeSensorRegisterINA219(0x05,0x199,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
@@ -2251,10 +2251,10 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				current = readSensorRegisterINA219(0x04,2);
 				
 				SEGGER_RTT_printf(0, "\r\n\tread\n");
-				
-				SEGGER_RTT_printf(0," %d %d,", shunt, bus);
-				OSA_TimeDelay(100);
-				SEGGER_RTT_printf(0," %d %d,", current, power);
+				SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n");
+				SEGGER_RTT_printf(0," %d %d,", shunt);					
+				SEGGER_RTT_printf(0, "\r\n\Current\n");	
+				SEGGER_RTT_printf(0," %d %d,", current);
 				
 				SEGGER_RTT_printf(0, "\r\n\printed\n");
 				}
