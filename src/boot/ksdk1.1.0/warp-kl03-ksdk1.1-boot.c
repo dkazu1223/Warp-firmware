@@ -2229,7 +2229,10 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
-				writeSensorRegisterINA219(0x05,0x199,menuI2cPullupValue);
+				// for 5v across a 27k resistor the lsb was of the order 10-9 so took 1*10^-9 as lsb -> cal of 0x186A0000
+				//currents then multiplies by 10^-9 for results
+				
+				writeSensorRegisterINA219(0x05,0x186A0000,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
 				int k;
 				k=0;
@@ -2240,17 +2243,17 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				int bus;
 				int power;
 				int current;
-				OSA_TimeDelay(1000);
+				OSA_TimeDelay(100);
 				
 				shunt = readSensorRegisterINA219(0x01,2);
 				bus = readSensorRegisterINA219(0x02,2);
 				power = readSensorRegisterINA219(0x00,2);
 				current = readSensorRegisterINA219(0x05,2);
 				
-				SEGGER_RTT_printf(0, "\r\n\read\n");
+				SEGGER_RTT_printf(0, "\r\n\tread\n");
 				
 				SEGGER_RTT_printf(0," %d %d,", shunt, bus);
-				OSA_TimeDelay(1000);
+				OSA_TimeDelay(100);
 				SEGGER_RTT_printf(0," %d %d,", current, power);
 				
 				SEGGER_RTT_printf(0, "\r\n\printed\n");
