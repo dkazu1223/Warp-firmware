@@ -2235,7 +2235,9 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				writeSensorRegisterINA219(0x05,0x199,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
 				int k;
+				int p;
 				k=0;
+				p=0;
 				while( k < 30 ) 
 				{
 				k++;
@@ -2251,13 +2253,32 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				current = readSensorRegisterINA219(0x04,2);
 				
 				//SEGGER_RTT_printf(0, "\r\n\tread\n");
-				//SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); SEGGER_RTT_printf(0, "\r\n\Current\n");	
+				SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); 
+				//SEGGER_RTT_printf(0, "\r\n\Current\n");	
 				SEGGER_RTT_printf(0," %d,", shunt);				
 				//SEGGER_RTT_printf(0," %d,", current);
 				
 				//SEGGER_RTT_printf(0, "\r\n\printed\n");
 				}
+				while (p<30)
+				{
+				p++
+				shunt = readSensorRegisterINA219(0x01,2);
+				bus = readSensorRegisterINA219(0x02,2);
+				power = readSensorRegisterINA219(0x03,2);
+				current = readSensorRegisterINA219(0x04,2);
+				
+				//SEGGER_RTT_printf(0, "\r\n\tread\n");
+				//SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n");
+				SEGGER_RTT_printf(0, "\r\n\Current\n");	
+				//SEGGER_RTT_printf(0," %d,", shunt);				
+				SEGGER_RTT_printf(0," %d,", current);
+				
+				//SEGGER_RTT_printf(0, "\r\n\printed\n");	
 					
+					
+					
+				}	
 					/*
 				
 				bool		autoIncrement, chatty;
