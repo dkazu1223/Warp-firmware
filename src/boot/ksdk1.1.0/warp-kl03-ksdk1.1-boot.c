@@ -2229,8 +2229,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\n\tSomething!\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
-				writeSensorRegisterINA219(0x00,8192)
-				//writeSensorRegisterINA219(0x05,)
+				writeSensorRegisterINA219(0x05,8192)
+				//writeSensorRegisterINA219(0x00,)
 				
 				int shunt;
 				int bus;
@@ -2279,7 +2279,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				disableI2Cpins();
 				
 				OSA_TimeDelay(10000);
-				SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
+				//SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
 
 				break;
 			}	
