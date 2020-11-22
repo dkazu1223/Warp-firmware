@@ -2224,16 +2224,15 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 			{
 				SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
 				
-				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
+				
 				
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
 				
 				configureSensorINA219(0x199,
-						     0x05,
 						     menuI2cPullupValue
 						     );
 				
-				
+				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				int k;
 				bool hexModeFlag;
 				k = 0;
