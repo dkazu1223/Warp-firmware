@@ -80,8 +80,7 @@ writeSensorRegisterINA219(uint8_t deviceRegister, uint16_t payload, uint16_t men
 
 	switch (deviceRegister)
 	{
-		case 0x00: case 0x01: case 0x02: case 0x03: 
-		case 0x04: case 0x05:
+		case 0x00: case 0x05:
 		{
 			/* OK */
 			break;
@@ -100,7 +99,9 @@ writeSensorRegisterINA219(uint8_t deviceRegister, uint16_t payload, uint16_t men
 	};
 
 	commandByte[0] = deviceRegister;
-	payloadByte[0] = payload;
+	payloadByte[1] = payload & 0xFF;
+	payloadByte[0] = (payload >> 8);
+	
 	status = I2C_DRV_MasterSendDataBlocking(
 							0 /* I2C instance */,
 							&slave,
@@ -125,7 +126,6 @@ configureSensorINA219(uint16_t payloadF_SETUP,  uint16_t menuI2cPullupValue)
 							payloadF_SETUP /* payload: Disable FIFO */,
 							menuI2cPullupValue);
 	
-
 	return i2cWriteStatus;
 }
 
