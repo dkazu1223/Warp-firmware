@@ -182,11 +182,27 @@ readSensorRegisterINA219(uint8_t deviceRegister, int numberOfBytes)
 	{
 		return kWarpStatusDeviceCommunicationFailed;
 	}
-	LSB = deviceINA219State.i2cBuffer[0];
-	MSB = deviceINA219State.i2cBuffer[1];
+	//LSB = deviceINA219State.i2cBuffer[0];
+	//MSB = deviceINA219State.i2cBuffer[1];
 	
-	out = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
+	//out = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
 		
 	return kWarpStatusOK;
 }
 
+
+printSensorDataINA219(bool hexModeFlag)
+{
+	uint16_t	LSB;
+	uint16_t	MSB;
+	uint16_t	out;
+	WarpStatus	i2cReadStatus;
+	
+	i2cReadStatus = readSensorRegisterINA219(kWarpSensorOutputRegisterINA219, 2 /* numberOfBytes */);
+	
+	LSB = deviceINA219State.i2cBuffer[0];
+	MSB = deviceINA219State.i2cBuffer[1];
+	
+	out = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
+	
+	return out
