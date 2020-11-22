@@ -2222,8 +2222,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 			case 'w':
 			{								
-				writeSensorRegisterINA219(0x05,	0x199, menuI2cPullupValue);
-				
+								
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				int k;
 				bool hexModeFlag;
