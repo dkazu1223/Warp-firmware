@@ -2230,7 +2230,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				configureSensorINA219(0x199,
 						     0x05,
-						     i2cPullupValue
+						     menuI2cPullupValue
 						     );
 				
 				
@@ -2739,9 +2739,9 @@ printAllSensors(bool printHeadersAndCalibration, bool hexModeFlag, int menuDelay
 //added	
 	#ifdef WARP_BUILD_ENABLE_DEVINA219
 	numberOfConfigErrors += configureSensorINA219(0x199,
-						     0x05,
-						     i2cPullupValue
-						     );
+					0x05,
+					i2cPullupValue
+					);
 
 	#endif
 	
