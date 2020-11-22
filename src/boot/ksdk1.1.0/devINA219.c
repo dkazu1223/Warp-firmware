@@ -205,4 +205,64 @@ printSensorDataINA219(bool hexModeFlag)
 	
 	out = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
 	
-	return out
+
+	SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
+				
+	SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
+				
+	SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
+	enableI2Cpins(menuI2cPullupValue);
+				
+	writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
+	//writeSensorRegisterINA219(0x00,)
+	int k;
+	int p;
+	k=0;
+	p=0;
+	int shunt;
+	int bus;
+	int power;
+	int current;
+	SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); 
+	while( k < 3 ) 
+	{
+	k++;
+				
+	//OSA_TimeDelay(1);
+				
+	shunt = readSensorRegisterINA219(0x01,2);
+	bus = readSensorRegisterINA219(0x02,2);
+	power = readSensorRegisterINA219(0x03,2);
+	current = readSensorRegisterINA219(0x04,2);
+				
+	//SEGGER_RTT_printf(0, "\r\n\tread\n");
+				
+	SEGGER_RTT_printf(0, "\r\n\Current\n");	
+	SEGGER_RTT_printf(0," %d,", shunt);				
+	SEGGER_RTT_printf(0," %d,", current);
+				
+	SEGGER_RTT_printf(0, "\r\n\ \n");
+		
+	}
+	if (i2cReadStatus != kWarpStatusOK)
+	{
+		SEGGER_RTT_WriteString(0, " ----,");
+	}
+	else
+	{
+		if (hexModeFlag)
+		{
+			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
+		}
+		else
+		{
+			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+		}
+	}			
+				
+				
+	SEGGER_RTT_printf(0, "\r\n\Current\n");	
+	
+
+	
+return out
