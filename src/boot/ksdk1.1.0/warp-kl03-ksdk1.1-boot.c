@@ -2227,10 +2227,40 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
+				
+				configureSensorINA219(0x199,
+						     0x05
+						     i2cpullupValue
+						     );
+				
+				
+				int k;
+				
 				enableI2Cpins(menuI2cPullupValue);
 				
-				writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
+				k = 0
+				bool hexModeFlag1;
+				
+				
+				while( k < 3 ) 
+				{		
+					
+				k++;
+				printSensorDataINA19(hexModeFlag)
+			
+				}
+				
+				
+				
+				
+				//
+				
+				
+				
+				
+				//writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
+				/*
 				int k;
 				int p;
 				k=0;
@@ -2263,6 +2293,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				
 				SEGGER_RTT_printf(0, "\r\n\Current\n");
+				
+				*/
 				/*
 				while (p<1001)
 				{
@@ -2313,9 +2345,9 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 					/*baseAddress */
 					/*autoIncrement*/
 					
-				disableI2Cpins();
+				//disableI2Cpins();
 				
-				OSA_TimeDelay(10000);
+				//OSA_TimeDelay(10000);
 				//SEGGER_RTT_WriteString(0, "\r\tDone.\n\n");
 
 				break;
@@ -2711,7 +2743,18 @@ printAllSensors(bool printHeadersAndCalibration, bool hexModeFlag, int menuDelay
 					i2cPullupValue
 					);
 	#endif
-	//Added??
+
+	
+//added	
+	#ifdef
+	numberOfConfigErrors += configureSensorINA219(0x199,
+						     0x05
+						     i2cpullupValue
+						     );
+	
+
+	
+	
 	
 	
 	
