@@ -2221,15 +2221,32 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 //Added					
 				
 			case 'w':
-			{
-				SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
+			{	
 				
-								
+				
+				#ifdef WARP_BUILD_ENABLE_DEVBINA219
+				status = writeByteToI2cDeviceRegister(	deviceINA219State.i2cAddress		/*	i2cAddress		*/,
+						true					/*	sendCommandByte		*/,
+						0x05					/*	commandByte		*/,
+						true					/*	sendPayloadByte		*/,
+						0x199					/*	payloadByte		*/);
+				if (status != kWarpStatusOK)
+				
+				#ifdef WARP_BUILD_ENABLE_SEGGER_RTT_PRINTF
+				SEGGER_RTT_printf(0, "\r\tPowerup command failed, code=%d, for BMX055mag @ 0x%02x.\n", status, deviceINA219State.i2cAddress);
+				#endif
+				
+				
+				
+				//SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
+				
+				/*				
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
 				
 				configureSensorINA219(0x199,
 						     menuI2cPullupValue
 						     );
+				*/
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				int k;
