@@ -2236,7 +2236,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				int k;
 				bool hexModeFlag;
-				k = 0
+				k = 0;
 				hexModeFlag = 1;
 				enableI2Cpins(menuI2cPullupValue);	
 				while( k < 3 ) 
@@ -2740,9 +2740,9 @@ printAllSensors(bool printHeadersAndCalibration, bool hexModeFlag, int menuDelay
 	#ifdef WARP_BUILD_ENABLE_DEVINA219
 	numberOfConfigErrors += configureSensorINA219(0x199,
 						     0x05,
-						     i2cpullupValue
+						     i2cPullupValue
 						     );
-	
+
 	#endif
 	
 	
