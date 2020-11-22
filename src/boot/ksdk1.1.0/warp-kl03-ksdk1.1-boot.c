@@ -2312,8 +2312,6 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				SEGGER_RTT_printf(0, "\r\n\ \n");	
 					
-					
-					
 				}	
 				*/
 					/*
@@ -2353,11 +2351,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				break;
 			}	
 				
-				
-				
-		
-	
-				
+						
 				
 			/*
 			 *	Simply spin for 10 seconds. Since the SWD pins should only be enabled when we are waiting for key at top of loop (or toggling after printf), during this time there should be no interference from the SWD.
