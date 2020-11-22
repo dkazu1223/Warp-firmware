@@ -192,8 +192,6 @@ printSensorDataINA219(bool hexModeFlag)
 	uint16_t	MSB;
 	uint16_t	out;
 	WarpStatus	i2cReadStatus;
-				
-	writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
 
 	/*
 	int k;
