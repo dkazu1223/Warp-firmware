@@ -121,12 +121,11 @@ WarpStatus
 configureSensorINA219(uint8_t payloadF_SETUP,  uint16_t menuI2cPullupValue)
 {
 	WarpStatus	i2cWriteStatus
-
-	i2cWriteStatus = writeSensorRegisterINA219(kWarpSensorConfiguration /* register address */,
+	i2cWriteStatus = writeSensorRegisterINA219(kWarpSensorConfigurationRegisterINA219_Calibration /* register address */,
 							payloadF_SETUP /* payload: Disable FIFO */,
 							menuI2cPullupValue);
 
-	return (i2cWriteStatus);
+	return i2cWriteStatus;
 }
 
 WarpStatus
