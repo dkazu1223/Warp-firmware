@@ -231,8 +231,8 @@ typedef enum
 	kWarpSensorConfigurationRegisterBME680CalibrationRegion2Start	= 0xE1,
 	kWarpSensorConfigurationRegisterBME680CalibrationRegion2End	= 0xF2,
 
-	kWarpSensorConfigurationRegisterINA219_SETUP                    = 0x00,
-	kWarpSensorConfigurationRegisterINA219CTRL_REG1                 = 0x00,
+	kWarpSensorConfigurationRegisterINA219_Configuration            = 0x00,
+	kWarpSensorConfigurationRegisterINA219_Calibration              = 0x05,
 } WarpSensorConfigurationRegister;
 
 typedef enum
