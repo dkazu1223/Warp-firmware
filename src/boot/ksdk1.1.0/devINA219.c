@@ -118,19 +118,15 @@ writeSensorRegisterINA219(uint8_t deviceRegister, uint16_t payload, uint16_t men
 }
 
 WarpStatus
-configureSensorINA219(uint8_t payloadF_SETUP, uint8_t payloadCTRL_REG1, uint16_t menuI2cPullupValue)
+configureSensorINA219(uint8_t payloadF_SETUP,  uint16_t menuI2cPullupValue)
 {
-	WarpStatus	i2cWriteStatus1, i2cWriteStatus2;
+	WarpStatus	i2cWriteStatus
 
-	i2cWriteStatus1 = writeSensorRegisterINA219(kWarpSensorConfigurationRegisterINA219_SETUP /* register address F_SETUP */,
+	i2cWriteStatus = writeSensorRegisterINA219(kWarpSensorConfiguration /* register address */,
 							payloadF_SETUP /* payload: Disable FIFO */,
 							menuI2cPullupValue);
 
-	i2cWriteStatus2 = writeSensorRegisterINA219(kWarpSensorConfigurationRegisterINA219CTRL_REG1 /* register address CTRL_REG1 */,
-							payloadCTRL_REG1 /* payload */,
-							menuI2cPullupValue);
-
-	return (i2cWriteStatus1 | i2cWriteStatus2);
+	return (i2cWriteStatus);
 }
 
 WarpStatus
@@ -146,8 +142,7 @@ readSensorRegisterINA219(uint8_t deviceRegister, int numberOfBytes)
 	USED(numberOfBytes);
 	switch (deviceRegister)
 	{
-		case 0x00: case 0x01: case 0x02: case 0x03: 
-		case 0x04: case 0x05:
+		case 0x01: case 0x02: case 0x03: case 0x04:
 		{
 			/* OK */
 			break;
@@ -197,24 +192,10 @@ printSensorDataINA219(bool hexModeFlag)
 	uint16_t	MSB;
 	uint16_t	out;
 	WarpStatus	i2cReadStatus;
-	
-	i2cReadStatus = readSensorRegisterINA219(kWarpSensorOutputRegisterINA219, 2 /* numberOfBytes */);
-	
-	LSB = deviceINA219State.i2cBuffer[0];
-	MSB = deviceINA219State.i2cBuffer[1];
-	
-	out = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
-	
-
-	SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
-				
-	SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
-				
-	SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
-	enableI2Cpins(menuI2cPullupValue);
 				
 	writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
-	//writeSensorRegisterINA219(0x00,)
+
+	/*
 	int k;
 	int p;
 	k=0;
@@ -223,6 +204,7 @@ printSensorDataINA219(bool hexModeFlag)
 	int bus;
 	int power;
 	int current;
+	
 	SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); 
 	while( k < 3 ) 
 	{
@@ -244,6 +226,17 @@ printSensorDataINA219(bool hexModeFlag)
 	SEGGER_RTT_printf(0, "\r\n\ \n");
 		
 	}
+	*/
+	
+	
+	i2cReadStatus = readSensorRegisterINA219(kWarpSensorOutputRegisterINA219Current, 2 /* numberOfBytes */);	
+	LSB = deviceINA219State.i2cBuffer[0];
+	MSB = deviceINA219State.i2cBuffer[1];
+	
+	out = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
+	
+		
+	
 	if (i2cReadStatus != kWarpStatusOK)
 	{
 		SEGGER_RTT_WriteString(0, " ----,");
@@ -252,17 +245,10 @@ printSensorDataINA219(bool hexModeFlag)
 	{
 		if (hexModeFlag)
 		{
-			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
+			SEGGER_RTT_printf(0, " 0x%02x,", readSensorRegisterValue);
 		}
 		else
 		{
-			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValue);
 		}
-	}			
-				
-				
-	SEGGER_RTT_printf(0, "\r\n\Current\n");	
-	
-
-	
-return out
+	}				
