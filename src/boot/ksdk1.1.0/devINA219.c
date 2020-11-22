@@ -249,7 +249,7 @@ printSensorDataINA219(bool hexModeFlag)
 		}
 		else
 		{
-			SEGGER_RTT_printf(0, " %d,", Current;
+			SEGGER_RTT_printf(0, " %d,", Current);
 		}
 		
 	SEGGER_RTT_printf(0, "\r\n\t\n");
