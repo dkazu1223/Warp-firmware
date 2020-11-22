@@ -234,7 +234,7 @@ printSensorDataINA219(bool hexModeFlag)
 	MSB = deviceINA219State.i2cBuffer[1];
 	
 	readSensorRegisterValue = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
-	Current = readSensorRegisterValue*10/100
+	Current = readSensorRegisterValue*10/100;
 		
 	
 	if (i2cReadStatus != kWarpStatusOK)
