@@ -2239,14 +2239,14 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
 				k = 0
-				bool hexModeFlag1;
+				bool hexModeFlag;
 				
 				
 				while( k < 3 ) 
 				{		
 					
 				k++;
-				printSensorDataINA19(hexModeFlag)
+				printSensorDataINA19(hexModeFlag);
 			
 				}
 				
