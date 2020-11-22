@@ -2229,7 +2229,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				k = 0;
 				hexModeFlag = 1;
 				enableI2Cpins(menuI2cPullupValue);	
-				while( k < 99 ) 
+				while( k < 1001 ) 
 				{		
 
 				k++;
