@@ -2222,7 +2222,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 			case 'w':
 			{	
-				
+				WarpStatus	status;
 				
 				#ifdef WARP_BUILD_ENABLE_DEVBINA219
 				status = writeByteToI2cDeviceRegister(	deviceINA219State.i2cAddress		/*	i2cAddress		*/,
@@ -2236,7 +2236,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\tPowerup command failed, code=%d, for BMX055mag @ 0x%02x.\n", status, deviceINA219State.i2cAddress);
 				#endif
 				
-				
+			
 				
 				//SEGGER_RTT_WriteString(0, "\r\n\tReading INA219\n");
 				
