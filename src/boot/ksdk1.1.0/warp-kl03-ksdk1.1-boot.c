@@ -2240,7 +2240,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				int power;
 				int current;
 				SEGGER_RTT_printf(0, "\r\n\Shunt voltage\n"); 
-				while( k < 1001 ) 
+				while( k < 3 ) 
 				{
 				k++;
 				
@@ -2253,9 +2253,9 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				//SEGGER_RTT_printf(0, "\r\n\tread\n");
 				
-				//SEGGER_RTT_printf(0, "\r\n\Current\n");	
+				SEGGER_RTT_printf(0, "\r\n\Current\n");	
 				SEGGER_RTT_printf(0," %d,", shunt);				
-				//SEGGER_RTT_printf(0," %d,", current);
+				SEGGER_RTT_printf(0," %d,", current);
 				
 				SEGGER_RTT_printf(0, "\r\n\ \n");
 				}
@@ -2263,7 +2263,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				
 				SEGGER_RTT_printf(0, "\r\n\Current\n");
-				
+				/*
 				while (p<1001)
 				{
 				p++;
@@ -2283,6 +2283,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 					
 					
 				}	
+				*/
 					/*
 				
 				bool		autoIncrement, chatty;
