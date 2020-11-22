@@ -243,7 +243,7 @@ printSensorDataINA219(bool hexModeFlag)
 	{
 		if (hexModeFlag)
 		{
-			SEGGER_RTT_printf(0, " 0x%02x,", readSensorRegisterValue);
+			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValue);
 		}
 		else
 		{
@@ -265,7 +265,7 @@ printSensorDataINA219(bool hexModeFlag)
 	{
 		if (hexModeFlag)
 		{
-			SEGGER_RTT_printf(0, " 0x%02x,", readSensorRegisterValue);
+			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValue);
 		}
 		else
 		{
