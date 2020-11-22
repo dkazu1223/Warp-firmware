@@ -2229,8 +2229,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_printf(0, "\r\n\tWriting Calibration\n");
 				
 				configureSensorINA219(0x199,
-						     0x05
-						     i2cpullupValue
+						     0x05,
+						     i2cPullupValue
 						     );
 				
 				
