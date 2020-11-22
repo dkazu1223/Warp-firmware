@@ -275,8 +275,9 @@ printSensorDataINA219(bool hexModeFlag)
 		{
 			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValue);
 		}
+	}
 	*/	
 	
 	
-	}				
+					
 }
