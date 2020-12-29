@@ -100,7 +100,7 @@ writeSensorRegisterINA219(uint8_t deviceRegister, uint16_t payload, uint16_t men
 
 	commandByte[0] = deviceRegister;
 	payloadByte[1] = payload & 0xFF;
-	payloadByte[0] = (payload >> 8);
+	payloadByte[0] = (payload >> 8) & 0xFF;
 	
 	status = I2C_DRV_MasterSendDataBlocking(
 							0 /* I2C instance */,
@@ -142,7 +142,7 @@ readSensorRegisterINA219(uint8_t deviceRegister, int numberOfBytes)
 	USED(numberOfBytes);
 	switch (deviceRegister)
 	{
-		case 0x01: case 0x02: case 0x03: case 0x04:
+		case 0x00: case 0x01: case 0x02: case 0x03: case 0x04: case 0x05:
 		{
 			/* OK */
 			break;
@@ -227,13 +227,13 @@ printSensorDataINA219(bool hexModeFlag)
 	WarpStatus	i2cReadStatus;
 	uint16_t	ShuntVoltage;
 	uint16_t	Current;
-
+//kWarpSensorOutputRegisterINA219ShuntVoltage
 	
-	i2cReadStatus = readSensorRegisterINA219(kWarpSensorOutputRegisterINA219ShuntVoltage, 2 /* numberOfBytes */);	
+	i2cReadStatus = readSensorRegisterINA219(0x04, 2 /* numberOfBytes */);	
 	LSB = deviceINA219State.i2cBuffer[0];
 	MSB = deviceINA219State.i2cBuffer[1];
 	
-	readSensorRegisterValue = ((LSB & 0xFF) << 8) | (MSB & 0xFF);
+	readSensorRegisterValue = ((LSB & 0xFF) << 8 | (MSB));
 		
 	
 	if (i2cReadStatus != kWarpStatusOK)
