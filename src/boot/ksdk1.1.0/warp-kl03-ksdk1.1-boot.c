@@ -2221,9 +2221,19 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 //Added					
 				
 			case 'w':
-			{								
+			{	
+				enableI2Cpins(menuI2cPullupValue);
+				
+				SEGGER_RTT_WriteString(0, "\r\n\tConfig\n");
+				
+				                //write to config register
+                		writeSensorRegisterINA219(0x00, 0x019F, menuI2cPullupValue);
+                
+                		//write to calibration register
+               			writeSensorRegisterINA219(0x05, 0x2000, menuI2cPullupValue);
+				
+				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");		
 								
-				SEGGER_RTT_WriteString(0, "\r\n\tStarting read\n");
 				int k;
 				bool hexModeFlag;
 				k = 0;
@@ -2235,6 +2245,10 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				k++;
 				printSensorDataINA219(hexModeFlag);
 				SEGGER_RTT_WriteString(0, "\r\n\t \n");
+				
+					
+				disableI2Cpins();
+					
 				}
 			
 		
