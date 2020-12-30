@@ -2221,7 +2221,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 //Added					
 				
 			case 'w':
-			{	
+			{			
 				enableI2Cpins(menuI2cPullupValue);
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tConfig\n");
@@ -2248,6 +2248,11 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_WriteString(0, "\r\n\t \n");
 					
 				}
+				
+				int16_t		xreading;
+				int16_t		yreading;
+				int16_t		zreading;
+				
 				SEGGER_RTT_WriteString(0, "\r\n\tgetsensordata \n");
 				
 				xreading ; yreading ; zreading = getSensorDataMMA8451Q(hexModeFlag);
