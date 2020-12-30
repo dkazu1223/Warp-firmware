@@ -2245,12 +2245,9 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				k++;
 				printSensorDataINA219(hexModeFlag);
 				SEGGER_RTT_WriteString(0, "\r\n\t \n");
-				
-					
-				disableI2Cpins();
 					
 				}
-			
+				disableI2Cpins();
 		
 				//writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
 				//writeSensorRegisterINA219(0x00,)
