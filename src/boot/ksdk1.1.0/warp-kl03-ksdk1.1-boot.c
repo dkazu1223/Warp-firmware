@@ -2728,14 +2728,6 @@ printAllSensors(bool printHeadersAndCalibration, bool hexModeFlag, int menuDelay
 //	#endif
 	
 	
-	#ifdef WARP_BUILD_ENABLE_DEVINA219
-	numberOfConfigErrors += configureSensorINA219(0x00,
-					0x01,
-					i2cPullupValue
-					);
-	#endif
-	
-	
 	
 	
 	#ifdef WARP_BUILD_ENABLE_DEVMAG3110
