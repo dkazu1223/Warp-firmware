@@ -2239,14 +2239,21 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				k = 0;
 				hexModeFlag = 1;
 				enableI2Cpins(menuI2cPullupValue);	
-				while( k < 1001 ) 
+				while( k < 10 ) 
 				{		
 
 				k++;
 				printSensorDataINA219(hexModeFlag);
+					
 				SEGGER_RTT_WriteString(0, "\r\n\t \n");
 					
 				}
+				SEGGER_RTT_WriteString(0, "\r\n\tgetsensordata \n");
+				getSensorDataMMA8451Q(hexModeFlag;
+						      
+				SEGGER_RTT_printf(0, " %d,", xreading , yreading , zreading );
+						      
+						      
 				disableI2Cpins();
 		
 				//writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
