@@ -2262,7 +2262,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				xreading = getSensorDataMMA8451Q(hexModeFlag);	
 			
-				SEGGER_RTT_printf(0, " %d,", );
+				SEGGER_RTT_printf(0, " %d,", xreading);
 						      
 						      
 				disableI2Cpins();
