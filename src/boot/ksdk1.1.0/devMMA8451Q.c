@@ -301,7 +301,6 @@ printSensorDataMMA8451Q(bool hexModeFlag)
 	}
 }
 
-void
 getSensorDataMMA8451Q(bool hexModeFlag)
 {
 	uint16_t	readSensorRegisterValueLSB;
