@@ -51,3 +51,4 @@ WarpStatus	readSensorSignalMMA8451Q(WarpTypeMask signal,
 					WarpSignalReliability reliability,
 					WarpSignalNoise noise);
 void		printSensorDataMMA8451Q(bool hexModeFlag);
+void		getSensorDataMMA8451Q(bool hexModeFlag);
