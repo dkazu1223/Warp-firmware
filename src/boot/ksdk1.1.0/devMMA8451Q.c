@@ -344,12 +344,12 @@ getSensorDataMMA8451Q(bool hexModeFlag)
 	{
 		if (hexModeFlag)
 		{
-			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
+			//SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
 			xreading = readSensorRegisterValueCombined;		
 		}
 		else
 		{
-			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+			//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 			xreading = readSensorRegisterValueCombined;			
 		}
 		
@@ -375,12 +375,12 @@ getSensorDataMMA8451Q(bool hexModeFlag)
 	{
 		if (hexModeFlag)
 		{
-			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
+			//SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
 			yreading = readSensorRegisterValueCombined;
 		}
 		else
 		{
-			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+			//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 			yreading = readSensorRegisterValueCombined;
 		}
 	}
@@ -405,12 +405,12 @@ getSensorDataMMA8451Q(bool hexModeFlag)
 	{
 		if (hexModeFlag)
 		{
-			SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
+			//SEGGER_RTT_printf(0, " 0x%02x 0x%02x,", readSensorRegisterValueMSB, readSensorRegisterValueLSB);
 			zreading = readSensorRegisterValueCombined;
 		}
 		else
 		{
-			SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+			//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 			zreading = readSensorRegisterValueCombined;
 		}
 	}
