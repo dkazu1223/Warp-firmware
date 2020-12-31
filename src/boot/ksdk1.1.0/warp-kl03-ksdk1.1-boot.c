@@ -2252,6 +2252,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				int16_t		xreading;
 				int16_t		yreading;
 				int16_t		zreading;
+				int16_t		readings;
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tgetsensordata \n");
 				
@@ -2259,10 +2260,13 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				
 				//printSensorDataMMA8451Q(hexModeFlag);
+				readings = getSensorDataMMA8451Q(hexModeFlag);
 				
-				xreading = getSensorDataMMA8451Q(hexModeFlag)[0];
+				/*
+				xreading = readings[0]
 				yreading = getSensorDataMMA8451Q(hexModeFlag)[1];
 				zreading = getSensorDataMMA8451Q(hexModeFlag)[2];
+				*/
 			
 				SEGGER_RTT_printf(0, " %d,", xreading);
 						      
