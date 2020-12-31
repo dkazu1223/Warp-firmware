@@ -413,6 +413,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 			//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 			zreading = readSensorRegisterValueCombined;
 		}
+	int16_t		reading;
 	if (xyz == 0)
 	{
 		reading = xreading
@@ -426,7 +427,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 			reading = yreading
 		}
 		
-	int16_t		reading
-	return readings;
+	
+	return reading;
 }
 
