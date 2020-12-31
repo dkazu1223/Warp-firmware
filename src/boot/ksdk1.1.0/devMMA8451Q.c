@@ -307,6 +307,7 @@ getSensorDataMMA8451Q(bool hexModeFlag)
 	uint16_t	readSensorRegisterValueLSB;
 	uint16_t	readSensorRegisterValueMSB;
 	int16_t		readSensorRegisterValueCombined;
+	int16_t		readings[3]
 	int16_t		xreading;
 	int16_t		yreading;
 	int16_t		zreading;
@@ -414,6 +415,7 @@ getSensorDataMMA8451Q(bool hexModeFlag)
 			zreading = readSensorRegisterValueCombined;
 		}
 	}
-	return xreading;
+	readings = {xreading,yreading,zreading}
+	return readings;
 }
 
