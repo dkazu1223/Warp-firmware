@@ -2256,14 +2256,14 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tgetsensordata \n");
 				
-				
-				
+								
 				
 				//printSensorDataMMA8451Q(hexModeFlag);
 				readings = getSensorDataMMA8451Q(hexModeFlag);
-				xreading = readings
+				xreading = readings;
 					
-					
+				
+				
 				/*
 				
 				yreading = readings[1];
