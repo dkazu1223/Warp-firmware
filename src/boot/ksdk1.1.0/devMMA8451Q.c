@@ -301,7 +301,7 @@ printSensorDataMMA8451Q(bool hexModeFlag)
 	}
 }
 
-WarpStatus
+uint16_t
 getSensorDataMMA8451Q(bool hexModeFlag)
 {
 	uint16_t	readSensorRegisterValueLSB;
