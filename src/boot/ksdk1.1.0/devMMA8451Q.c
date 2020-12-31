@@ -302,7 +302,7 @@ printSensorDataMMA8451Q(bool hexModeFlag)
 }
 
 uint16_t
-getSensorDataMMA8451Q(bool hexModeFlag)
+getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 {
 	uint16_t	readSensorRegisterValueLSB;
 	uint16_t	readSensorRegisterValueMSB;
@@ -413,8 +413,20 @@ getSensorDataMMA8451Q(bool hexModeFlag)
 			//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 			zreading = readSensorRegisterValueCombined;
 		}
+	if (xyz == 0)
+	{
+		reading = xreading
 	}
-	int16_t		readings[3] = {xreading,yreading,zreading};
+		if (xyz == 1)
+		{
+			reading = zreading
+		}
+		else
+		{
+			reading = yreading
+		}
+		
+	int16_t		reading
 	return readings;
 }
 
