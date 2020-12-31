@@ -416,15 +416,15 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	int16_t		reading;
 	if (xyz == 0)
 	{
-		reading = xreading
+		reading = xreading;
 	}
 		if (xyz == 1)
 		{
-			reading = zreading
+			reading = yreading;
 		}
 		else
 		{
-			reading = yreading
+			reading = zreading;
 		}
 		
 	
