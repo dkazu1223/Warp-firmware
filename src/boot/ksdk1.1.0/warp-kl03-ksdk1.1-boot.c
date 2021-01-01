@@ -2277,6 +2277,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				yreading = reading;
 				zreading = reading;
 			
+				SEGGER_RTT_WriteString(0, "\r\n\treadings from get \n");
 				
 				SEGGER_RTT_printf(0, " %d,", xreading, yreading, zreading);				      
 						      
