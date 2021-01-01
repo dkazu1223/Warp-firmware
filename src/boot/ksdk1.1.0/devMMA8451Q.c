@@ -342,7 +342,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	}
 	else
 	{
-		//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 		xreading = readSensorRegisterValueCombined;
 	}
 
@@ -364,7 +364,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	}
 	else
 	{
-		//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 		yreading = readSensorRegisterValueCombined;
 
 	}
@@ -387,7 +387,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	}
 	else
 	{
-		//SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 		zreading = readSensorRegisterValueCombined;
 	}
 	int16_t		reading;
