@@ -2225,7 +2225,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tConfig\n");
-				/*
+				
 				                //write to config register
                 		writeSensorRegisterINA219(0x00, 0x019F, menuI2cPullupValue);
                 
@@ -2238,7 +2238,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				bool hexModeFlag;
 				k = 0;
 				hexModeFlag = 1;
-				enableI2Cpins(menuI2cPullupValue);	
+	
+				/*
 				while( k < 10 ) 
 				{		
 
