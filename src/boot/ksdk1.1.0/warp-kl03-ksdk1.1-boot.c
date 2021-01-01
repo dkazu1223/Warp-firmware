@@ -2262,7 +2262,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				int16_t		xreading;
 				int16_t		yreading;
 				int16_t		zreading;
-				int		xyz;
+				int		xyz = 0;
 				
 				SEGGER_RTT_WriteString(0, "\r\n\treadings from print \n");
 							
@@ -2270,7 +2270,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\treadings from get \n");
 				
-				xreading = getSensorDataMMA8451Q(hexModeFlag,0);
+				xreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
 				xyz = 1;
 				yreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
 				xyz = 2;
@@ -2278,8 +2278,9 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\treadings from get \n");
 				
-				SEGGER_RTT_printf(0, " %d,", xreading, yreading, zreading);				      
-						      
+				SEGGER_RTT_printf(0, " %d,", xreading);				      
+				SEGGER_RTT_printf(0, " %d,", yreading);	
+				SEGGER_RTT_printf(0, " %d,", zreading);	
 				disableI2Cpins();
 		
 				//writeSensorRegisterINA219(0x05,2000,menuI2cPullupValue);
