@@ -343,7 +343,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	else
 	{
 		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
-		xreading = readSensorRegisterValueCombined		
+		xreading = readSensorRegisterValueCombined;
 	}
 
 
