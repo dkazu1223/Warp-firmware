@@ -2266,24 +2266,19 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\treadings from print \n");
 							
-				printSensorDataMMA8451Q(hexModeFlag);
+				printSensorDataMMA8451Q(0);
 				
 				SEGGER_RTT_WriteString(0, "\r\n\treadings from get \n");
 				
 				reading = getSensorDataMMA8451Q(hexModeFlag,0);
-				
+				reading = getSensorDataMMA8451Q(hexModeFlag,1);
+				reading = getSensorDataMMA8451Q(hexModeFlag,2);
 				xreading = reading;
+				yreading = reading;
+				zreading = reading;
+			
 				
-				
-				SEGGER_RTT_WriteString(0, "\r\n\txreading \n");
-				/*
-				
-				yreading = readings[1];
-				zreading = getSensorDataMMA8451Q(hexModeFlag)[2];
-				*/
-				
-				SEGGER_RTT_printf(0, " %d,", xreading);
-						      
+				SEGGER_RTT_printf(0, " %d,", xreading, yreading, zreading);				      
 						      
 				disableI2Cpins();
 		
