@@ -2255,7 +2255,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				#ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
 				configureSensorMMA8451Q(0x00,/* Payload: Disable FIFO */
 				0x01,/* Normal read 8bit, 800Hz, normal, active mode */
-				i2cPullupValue
+				menuI2cPullupValue
 				);
 				#endif
 				
