@@ -390,14 +390,14 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 		zreading = readSensorRegisterValueCombined;
 	}
-	int16_t		reading;
-	if (xyz == 0)
+	int16_t		reading = 69;
+	if (xyz = 0)
 	{
 		reading = xreading;
 	}
 	else
 	{
-		if (xyz == 1)
+		if (xyz = 1)
 		{
 			reading = yreading;
 		}
