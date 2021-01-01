@@ -2225,7 +2225,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				enableI2Cpins(menuI2cPullupValue);
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tConfig\n");
-				
+				/*
 				                //write to config register
                 		writeSensorRegisterINA219(0x00, 0x019F, menuI2cPullupValue);
                 
@@ -2248,6 +2248,15 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				SEGGER_RTT_WriteString(0, "\r\n\t \n");
 					
 				}
+				*/
+				//configure accelerometer
+				
+				#ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
+				numberOfConfigErrors += configureSensorMMA8451Q(0x00,/* Payload: Disable FIFO */
+				0x01,/* Normal read 8bit, 800Hz, normal, active mode */
+				i2cPullupValue
+				);
+				#endif
 				
 				int16_t		xreading;
 				int16_t		yreading;
@@ -2255,9 +2264,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				int16_t		reading;
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tgetsensordata \n");
-				
-								
-				
+							
 				//printSensorDataMMA8451Q(hexModeFlag);
 				reading = getSensorDataMMA8451Q(hexModeFlag,0);
 				
