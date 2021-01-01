@@ -2252,7 +2252,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				//configure accelerometer
 				
 				#ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
-				numberOfConfigErrors += configureSensorMMA8451Q(0x00,/* Payload: Disable FIFO */
+				configureSensorMMA8451Q(0x00,/* Payload: Disable FIFO */
 				0x01,/* Normal read 8bit, 800Hz, normal, active mode */
 				i2cPullupValue
 				);
@@ -2265,7 +2265,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 				
 				SEGGER_RTT_WriteString(0, "\r\n\tgetsensordata \n");
 							
-				//printSensorDataMMA8451Q(hexModeFlag);
+				printSensorDataMMA8451Q(hexModeFlag);
+				
 				reading = getSensorDataMMA8451Q(hexModeFlag,0);
 				
 				xreading = reading;
