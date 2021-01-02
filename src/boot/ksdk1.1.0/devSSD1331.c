@@ -164,6 +164,7 @@ devSSD1331init(void)
 	SEGGER_RTT_WriteString(0, "\r\n\tDone with enabling fill...\n");
 	
 /*
+// turns whole screen green
 	writeCommand(0X22);
 	writeCommand(0x00);
         writeCommand(0x00);
@@ -177,13 +178,13 @@ devSSD1331init(void)
         writeCommand(0x00);
 
 */
-	
+// turns segment green	
 	
 	writeCommand(0X22);
-	writeCommand(0x00);
-        writeCommand(0x00);
-        writeCommand(8);
-        writeCommand(16);
+	writeCommand(0x00); // start cols
+        writeCommand(0x00); // start ?
+        writeCommand(2); // end cols
+        writeCommand(16); // end cols
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
