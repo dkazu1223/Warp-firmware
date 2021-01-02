@@ -191,7 +191,6 @@ devSSD1331init(void)
 	writeCommand(0xFF);
         writeCommand(0x00);
 
-*/
 
 	SEGGER_RTT_WriteString(0, "\r\n\tDone with draw rectangle...\n");
 
