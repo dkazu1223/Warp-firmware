@@ -162,7 +162,8 @@ devSSD1331init(void)
 	 */   
 
 	SEGGER_RTT_WriteString(0, "\r\n\tDone with enabling fill...\n");
-
+	
+/*
 	writeCommand(0X22);
 	writeCommand(0x00);
         writeCommand(0x00);
@@ -175,6 +176,22 @@ devSSD1331init(void)
 	writeCommand(0xFF);
         writeCommand(0x00);
 
+*/
+	
+	
+	writeCommand(0X22);
+	writeCommand(0x00);
+        writeCommand(0x00);
+        writeCommand(8);
+        writeCommand(16);
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+
+*/
 
 	SEGGER_RTT_WriteString(0, "\r\n\tDone with draw rectangle...\n");
 
