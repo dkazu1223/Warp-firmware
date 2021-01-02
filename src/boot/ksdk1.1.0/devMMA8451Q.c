@@ -405,7 +405,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 		}
 		else
 		{
-			reading == zreading;
+			reading = zreading;
 			SEGGER_RTT_WriteString(0, " xyz = 2,");
 		}
 	}
