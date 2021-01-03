@@ -43,4 +43,4 @@ typedef enum
 } SSD1331Commands;
 
 int	devSSD1331init(void);
-int	devSSD1331symbols(int symbolno);
+int	devSSD1331symbols(int symbolno, int xco, int yco);
