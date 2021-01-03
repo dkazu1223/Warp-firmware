@@ -296,14 +296,20 @@ devSSD1331init(void)
 int
 devSSD1331symbols(int symbolno, int xco, int yco)
 {
+//symbolnos = numbers from 1 to 9 then 10 - 35 are the letters abc, 36 is a comma, 37 is a dot.
+	
+int shiftx
+int shifty
+	
+shiftx = xco * 8
+shifty = yco * 16
 
-//first seven segment test
 	//1 top segment	
 	writeCommand(0X22);
-	writeCommand(1); // start cols
-        writeCommand(0x00); // start rows
-        writeCommand(5); // end cols
-        writeCommand(1); // end rows
+	writeCommand(1+shiftx); // start cols
+        writeCommand(0+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(1+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -314,10 +320,10 @@ devSSD1331symbols(int symbolno, int xco, int yco)
 	
 	//2 left top segment	
 	writeCommand(0X22);
-	writeCommand(0); // start cols
-        writeCommand(2); // start rows
-        writeCommand(1); // end cols
-        writeCommand(5); // end rows
+	writeCommand(0+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -327,10 +333,10 @@ devSSD1331symbols(int symbolno, int xco, int yco)
 
 	//2 right top segment	
 	writeCommand(0X22);
-	writeCommand(5); // start cols
-        writeCommand(2); // start rows
-        writeCommand(6); // end cols
-        writeCommand(5); // end rows
+	writeCommand(5+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(6+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -340,10 +346,10 @@ devSSD1331symbols(int symbolno, int xco, int yco)
 	
 	//3 middle segment	
 	writeCommand(0X22);
-	writeCommand(1); // start cols
-        writeCommand(6); // start rows
-        writeCommand(5); // end cols
-        writeCommand(7); // end rows
+	writeCommand(1+shiftx); // start cols
+        writeCommand(6+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(7+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -353,9 +359,9 @@ devSSD1331symbols(int symbolno, int xco, int yco)
 
 	//2 left bottom segment	
 	writeCommand(0X22);
-	writeCommand(0); // start cols
-        writeCommand(8); // start rows
-        writeCommand(1); // end cols
+	writeCommand(0+shiftx); // start cols
+        writeCommand(8)+shifty; // start rows
+        writeCommand(1+shiftx); // end cols
         writeCommand(11); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
@@ -366,10 +372,10 @@ devSSD1331symbols(int symbolno, int xco, int yco)
 
 	//2 right bottom segment	
 	writeCommand(0X22);
-	writeCommand(5); // start cols
-        writeCommand(8); // start rows
-        writeCommand(6); // end cols
-        writeCommand(11); // end rows
+	writeCommand(5+shiftx); // start cols
+        writeCommand(8+shifty); // start rows
+        writeCommand(6+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -379,10 +385,10 @@ devSSD1331symbols(int symbolno, int xco, int yco)
 	
 	//3 bottom segment	
 	writeCommand(0X22);
-	writeCommand(1); // start cols
-        writeCommand(12); // start rows
-        writeCommand(5); // end cols
-        writeCommand(13); // end rows
+	writeCommand(1+shiftx); // start cols
+        writeCommand(12+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(13+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
