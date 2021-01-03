@@ -1377,11 +1377,11 @@ main(void)
 	 */
 #endif
 	devSSD1331init();
-	
 	int number = 0;
 	int xco = 0;
 	int yco = 0;
-	
+/*
+//test
 	devSSD1331symbols(0,0,0);
 	devSSD1331symbols(1,1,1);	
 	devSSD1331symbols(2,2,2);
@@ -1391,7 +1391,31 @@ main(void)
 	devSSD1331symbols(6,6,0);
 	devSSD1331symbols(7,7,0);
 	devSSD1331symbols(8,8,0);
-	devSSD1331symbols(9,9,0);
+	devSSD1331symbols(9,9,0);	
+*/
+//steps on line 1
+	devSSD1331symbols(28,0,0);	
+	devSSD1331symbols(29,1,0);
+	devSSD1331symbols(14,2,0);
+	devSSD1331symbols(25,3,0);
+	devSSD1331symbols(28,4,0);
+//avg steps on line 2
+	devSSD1331symbols(10,0,1);	
+	devSSD1331symbols(31,1,1);
+	devSSD1331symbols(16,2,1);
+	
+	devSSD1331symbols(28,3,1);	
+	devSSD1331symbols(29,4,1);
+	devSSD1331symbols(14,5,1);
+	devSSD1331symbols(25,6,1);
+	devSSD1331symbols(28,7,1);
+//time on line 3
+	devSSD1331symbols(29,3,2);	
+	devSSD1331symbols(1,4,2);
+	devSSD1331symbols(1,5,2);
+	devSSD1331symbols(14,7,2);
+	
+	
 	while (1)
 	{
 		/*
