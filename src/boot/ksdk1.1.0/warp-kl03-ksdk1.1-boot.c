@@ -1392,25 +1392,6 @@ main(void)
 	number = 3;
 	xco = 3;
 	yco = 3;
-	devSSD1331symbols(number,xco,yco);
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
