@@ -378,7 +378,7 @@ if (symbolno == 0)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -834,7 +834,7 @@ else if (symbolno == 6)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -970,7 +970,7 @@ else if (symbolno == 8)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -1144,7 +1144,7 @@ if (symbolno == 10)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -1200,7 +1200,7 @@ if (symbolno == 31)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -1268,7 +1268,7 @@ if (symbolno == 16)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -1405,7 +1405,7 @@ if (symbolno == 28)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -1486,7 +1486,7 @@ if (symbolno == 28)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
@@ -1567,7 +1567,7 @@ if (symbolno == 28)
 	//5 left bottom segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
-        writeCommand(8)+shifty; // start rows
+        writeCommand(8+shifty); // start rows
         writeCommand(1+shiftx); // end cols
         writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
