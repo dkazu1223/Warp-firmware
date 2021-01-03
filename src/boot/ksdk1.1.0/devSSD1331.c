@@ -196,8 +196,14 @@ devSSD1331init(void)
 	SEGGER_RTT_WriteString(0, "\r\n\tDone with draw rectangle...\n");
 
 */
-	
-	
+	return 0;
+}
+
+
+int
+devSSD1331symbols(void)
+{
+
 //first seven segment test
 	//1 top segment	
 	writeCommand(0X22);
@@ -289,6 +295,7 @@ devSSD1331init(void)
         writeCommand(0x00);
         writeCommand(0x00);
 	writeCommand(0xFF);
-        writeCommand(0x00);	
+        writeCommand(0x00);
+	
 	return 0;
 }
