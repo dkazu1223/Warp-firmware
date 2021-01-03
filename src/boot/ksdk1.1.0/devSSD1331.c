@@ -213,7 +213,7 @@ devSSD1331init(void)
         writeCommand(0x00);
 
 	
-	//2 top segment	
+	//2 left top segment	
 	writeCommand(0X22);
 	writeCommand(0); // start cols
         writeCommand(2); // start rows
@@ -226,5 +226,69 @@ devSSD1331init(void)
 	writeCommand(0xFF);
         writeCommand(0x00);
 
+	//2 right top segment	
+	writeCommand(0X22);
+	writeCommand(5); // start cols
+        writeCommand(2); // start rows
+        writeCommand(6); // end cols
+        writeCommand(5); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//3 middle segment	
+	writeCommand(0X22);
+	writeCommand(1); // start cols
+        writeCommand(6); // start rows
+        writeCommand(5); // end cols
+        writeCommand(7); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);	
+
+	//2 left bottom segment	
+	writeCommand(0X22);
+	writeCommand(0); // start cols
+        writeCommand(8); // start rows
+        writeCommand(1); // end cols
+        writeCommand(11); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+
+	//2 right bottom segment	
+	writeCommand(0X22);
+	writeCommand(5); // start cols
+        writeCommand(8); // start rows
+        writeCommand(6); // end cols
+        writeCommand(11); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//3 bottom segment	
+	writeCommand(0X22);
+	writeCommand(1); // start cols
+        writeCommand(12); // start rows
+        writeCommand(5); // end cols
+        writeCommand(13); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);	
 	return 0;
 }
