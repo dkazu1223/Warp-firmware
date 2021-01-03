@@ -496,15 +496,14 @@ if (symbolno == 0)
         writeCommand(0x00);
 	}	
 	
-	
 else if (symbolno == 1)
 	{	
 	//3 right top segment	
 	writeCommand(0X22);
-	writeCommand(5); // start cols
-        writeCommand(2); // start rows
-        writeCommand(6); // end cols
-        writeCommand(5); // end rows
+	writeCommand(5+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(6+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -514,10 +513,10 @@ else if (symbolno == 1)
 	
 	//6 right bottom segment	
 	writeCommand(0X22);
-	writeCommand(5); // start cols
-        writeCommand(8); // start rows
-        writeCommand(6); // end cols
-        writeCommand(11); // end rows
+	writeCommand(5+shiftx); // start cols
+        writeCommand(8+shifty); // start rows
+        writeCommand(6+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
