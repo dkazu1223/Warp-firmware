@@ -1386,7 +1386,6 @@ main(void)
 	number = 1;
 	xco = 1;
 	yco = 1;
-/*
 	devSSD1331symbols(number,xco,yco);	
 	number = 2;
 	xco = 2;
@@ -1395,7 +1394,7 @@ main(void)
 	number = 3;
 	xco = 3;
 	yco = 3;
-*/
+
 	
 	
 	
