@@ -317,7 +317,7 @@ shifty = yco * 16;
 	writeCommand(0xFF);
         writeCommand(0x00);
 //full seven segments
-	
+/*	
 if (symbolno == 0)
 	{	
 	//1 top segment	
@@ -412,7 +412,7 @@ if (symbolno == 0)
         writeCommand(0x00);
 	}
 	return 0;
-	
+	*/
 
 if (symbolno == 0)
 	{
