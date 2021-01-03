@@ -178,13 +178,13 @@ devSSD1331init(void)
         writeCommand(0x00);
 
 */
-// turns segment green	
-	
+// turns 16/8 segment green	
+/*	
 	writeCommand(0X22);
 	writeCommand(0x00); // start cols
-        writeCommand(0x00); // start ?
-        writeCommand(2); // end cols
-        writeCommand(16); // end cols
+        writeCommand(0x00); // start rows
+        writeCommand(8); // end cols
+        writeCommand(16); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -195,7 +195,36 @@ devSSD1331init(void)
 
 	SEGGER_RTT_WriteString(0, "\r\n\tDone with draw rectangle...\n");
 
+*/
+	
+	
+//first seven segment test
+	//1 top segment	
+	writeCommand(0X22);
+	writeCommand(1); // start cols
+        writeCommand(0x00); // start rows
+        writeCommand(6); // end cols
+        writeCommand(2); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
 
+	
+	//2 top segment	
+	writeCommand(0X22);
+	writeCommand(0); // start cols
+        writeCommand(2); // start rows
+        writeCommand(2); // end cols
+        writeCommand(6); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
 
 	return 0;
 }
