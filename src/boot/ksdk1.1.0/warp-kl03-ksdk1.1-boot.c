@@ -1380,7 +1380,7 @@ main(void)
 	int number = 1;
 	int xco = 6;
 	int yco = 0;
-	devSSD1331symbols(number,xyo,yco);
+	devSSD1331symbols(number,xco,yco);
 	while (1)
 	{
 		/*
