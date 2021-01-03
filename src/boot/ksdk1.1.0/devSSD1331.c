@@ -1675,8 +1675,37 @@ if (symbolno == 28)
         writeCommand(0x00);
 	writeCommand(0xFF);
         writeCommand(0x00);
+	}
 	
+	
+if (symbolno == 18)
+	{		
+	//2 left top segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
 
+	//5 left bottom segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(8+shifty); // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
 	}
 
 else{
