@@ -203,8 +203,8 @@ devSSD1331init(void)
 	writeCommand(0X22);
 	writeCommand(1); // start cols
         writeCommand(0x00); // start rows
-        writeCommand(6); // end cols
-        writeCommand(2); // end rows
+        writeCommand(5); // end cols
+        writeCommand(1); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -217,8 +217,8 @@ devSSD1331init(void)
 	writeCommand(0X22);
 	writeCommand(0); // start cols
         writeCommand(2); // start rows
-        writeCommand(2); // end cols
-        writeCommand(6); // end rows
+        writeCommand(1); // end cols
+        writeCommand(5); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
