@@ -298,11 +298,11 @@ devSSD1331symbols(int symbolno, int xco, int yco)
 {
 //symbolnos = numbers from 1 to 9 then 10 - 35 are the letters abc, 36 is a comma, 37 is a dot.
 	
-int shiftx
-int shifty
+int shiftx;
+int shifty;
 	
-shiftx = xco * 8
-shifty = yco * 16
+shiftx = xco * 8;
+shifty = yco * 16;
 
 	//1 top segment	
 	writeCommand(0X22);
