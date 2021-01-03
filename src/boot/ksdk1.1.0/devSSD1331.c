@@ -305,7 +305,7 @@ shiftx = xco * 8;
 shifty = yco * 16;
 
 //full seven segments
-/*
+	
 if (symbolno = 0)
 	{	
 	//1 top segment	
@@ -400,8 +400,8 @@ if (symbolno = 0)
         writeCommand(0x00);
 	}
 	return 0;
-*/	
 	
+	/*
 if (symbolno = 0)
 	{
 	//1 top segment	
@@ -653,5 +653,6 @@ if (symbolno = 3)
         writeCommand(0x00);
 	}
 	return 0;
+	*/
 	
 }
