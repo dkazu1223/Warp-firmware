@@ -461,7 +461,7 @@ if (symbolno == 0)
 	writeCommand(0+shiftx); // start cols
         writeCommand(8)+shifty; // start rows
         writeCommand(1+shiftx); // end cols
-        writeCommand(11); // end rows
+        writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
@@ -574,7 +574,7 @@ if (symbolno == 2)
 	writeCommand(0+shiftx); // start cols
         writeCommand(8)+shifty; // start rows
         writeCommand(1+shiftx); // end cols
-        writeCommand(11); // end rows
+        writeCommand(11+shifty); // end rows
 	writeCommand(0x00);
         writeCommand(0xFF);
         writeCommand(0x00);
