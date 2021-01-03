@@ -1382,19 +1382,10 @@ main(void)
 	int xco = 0;
 	int yco = 0;
 	
-	devSSD1331symbols(number,xco,yco);
-	number = 1;
-	xco = 1;
-	yco = 1;
-	devSSD1331symbols(number,xco,yco);	
-	number = 2;
-	xco = 2;
-	yco = 2;
-	devSSD1331symbols(number,xco,yco);
-	number = 3;
-	xco = 3;
-	yco = 3;
-	devSSD1331symbols(number,xco,yco);
+	devSSD1331symbols(0,0,0);
+	devSSD1331symbols(1,1,1);	
+	devSSD1331symbols(2,2,2);
+	devSSD1331symbols(3,3,3);
 	devSSD1331symbols(4,4,2);
 	devSSD1331symbols(5,5,1);
 	devSSD1331symbols(6,6,0);
