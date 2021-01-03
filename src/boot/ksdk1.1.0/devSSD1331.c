@@ -306,7 +306,7 @@ shifty = yco * 16;
 
 //full seven segments
 	
-if (symbolno = 0)
+if (symbolno == 0)
 	{	
 	//1 top segment	
 	writeCommand(0X22);
@@ -402,7 +402,7 @@ if (symbolno = 0)
 	return 0;
 	
 	/*
-if (symbolno = 0)
+if (symbolno == 0)
 	{
 	//1 top segment	
 	writeCommand(0X22);
@@ -486,7 +486,7 @@ if (symbolno = 0)
 	
 	return 0;
 	
-if (symbolno = 1)
+if (symbolno == 1)
 	{	
 	//3 right top segment	
 	writeCommand(0X22);
@@ -516,7 +516,7 @@ if (symbolno = 1)
 	}
 	return 0;	
 	
-if (symbolno = 2)
+if (symbolno == 2)
 	{	
 	//1 top segment	
 	writeCommand(0X22);
@@ -585,7 +585,7 @@ if (symbolno = 2)
 	}
 	return 0;
 	
-if (symbolno = 3)
+if (symbolno == 3)
 	{	
 	//1 top segment	
 	writeCommand(0X22);
