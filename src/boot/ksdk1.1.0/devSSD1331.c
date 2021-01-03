@@ -1237,7 +1237,7 @@ if (symbolno == 31)
         writeCommand(0x00);
 	}
 
-if (symbolno == 0)
+if (symbolno == 16)
 	{	
 	//1 top segment	
 	writeCommand(0X22);
@@ -1303,6 +1303,280 @@ if (symbolno == 0)
         writeCommand(0x00);
 	writeCommand(0xFF);
         writeCommand(0x00);
+	}
+	
+if (symbolno == 28)
+	{	
+	//1 top segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(0+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(1+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//2 left top segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//4 middle segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(6+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(7+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);	
+
+	//6 right bottom segment	
+	writeCommand(0X22);
+	writeCommand(5+shiftx); // start cols
+        writeCommand(8+shifty); // start rows
+        writeCommand(6+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//7 bottom segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(12+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(13+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	}
+	
+	if (symbolno == 29)
+	{	
+	
+	//2 left top segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+
+	//4 middle segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(6+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(7+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);	
+
+	//5 left bottom segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(8)+shifty; // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+
+	//6 right bottom segment	
+	writeCommand(0X22);
+	writeCommand(5+shiftx); // start cols
+        writeCommand(8+shifty); // start rows
+        writeCommand(6+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//7 bottom segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(12+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(13+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	}
+	
+	if (symbolno == 14)
+	{	
+	//1 top segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(0+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(1+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//2 left top segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//4 middle segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(6+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(7+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);	
+
+	//5 left bottom segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(8)+shifty; // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//7 bottom segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(12+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(13+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	}
+	
+	if (symbolno == 25)
+	{	
+	//1 top segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(0+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(1+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//2 left top segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+
+	//3 right top segment	
+	writeCommand(0X22);
+	writeCommand(5+shiftx); // start cols
+        writeCommand(2+shifty); // start rows
+        writeCommand(6+shiftx); // end cols
+        writeCommand(5+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+	
+	//4 middle segment	
+	writeCommand(0X22);
+	writeCommand(1+shiftx); // start cols
+        writeCommand(6+shifty); // start rows
+        writeCommand(5+shiftx); // end cols
+        writeCommand(7+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);	
+
+	//5 left bottom segment	
+	writeCommand(0X22);
+	writeCommand(0+shiftx); // start cols
+        writeCommand(8)+shifty; // start rows
+        writeCommand(1+shiftx); // end cols
+        writeCommand(11+shifty); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
+
 	}
 else{
 
