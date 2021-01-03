@@ -303,7 +303,19 @@ int shifty;
 	
 shiftx = xco * 8;
 shifty = yco * 16;
-
+	
+//test 
+	writeCommand(0X22);
+	writeCommand(88); // start cols
+        writeCommand(56); // start rows
+        writeCommand(95); // end cols
+        writeCommand(63); // end rows
+	writeCommand(0x00);
+        writeCommand(0xFF);
+        writeCommand(0x00);
+        writeCommand(0x00);
+	writeCommand(0xFF);
+        writeCommand(0x00);
 //full seven segments
 	
 if (symbolno == 0)
