@@ -1377,6 +1377,7 @@ main(void)
 	 */
 #endif
 	devSSD1331init();
+	devSSD1331symbols();
 	while (1)
 	{
 		/*
