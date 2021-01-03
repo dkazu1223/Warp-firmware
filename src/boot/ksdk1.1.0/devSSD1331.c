@@ -413,7 +413,7 @@ if (symbolno == 0)
 	}
 	return 0;
 	
-	/*
+
 if (symbolno == 0)
 	{
 	//1 top segment	
@@ -665,6 +665,6 @@ if (symbolno == 3)
         writeCommand(0x00);
 	}
 	return 0;
-	*/
+
 	
 }
