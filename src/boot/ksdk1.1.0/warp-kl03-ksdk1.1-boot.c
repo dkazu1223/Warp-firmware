@@ -1383,15 +1383,15 @@ main(void)
 	int yco = 0;
 	
 	devSSD1331symbols(number,xco,yco);
-	number = 1;
+	number = 0;
 	xco = 1;
 	yco = 1;
 	devSSD1331symbols(number,xco,yco);	
-	number = 2;
+	number = 0;
 	xco = 2;
 	yco = 2;
 	devSSD1331symbols(number,xco,yco);
-	number = 3;
+	number = 0;
 	xco = 3;
 	yco = 3;
 	devSSD1331symbols(number,xco,yco);
