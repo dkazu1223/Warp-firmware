@@ -1391,11 +1391,16 @@ main(void)
 	xco = 2;
 	yco = 2;
 	devSSD1331symbols(number,xco,yco);
-	number = 0;
+	number = 3;
 	xco = 3;
 	yco = 3;
 	devSSD1331symbols(number,xco,yco);
-		
+	devSSD1331symbols(4,4,2);
+	devSSD1331symbols(5,5,1);
+	devSSD1331symbols(6,6,0);
+	devSSD1331symbols(7,7,0);
+	devSSD1331symbols(8,8,0);
+	devSSD1331symbols(9,9,0);
 	while (1)
 	{
 		/*
