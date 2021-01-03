@@ -496,7 +496,6 @@ if (symbolno == 0)
         writeCommand(0x00);
 	}	
 	
-	return 0;
 	
 else if (symbolno == 1)
 	{	
@@ -525,8 +524,7 @@ else if (symbolno == 1)
         writeCommand(0x00);
 	writeCommand(0xFF);
         writeCommand(0x00);
-	}
-	return 0;	
+	}	
 	
 else if (symbolno == 2)
 	{	
@@ -595,7 +593,6 @@ else if (symbolno == 2)
 	writeCommand(0xFF);
         writeCommand(0x00);
 	}
-	return 0;
 	
 else if (symbolno == 3)
 	{	
@@ -664,9 +661,9 @@ else if (symbolno == 3)
 	writeCommand(0xFF);
         writeCommand(0x00);
 	}
-	return 0;
+	
 else{
 
     }
-	
+	return 0;
 }
