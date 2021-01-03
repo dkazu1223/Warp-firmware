@@ -1377,7 +1377,8 @@ main(void)
 	 */
 #endif
 	devSSD1331init();
-	devSSD1331symbols();
+	int number = 1;
+	devSSD1331symbols(number);
 	while (1)
 	{
 		/*
