@@ -1307,6 +1307,7 @@ if (symbolno == 16)
 	
 if (symbolno == 28)
 	{	
+//s
 	//1 top segment	
 	writeCommand(0X22);
 	writeCommand(1+shiftx); // start cols
@@ -1375,7 +1376,7 @@ if (symbolno == 28)
 	
 	if (symbolno == 29)
 	{	
-	
+//t
 	//2 left top segment	
 	writeCommand(0X22);
 	writeCommand(0+shiftx); // start cols
@@ -1414,19 +1415,6 @@ if (symbolno == 28)
         writeCommand(0x00);
 	writeCommand(0xFF);
         writeCommand(0x00);
-
-	//6 right bottom segment	
-	writeCommand(0X22);
-	writeCommand(5+shiftx); // start cols
-        writeCommand(8+shifty); // start rows
-        writeCommand(6+shiftx); // end cols
-        writeCommand(11+shifty); // end rows
-	writeCommand(0x00);
-        writeCommand(0xFF);
-        writeCommand(0x00);
-        writeCommand(0x00);
-	writeCommand(0xFF);
-        writeCommand(0x00);
 	
 	//7 bottom segment	
 	writeCommand(0X22);
@@ -1444,6 +1432,7 @@ if (symbolno == 28)
 	
 	if (symbolno == 14)
 	{	
+//e
 	//1 top segment	
 	writeCommand(0X22);
 	writeCommand(1+shiftx); // start cols
@@ -1509,9 +1498,10 @@ if (symbolno == 28)
 	writeCommand(0xFF);
         writeCommand(0x00);
 	}
-	
+
 	if (symbolno == 25)
 	{	
+//p
 	//1 top segment	
 	writeCommand(0X22);
 	writeCommand(1+shiftx); // start cols
