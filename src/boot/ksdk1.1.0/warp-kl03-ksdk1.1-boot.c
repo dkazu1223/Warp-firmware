@@ -1410,10 +1410,10 @@ main(void)
 	devSSD1331symbols(25,6,1);
 	devSSD1331symbols(28,7,1);
 //time on line 3
-	devSSD1331symbols(29,3,2);	
-	devSSD1331symbols(1,4,2);
-	devSSD1331symbols(1,5,2);
-	devSSD1331symbols(14,7,2);
+	devSSD1331symbols(29,0,2);	
+	devSSD1331symbols(1,1,2);
+	devSSD1331symbols(1,2,2);
+	devSSD1331symbols(14,4,2);
 	
 	
 	while (1)
