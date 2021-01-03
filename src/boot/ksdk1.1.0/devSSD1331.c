@@ -201,7 +201,7 @@ devSSD1331init(void)
 
 
 int
-devSSD1331symbols(void)
+devSSD1331symbols(int symbolno)
 {
 
 //first seven segment test
