@@ -396,18 +396,21 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 		reading = xreading;
 		SEGGER_RTT_WriteString(0, " xyz = 0");
 	}
+	else if (xyz == 1)
+	{
+	reading = yreading;
+	SEGGER_RTT_WriteString(0, " xyz = 1,");	
+	}	
+		
+	else if (xyz == 2)
+	{
+	reading = zreading;
+	SEGGER_RTT_WriteString(0, " xyz = 2,");
+	}
 	else
 	{
-		if (xyz == 1)
-		{
-			reading = yreading;
-			SEGGER_RTT_WriteString(0, " xyz = 1,");
-		}
-		else
-		{
-			reading = zreading;
-			SEGGER_RTT_WriteString(0, " xyz = 2,");
-		}
+	reading = 404;
+	SEGGER_RTT_WriteString(0, "getting error");
 	}
 		
 	return reading;
