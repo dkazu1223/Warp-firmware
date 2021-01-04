@@ -1432,8 +1432,7 @@ if (d4 != 0)
 	devSSD1331symbols(d4,8,0);
 }
 d3 = (aut-d4*1000)/100;		
-if (df!=1)
-	//|| d3!=0
+if (df=1 || d3!=0)
 {
 	df=1;
 	devSSD1331symbols(d3,9,0);
@@ -1441,8 +1440,7 @@ if (df!=1)
 d2 = (aut-d4*1000-d3*100)/10;
 SEGGER_RTT_printf(0, " %d,", 696969);	
 SEGGER_RTT_printf(0, " %d,", d2);	
-if (df!=1)
-	//|| d2!=0
+if (df=1|| d2!=0)
 {
 	df=1;
 	devSSD1331symbols(d2,10,0);	
