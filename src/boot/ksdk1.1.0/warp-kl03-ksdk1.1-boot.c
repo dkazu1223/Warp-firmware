@@ -1418,16 +1418,16 @@ main(void)
 	
 //test autoprint numbers
 	
-int auto = 9876
-int d1
-int d2
-int d3
-int d4	
+int auto = 9876;
+int d1;
+int d2;
+int d3;
+int d4;
 
-d4 = auto/1000
-d3 = (auto-d4*1000)/100
-d2 = (auto-d4*1000-d3*100)/10
-d1 = (auto-d4*1000-d3*100-d2*10)
+d4 = auto/1000;
+d3 = (auto-d4*1000)/100;
+d2 = (auto-d4*1000-d3*100)/10;
+d1 = (auto-d4*1000-d3*100-d2*10);
 
 devSSD1331symbols(d4,9,0);	
 devSSD1331symbols(d3,10,0);
