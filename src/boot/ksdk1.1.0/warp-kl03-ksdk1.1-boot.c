@@ -1423,7 +1423,7 @@ int d1;
 int d2;
 int d3;
 int d4;
-bool df;
+int df = 0;
 d4 = aut/1000;
 	
 if (d4 != 0)
