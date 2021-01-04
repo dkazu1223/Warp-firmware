@@ -1414,8 +1414,26 @@ main(void)
 	devSSD1331symbols(18,1,2);
 	devSSD1331symbols(22,2,2);
 	devSSD1331symbols(14,4,2);
+
 	
+//test autoprint numbers
 	
+int auto = 9876
+int d1
+int d2
+int d3
+int d4	
+
+d4 = auto/1000
+d3 = (auto-d4*1000)/100
+d2 = (auto-d4*1000-d3*100)/10
+d1 = (auto-d4*1000-d3*100-d2*10)
+
+devSSD1331symbols(d4,9,0);	
+devSSD1331symbols(d3,10,0);
+devSSD1331symbols(d2,11,0);
+devSSD1331symbols(d1,12,0);
+		
 	while (1)
 	{
 		/*
