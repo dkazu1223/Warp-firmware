@@ -1418,21 +1418,33 @@ main(void)
 	
 //test autoprint numbers
 	
-int aut = 9876;
+int aut = 806;
 int d1;
 int d2;
 int d3;
 int d4;
-
+bool df;
 d4 = aut/1000;
-d3 = (aut-d4*1000)/100;
+	
+if (d4 != 0)
+{
+	df=1;
+	devSSD1331symbols(d4,8,0);
+}
+d3 = (aut-d4*1000)/100;		
+if (df!=1 || d3!=0)
+{
+	df=1;
+	devSSD1331symbols(d3,9,0);
+}
 d2 = (aut-d4*1000-d3*100)/10;
-d1 = (aut-d4*1000-d3*100-d2*10);
-
-devSSD1331symbols(d4,9,0);	
-devSSD1331symbols(d3,10,0);
-devSSD1331symbols(d2,11,0);
-devSSD1331symbols(d1,12,0);
+if (df!=1 || d2!=0)
+{
+	df=1;
+	devSSD1331symbols(d2,10,0);	
+}
+d1 = (aut-d4*1000-d3*100-d2*10);	
+devSSD1331symbols(d1,11,0);
 		
 	while (1)
 	{
