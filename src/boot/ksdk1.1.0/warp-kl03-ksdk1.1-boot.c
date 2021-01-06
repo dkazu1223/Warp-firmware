@@ -1028,7 +1028,7 @@ dumpProcessorState(void)
 	//SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", CLOCK_SYS_GetRtcGateCmd(0));
 	SEGGER_RTT_printf(0, "\r\tRTC clock22: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
 		
-	lptmr_status_t LPTMR_DRV_Stop(LPTMR_INSTANCE)
+	LPTMR_DRV_Stop(LPTMR_INSTANCE)
 	SEGGER_RTT_printf(0, "\r\tRTC clock33: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
 			
 	//LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE)
