@@ -104,7 +104,7 @@
 #define						kWarpConstantStringI2cFailure		"\rI2C failed, reg 0x%02x, code %d\n"
 #define						kWarpConstantStringErrorInvalidVoltage	"\rInvalid supply voltage [%d] mV!"
 #define						kWarpConstantStringErrorSanity		"\rSanity check failed!"
-
+#define LPTMR_INSTANCE 0
 
 #ifdef WARP_BUILD_ENABLE_DEVADXL362
 volatile WarpSPIDeviceState			deviceADXL362State;
@@ -993,7 +993,7 @@ printPinDirections(void)
 
 //initiate lptmr
 
-#define LPTMR_INSTANCE 0
+//#define LPTMR_INSTANCE 0
 //uint32_t LPTMR_INSTANCE = 0;
 	
 static lptmr_state_t gLPTMRState;
