@@ -989,14 +989,12 @@ printPinDirections(void)
 
 
 //#include "hal_tick.h"
-#include "btstack_config.h"
-
+//#include "btstack_config.h"
 
 //initiate lptmr
 
 #define LPTMR_INSTANCE 0
 //uint32_t LPTMR_INSTANCE = 0;
-	
 	
 static lptmr_state_t gLPTMRState;
 	
