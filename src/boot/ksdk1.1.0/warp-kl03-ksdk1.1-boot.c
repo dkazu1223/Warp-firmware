@@ -993,13 +993,12 @@ printPinDirections(void)
 
 //initiate lptmr
 
-	#define LPTMR_INSTANCE 0
+#define LPTMR_INSTANCE 0
 	
 	
-	static lptmr_state_t gLPTMRState;
+static lptmr_state_t gLPTMRState;
 	
-	
-    	lptmr_user_config_t lptmrUserConfig =
+lptmr_user_config_t lptmrUserConfig =
     	{
         .timerMode = kLptmrTimerModeTimeCounter, // Use LPTMR in Time Counter mode
         .freeRunningEnable = false, // When hit compare value, set counter back to zero
@@ -1010,7 +1009,7 @@ printPinDirections(void)
 	
 	
 	
-	LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
+LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
 
 
 
