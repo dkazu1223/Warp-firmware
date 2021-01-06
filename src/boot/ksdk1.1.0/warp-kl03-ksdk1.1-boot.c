@@ -50,7 +50,7 @@
 #include "fsl_mcglite_hal.h"
 #include "fsl_port_hal.h"
 #include "fsl_lpuart_driver.h"
-//#include "fsl_lptmr_driver.h"
+#include "fsl_lptmr_driver.h"
 
 #include "gpio_pins.h"
 #include "SEGGER_RTT.h"
