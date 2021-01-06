@@ -50,7 +50,7 @@
 #include "fsl_mcglite_hal.h"
 #include "fsl_port_hal.h"
 #include "fsl_lpuart_driver.h"
-#include "fsl_lptmr_driver.h"
+//#include "fsl_lptmr_driver.h"
 
 #include "gpio_pins.h"
 #include "SEGGER_RTT.h"
@@ -1001,7 +1001,7 @@ dumpProcessorState(void)
 	SEGGER_RTT_printf(0, "\r\tCPU power mode: %u\n", POWER_SYS_GetCurrentMode());
 	SEGGER_RTT_printf(0, "\r\tCPU clock manager configuration: %u\n", CLOCK_SYS_GetCurrentConfiguration());
 	*/
-	
+	/*
 	#define LPTMR_INSTANCE 0
 	
 	
@@ -1033,7 +1033,7 @@ dumpProcessorState(void)
 	SEGGER_RTT_printf(0, "\r\tRTC clock33: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
 			
 	//LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE)
-	
+	*/
 	/*
 	SEGGER_RTT_printf(0, "\r\tSPI clock: %d\n", CLOCK_SYS_GetSpiGateCmd(0));
 	SEGGER_RTT_printf(0, "\r\tI2C clock: %d\n", CLOCK_SYS_GetI2cGateCmd(0));
