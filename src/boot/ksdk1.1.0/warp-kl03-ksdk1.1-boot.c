@@ -1020,7 +1020,7 @@ dumpProcessorState(void)
 	
 	LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
 	
-	LPTMR_DRV_Start(LPTMR_INSTANCE)
+	LPTMR_DRV_Start(LPTMR_INSTANCE);
 		
 	SEGGER_RTT_printf(0, "\r\tRTC clock11: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
 	
