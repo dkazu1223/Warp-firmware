@@ -989,19 +989,10 @@ printPinDirections(void)
 
 
 
-void
-dumpProcessorState(void)
-{
-/*
-	uint32_t	cpuClockFrequency;
 
-	CLOCK_SYS_GetFreq(kCoreClock, &cpuClockFrequency);
-#ifdef WARP_BUILD_ENABLE_SEGGER_RTT_PRINTF
-	SEGGER_RTT_printf(0, "\r\n\n\tCPU @ %u KHz\n", (cpuClockFrequency / 1000));
-	SEGGER_RTT_printf(0, "\r\tCPU power mode: %u\n", POWER_SYS_GetCurrentMode());
-	SEGGER_RTT_printf(0, "\r\tCPU clock manager configuration: %u\n", CLOCK_SYS_GetCurrentConfiguration());
-	*/
-	/*
+
+//initiate lptmr
+
 	#define LPTMR_INSTANCE 0
 	
 	
@@ -1020,6 +1011,23 @@ dumpProcessorState(void)
 	
 	
 	LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
+
+
+
+
+void
+dumpProcessorState(void)
+{
+/*
+	uint32_t	cpuClockFrequency;
+
+	CLOCK_SYS_GetFreq(kCoreClock, &cpuClockFrequency);
+#ifdef WARP_BUILD_ENABLE_SEGGER_RTT_PRINTF
+	SEGGER_RTT_printf(0, "\r\n\n\tCPU @ %u KHz\n", (cpuClockFrequency / 1000));
+	SEGGER_RTT_printf(0, "\r\tCPU power mode: %u\n", POWER_SYS_GetCurrentMode());
+	SEGGER_RTT_printf(0, "\r\tCPU clock manager configuration: %u\n", CLOCK_SYS_GetCurrentConfiguration());
+	*/
+	/*
 	
 	LPTMR_DRV_Start(LPTMR_INSTANCE);
 		
