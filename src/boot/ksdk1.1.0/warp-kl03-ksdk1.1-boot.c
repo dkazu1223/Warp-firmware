@@ -993,7 +993,8 @@ printPinDirections(void)
 
 //initiate lptmr
 
-#define LPTMR_INSTANCE 0
+//#define LPTMR_INSTANCE 0
+uint32_t LPTMR_INSTANCE = 0;
 	
 	
 static lptmr_state_t gLPTMRState;
