@@ -988,7 +988,7 @@ printPinDirections(void)
 }
 
 
-#include "hal_tick.h"
+//#include "hal_tick.h"
 #include "btstack_config.h"
 
 
