@@ -1001,9 +1001,37 @@ dumpProcessorState(void)
 	SEGGER_RTT_printf(0, "\r\tCPU clock manager configuration: %u\n", CLOCK_SYS_GetCurrentConfiguration());
 	*/
 	
-	SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", CLOCK_SYS_GetRtcGateCmd(0));
+	#define LPTMR_INSTANCE 0
+	
+	
+	static lptmr_state_t gLPTMRState;
+	
+	
+    	lptmr_user_config_t lptmrUserConfig =
+    	{
+        .timerMode = kLptmrTimerModeTimeCounter, // Use LPTMR in Time Counter mode
+        .freeRunningEnable = false, // When hit compare value, set counter back to zero
+        .prescalerEnable = false, // bypass prescaler
+        .prescalerClockSource = kClockLptmrSrcLpoClk, // use 1kHz Low Power Clock
+        .isInterruptEnabled = true
+	};
+	
+	
+	
+	LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
+	
+	LPTMR_DRV_Start(LPTMR_INSTANCE)
+		
+	SEGGER_RTT_printf(0, "\r\tRTC clock11: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
+	
 	OSA_TimeDelay(10000);
-	SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", CLOCK_SYS_GetRtcGateCmd(0));
+	//SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", CLOCK_SYS_GetRtcGateCmd(0));
+	SEGGER_RTT_printf(0, "\r\tRTC clock22: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
+		
+	lptmr_status_t LPTMR_DRV_Stop(LPTMR_INSTANCE)
+	SEGGER_RTT_printf(0, "\r\tRTC clock33: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
+			
+	//LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE)
 	
 	/*
 	SEGGER_RTT_printf(0, "\r\tSPI clock: %d\n", CLOCK_SYS_GetSpiGateCmd(0));
