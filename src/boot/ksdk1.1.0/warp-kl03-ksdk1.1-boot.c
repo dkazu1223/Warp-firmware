@@ -992,7 +992,7 @@ printPinDirections(void)
 //#define LPTMR_INSTANCE 0
 
 //uint32_t LPTMR_INSTANCE = 0;
-	
+/*	
 static lptmr_state_t gLPTMRState;
 	
 lptmr_user_config_t lptmrUserConfig =
@@ -1004,9 +1004,9 @@ lptmr_user_config_t lptmrUserConfig =
         .isInterruptEnabled = true
 	};
 	
+*/	
 	
-	
-LPTMR_DRV_Init();
+//LPTMR_DRV_Init();
 //LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
 //&lptmrUserConfig, &gLPTMRStateLPTMR_INSTANCE
 
@@ -1022,21 +1022,20 @@ dumpProcessorState(void)
 	SEGGER_RTT_printf(0, "\r\tCPU power mode: %u\n", POWER_SYS_GetCurrentMode());
 	SEGGER_RTT_printf(0, "\r\tCPU clock manager configuration: %u\n", CLOCK_SYS_GetCurrentConfiguration());
 	*/
-	/*
-	
-	LPTMR_DRV_Start(LPTMR_INSTANCE);
-		
-	SEGGER_RTT_printf(0, "\r\tRTC clock11: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
-	
+
+	RTC_DRV_GetAlarm(0, &warpBootDate);
+	LPTMR_DRV_Start(LPTMR_INSTANCE);	
+	SEGGER_RTT_printf(0, "\r\tRTC clocklp: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
+	SEGGER_RTT_printf(0, "\r\tRTC clockrtc: %d\n", RTC_DRV_GetAlarm(0, &warpBootDate));
 	OSA_TimeDelay(10000);
 	//SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", CLOCK_SYS_GetRtcGateCmd(0));
-	SEGGER_RTT_printf(0, "\r\tRTC clock22: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
-		
+	SEGGER_RTT_printf(0, "\r\tRTC clocklpm: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
+	SEGGER_RTT_printf(0, "\r\tRTC clockrtc2: %d\n", RTC_DRV_GetAlarm(0, &warpBootDate));	
 	LPTMR_DRV_Stop(LPTMR_INSTANCE);
 	SEGGER_RTT_printf(0, "\r\tRTC clock33: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
 			
 	//LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE)
-	*/
+
 	/*
 	SEGGER_RTT_printf(0, "\r\tSPI clock: %d\n", CLOCK_SYS_GetSpiGateCmd(0));
 	SEGGER_RTT_printf(0, "\r\tI2C clock: %d\n", CLOCK_SYS_GetI2cGateCmd(0));
