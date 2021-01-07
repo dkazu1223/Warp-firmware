@@ -1006,9 +1006,9 @@ lptmr_user_config_t lptmrUserConfig =
 	
 	
 	
-LPTMR_DRV_Init(LPTMR_INSTANCE, &lptmrUserConfig, &gLPTMRState);
+LPTMR_DRV_Init(LPTMR_INSTANCE);
 //LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
-
+//&lptmrUserConfig, &gLPTMRState
 
 void
 dumpProcessorState(void)
