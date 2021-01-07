@@ -1213,11 +1213,11 @@ main(void)
 	RTC_DRV_GetAlarm(0, &warpBootDate);
 	LPTMR_DRV_Start(LPTMR_INSTANCE);	
 	SEGGER_RTT_printf(0, "\r\tRTC clocklp: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
-	SEGGER_RTT_printf(0, "\r\tRTC clockrtc: %d\n", RTC_DRV_GetAlarm(0, &warpBootDate));
+	SEGGER_RTT_printf(0, "\r\tRTC clockrtc: %d\n",warpBootDate);
 	OSA_TimeDelay(10000);
 	//SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", CLOCK_SYS_GetRtcGateCmd(0));
 	SEGGER_RTT_printf(0, "\r\tRTC clocklpm: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
-	SEGGER_RTT_printf(0, "\r\tRTC clockrtc2: %d\n", RTC_DRV_GetAlarm(0, &warpBootDate));	
+	SEGGER_RTT_printf(0, "\r\tRTC clockrtc2: %d\n", warpBootDate);	
 	LPTMR_DRV_Stop(LPTMR_INSTANCE);
 	SEGGER_RTT_printf(0, "\r\tRTC clock33: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
 
