@@ -989,7 +989,7 @@ printPinDirections(void)
 
 //initiate lptmr
 
-#define LPTMR_INSTANCE 0
+//#define LPTMR_INSTANCE 0
 
 //uint32_t LPTMR_INSTANCE = 0;
 	
@@ -1006,7 +1006,7 @@ lptmr_user_config_t lptmrUserConfig =
 	
 	
 	
-//LPTMR_DRV_Init();
+LPTMR_DRV_Init();
 //LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
 //&lptmrUserConfig, &gLPTMRStateLPTMR_INSTANCE
 
