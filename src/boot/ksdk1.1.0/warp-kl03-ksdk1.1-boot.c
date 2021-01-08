@@ -1218,7 +1218,8 @@ main(void)
 
 	RTC_DRV_GetAlarm(0, &warpBootDate);
 	
-	
+	//attempt at using the rtc and low power mode clocks
+	/*
 	//LPTMR_DRV_Start(LPTMR_INSTANCE);	
 	//SEGGER_RTT_printf(0, "\r\tRTC clocklp: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
 	SEGGER_RTT_printf(0, "\r\tRTC clockrtc: %d\n",warpBootDate);
@@ -1230,7 +1231,7 @@ main(void)
 	SEGGER_RTT_printf(0, "\r\tRTC clockrtc2: %d\n", warpBootDate);	
 	//LPTMR_DRV_Stop(LPTMR_INSTANCE);
 	//SEGGER_RTT_printf(0, "\r\tRTC clock33: %d\n", LPTMR_DRV_GetCurrentTimeUs(LPTMR_INSTANCE));
-
+	*/
 	/*
 	 *	Setup Power Manager Driver
 	 */
@@ -1472,7 +1473,7 @@ main(void)
 	devSSD1331symbols(14,4,2);
 
 	
-//test autoprint numbers
+//test autoprint numbers on the top line
 	
 int aut = 806;
 int d1;
@@ -1494,7 +1495,7 @@ if (df=1 || d3!=0)
 	devSSD1331symbols(d3,9,0);
 }
 d2 = (aut-d4*1000-d3*100)/10;
-SEGGER_RTT_printf(0, " %d,", 696969);	
+//SEGGER_RTT_printf(0, " %d,", 696969);	
 SEGGER_RTT_printf(0, " %d,", d2);	
 if (df=1|| d2!=0)
 {
