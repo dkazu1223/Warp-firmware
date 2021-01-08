@@ -1054,8 +1054,11 @@ dumpProcessorState(void)
 //second clock read attempt
 SEGGER_RTT_printf(0, "\r\tSIM->SCGC6=0x%02x\t\tRTC->SR=0x%02x\t\tRTC->TSR=0x%02x\n", SIM->SCGC6, RTC->SR, RTC->TSR);
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
-OSA_TimeDelay(10000);
+OSA_TimeDelay(3000);
 SEGGER_RTT_printf(0, "\r\tSIM->SCGC6=0x%02x\t\tRTC->SR=0x%02x\t\tRTC->TSR=0x%02x\n", SIM->SCGC6, RTC->SR, RTC->TSR);
+SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
+OSA_TimeDelay(4000);
+SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 }
 
 #ifdef WARP_BUILD_ENABLE_THERMALCHAMBERANALYSIS
