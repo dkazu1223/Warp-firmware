@@ -224,6 +224,8 @@ void					enableTPS82740B(uint16_t voltageMillivolts);
 void					setTPS82740CommonControlLines(uint16_t voltageMillivolts);
 void					printPinDirections(void);
 void					dumpProcessorState(void);
+//added runPedometer function
+void					runPedometer(void);
 void					repeatRegisterReadForDeviceAndAddress(WarpSensorDevice warpSensorDevice, uint8_t baseAddress, 
 								uint8_t pullupValue, bool autoIncrement, int chunkReadsPerAddress, bool chatty,
 								int spinDelay, int repetitionsPerAddress, uint16_t sssupplyMillivolts,
@@ -1009,7 +1011,7 @@ lptmr_user_config_t lptmrUserConfig =
 //LPTMR_DRV_Init();
 //LPTMR_DRV_Init(LPTMR_INSTANCE,&lptmrUserConfig,&gLPTMRState);
 //&lptmrUserConfig, &gLPTMRStateLPTMR_INSTANCE
-
+// the dumpProcessorstate function was hi-jacked while trying to make the rtc work
 void
 dumpProcessorState(void)
 {
@@ -1052,6 +1054,7 @@ dumpProcessorState(void)
 */
 	
 //second clock read attempt
+/*
 SEGGER_RTT_printf(0, "\r\tSIM->SCGC6=0x%02x\t\tRTC->SR=0x%02x\t\tRTC->TSR=0x%02x\n", SIM->SCGC6, RTC->SR, RTC->TSR);
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 OSA_TimeDelay(3000);
@@ -1059,6 +1062,36 @@ SEGGER_RTT_printf(0, "\r\tSIM->SCGC6=0x%02x\t\tRTC->SR=0x%02x\t\tRTC->TSR=0x%02x
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 OSA_TimeDelay(4000);
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
+	
+*/
+}
+// runPedometer function defined here
+
+void
+runPedometer(void)
+{
+SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
+int start_time = RTC->TSR
+int current_time
+int disp_time
+	
+while (1)
+{
+	
+	
+	
+
+	
+	
+	
+	current_time = RTC->TSR
+	disp_time = current_time = start_time
+		
+
+	if(disp_time < 30)
+	{
+		break
+	}
 }
 
 #ifdef WARP_BUILD_ENABLE_THERMALCHAMBERANALYSIS
