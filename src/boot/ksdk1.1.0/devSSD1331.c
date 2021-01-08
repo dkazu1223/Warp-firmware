@@ -1708,6 +1708,23 @@ if (symbolno == 18)
         writeCommand(0x00);
 	
 	}
+int
+devSSD1331clear(int xco, int yco)
+{
+	int shiftx;
+	int shifty;
+	
+	shiftx = xco * 8;
+	shifty = yco * 16;
+	
+	writeCommand(kSSD1331CommandCLEAR);
+	writeCommand(0+shiftx);
+	writeCommand(0+shifty);
+	writeCommand(8+shiftx);
+	writeCommand(16+shifty);
+	
+	return 0;
+}
 
 else{
 
