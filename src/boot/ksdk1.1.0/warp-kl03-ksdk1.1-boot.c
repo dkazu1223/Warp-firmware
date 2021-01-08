@@ -1102,6 +1102,7 @@ for(int q; q<100; q++)
 	}
 	*/
 }
+}
 
 #ifdef WARP_BUILD_ENABLE_THERMALCHAMBERANALYSIS
 void
