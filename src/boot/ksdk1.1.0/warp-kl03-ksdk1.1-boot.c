@@ -1071,9 +1071,9 @@ void
 runPedometer(void)
 {
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
-int start_time = RTC->TSR
-int current_time
-int disp_time
+int start_time = RTC->TSR;
+int current_time;
+int disp_time;
 	
 for(int q; q<100; q++)
 {
@@ -1083,10 +1083,9 @@ for(int q; q<100; q++)
 
 	
 	//get time in seconds
-	current_time = RTC->TSR
-	disp_time = current_time = start_time
-	print(disp_time)
-	
+	current_time = RTC->TSR;	
+	disp_time = current_time - start_time;	
+	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
 	//convert to minutes
 		
 	//display time		
