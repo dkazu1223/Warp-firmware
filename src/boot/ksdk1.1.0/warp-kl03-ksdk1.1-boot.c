@@ -1075,23 +1075,32 @@ int start_time = RTC->TSR
 int current_time
 int disp_time
 	
-while (1)
+for(int q; q<100; q++)
 {
-	
+	//need to loop through
 	
 	
 
 	
-	
-	
+	//get time in seconds
 	current_time = RTC->TSR
 	disp_time = current_time = start_time
+	print(disp_time)
+	
+	//convert to minutes
 		
-
-	if(disp_time < 30)
+	//display time		
+	
+		
+	OSA_TimeDelay(400);	
+		
+		
+	//break
+	/*if(disp_time < 30)
 	{
 		break
 	}
+	*/
 }
 
 #ifdef WARP_BUILD_ENABLE_THERMALCHAMBERANALYSIS
@@ -2350,7 +2359,8 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 			 */
 			case 't':
 			{
-				dumpProcessorState();
+				//dumpProcessorState();
+				runPedometer();
 				break;
 			}
 
