@@ -1013,6 +1013,7 @@ lptmr_user_config_t lptmrUserConfig =
 void
 dumpProcessorState(void)
 {
+//attempted read from clock
 /*
 	uint32_t	cpuClockFrequency;
 
@@ -1049,6 +1050,11 @@ dumpProcessorState(void)
 	SEGGER_RTT_printf(0, "\r\tTPM clock: %d\n", CLOCK_SYS_GetTpmGateCmd(0));
 #endif
 */
+	
+//second clock read attempt
+SEGGER_RTT_printf(0, "\r\tSIM->SCGC6=0x%02x\t\tRTC->SR=0x%02x\t\tRTC->TSR=0x%02x\n", SIM->SCGC6, RTC->SR, RTC->TSR);
+OSA_TimeDelay(10000);
+SEGGER_RTT_printf(0, "\r\tSIM->SCGC6=0x%02x\t\tRTC->SR=0x%02x\t\tRTC->TSR=0x%02x\n", SIM->SCGC6, RTC->SR, RTC->TSR);
 }
 
 #ifdef WARP_BUILD_ENABLE_THERMALCHAMBERANALYSIS
