@@ -1075,25 +1075,44 @@ int start_time = RTC->TSR;
 int current_time;
 int disp_time;
 	
-for(int q; q<100; q++)
+int td1;
+int td2;
+int td3;
+int td4;
+int td5;
+int td6;
+int df1;
+int disp_time_stored = 0
+	
+for(int q=0; q<100; q++)
 {
 	//need to loop through
 	
-	
-
-	
 	//get time in seconds
-	current_time = RTC->TSR;	
-	disp_time = current_time - start_time;	
+	current_time = RTC->TSR;
+	disp_time = current_time - start_time;
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
+	
 	//convert to minutes
-		
-	//display time		
+	OSA_TimeDelay(400);
+	
 	
 		
-	OSA_TimeDelay(400);	
+	if (disp_time != disp_time_stored)
+		{
+		//display time		
+		td6 = disp_time/60;
+		td4 = td6/10;	
+		devSSD1331symbols(td4,7,3);
+		td3 = td6 - td4*10;
+		devSSD1331symbols(td3,8,3);
+		td5=disp_time-td6*60;
+		td2= td5/10;
+		devSSD1331symbols(td2,,3);
+		disp_time_stored = disp_time;
 		
-		
+		}
+	
 	//break
 	/*if(disp_time < 30)
 	{
