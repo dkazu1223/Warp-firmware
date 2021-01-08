@@ -1082,7 +1082,7 @@ int td4;
 int td5;
 int td6;
 int df1;
-int disp_time_stored = 0
+int disp_time_stored = 0;
 	
 for(int q=0; q<100; q++)
 {
