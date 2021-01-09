@@ -44,4 +44,3 @@ typedef enum
 
 int	devSSD1331init(void);
 int	devSSD1331symbols(int symbolno, int xco, int yco);
-int	devSSD1331clear(int xco, int yco);
