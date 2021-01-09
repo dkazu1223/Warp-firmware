@@ -1084,6 +1084,12 @@ int td6;
 int df1;
 int disp_time_stored = 0;
 	
+	writeCommand(kSSD1331CommandCLEAR);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x5F);
+	writeCommand(0x3F);
+	
 for(int q=0; q<100; q++)
 {
 	//need to loop through
@@ -1095,6 +1101,7 @@ for(int q=0; q<100; q++)
 	
 	//convert to minutes
 	OSA_TimeDelay(400);
+	
 	
 	
 		
