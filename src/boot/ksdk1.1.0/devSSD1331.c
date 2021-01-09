@@ -305,16 +305,12 @@ shiftx = xco * 8;
 shifty = yco * 16;
 	
 //clear
+	
 	writeCommand(kSSD1331CommandCLEAR);
 	writeCommand(0+shiftx);
 	writeCommand(0+shifty);
 	writeCommand(8+shiftx);
 	writeCommand(16+shifty);
-		
-	
-	
-	
-	
 	
 /*	
 //test 
