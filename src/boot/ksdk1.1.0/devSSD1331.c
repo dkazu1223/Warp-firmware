@@ -303,6 +303,19 @@ int shifty;
 	
 shiftx = xco * 8;
 shifty = yco * 16;
+	
+//clear
+	writeCommand(kSSD1331CommandCLEAR);
+	writeCommand(0+shiftx);
+	writeCommand(0+shifty);
+	writeCommand(8+shiftx);
+	writeCommand(16+shifty);
+		
+	
+	
+	
+	
+	
 /*	
 //test 
 	writeCommand(0X22);
@@ -1712,7 +1725,7 @@ else{
 
     }
 	return 0;	
-	
+/*	
 	
 int
 devSSD1331clear(int xco, int yco)
@@ -1731,5 +1744,5 @@ devSSD1331clear(int xco, int yco)
 	
 	return 0;
 	}
-
+*/
 }
