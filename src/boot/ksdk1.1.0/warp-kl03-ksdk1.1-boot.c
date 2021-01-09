@@ -1095,7 +1095,7 @@ devSSD1331symbols(8,1,3);
 devSSD1331symbols(6969,1,3);
 devSSD1331symbols(8,1,3);
 	
-for(int q=0; q<100; q++)
+for(int q=0; q<30; q++)
 {
 	//need to loop through
 	
@@ -1103,6 +1103,19 @@ for(int q=0; q<100; q++)
 	current_time = RTC->TSR;
 	disp_time = current_time - start_time;
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
+	
+	//read from accelerometer all
+	
+	//choose largest
+	
+	// add to array
+	
+	//filter
+	
+	//count steps
+	
+	//ten second chunks?
+	
 	
 	//convert to minutes
 	OSA_TimeDelay(400);
@@ -1113,11 +1126,13 @@ for(int q=0; q<100; q++)
 		
 		devSSD1331symbols(6969,1,3);
 		
-		
+		//cleartest
+		/*
 		devSSD1331symbols(6969,7,3);
 		devSSD1331symbols(6969,8,3);
 		devSSD1331symbols(6969,10,3);
 		devSSD1331symbols(6969,11,3);
+		*/
 		/*
 		
 		devSSD1331clear(7,3);
@@ -1127,18 +1142,36 @@ for(int q=0; q<100; q++)
 		*/
 		//display time		
 		td6 = disp_time/60;
-		td4 = td6/10;	
-		devSSD1331symbols(td4,7,3);
+		td4 = td6/10;
+		if(td4 != td4s)
+			{
+				devSSD1331symbols(6969,7,3);	
+				devSSD1331symbols(td4,7,3);
+				td4s = td4;
+			}
 		td3 = td6 - td4*10;
-		devSSD1331symbols(td3,8,3);
-		
+		if(td3!=td3s)
+			{
+				devSSD1331clear(8,3);	
+				devSSD1331symbols(td3,8,3);
+				td3s = td3;
+			}
 		td5=disp_time-td6*60;
 		td2= td5/10;
-		devSSD1331symbols(td2,10,3);
+		if(td2!=td2s)
+			{
+				devSSD1331clear(9,3);
+				devSSD1331symbols(td2,10,3);
+				td2s = td2;
+			}
 		td1 = td5-td2*10;
-		devSSD1331symbols(td1,11,3);
-		disp_time_stored = disp_time;
-		
+		if(td1!=td1s)
+			{
+				devSSD1331symbols(td1,11,3);
+				devSSD1331clear(10,3);
+				td1s = td1;
+			}
+		disp_time_stored = disp_time;			
 		}
 	
 	//break
