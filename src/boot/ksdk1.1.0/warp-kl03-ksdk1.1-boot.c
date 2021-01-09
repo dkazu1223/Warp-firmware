@@ -1124,14 +1124,13 @@ for(int q=0; q<100; q++)
 		devSSD1331symbols(td4,7,3);
 		td3 = td6 - td4*10;
 		devSSD1331symbols(td3,8,3);
+		
 		td5=disp_time-td6*60;
 		td2= td5/10;
 		devSSD1331symbols(td2,10,3);
 		td1 = td5-td2*10;
-		devSSD1331symbols(td2,11,3);
+		devSSD1331symbols(td1,11,3);
 		disp_time_stored = disp_time;
-		
-		
 		
 		}
 	
