@@ -1119,25 +1119,18 @@ for(int q=0; q<30; q++)
 	
 	//convert to minutes
 	OSA_TimeDelay(400);
-		
+	/*
 	if (disp_time != disp_time_stored)
 		{
 		devSSD1331symbols(6969,1,3);
 		
 		//cleartest
-		/*
-		devSSD1331symbols(6969,7,3);
-		devSSD1331symbols(6969,8,3);
-		devSSD1331symbols(6969,10,3);
-		devSSD1331symbols(6969,11,3);
-		*/
-		/*
 		
-		devSSD1331clear(7,3);
-		devSSD1331clear(8,3);
-		devSSD1331clear(9,3);
-		devSSD1331clear(10,3);
-		*/
+		//devSSD1331symbols(6969,7,3);
+		//devSSD1331symbols(6969,8,3);
+		//devSSD1331symbols(6969,10,3);
+		//devSSD1331symbols(6969,11,3);
+		
 		//display time		
 		td6 = disp_time/60;
 		td4 = td6/10;
@@ -1173,13 +1166,12 @@ for(int q=0; q<30; q++)
 		}
 	
 	//break
-	/*if(disp_time < 30)
-	{
-		break
-	}
-	*/
+
 }
+*/
 }
+
+
 #ifdef WARP_BUILD_ENABLE_THERMALCHAMBERANALYSIS
 void
 addAndMultiplicationBusyLoop(long iterations)
