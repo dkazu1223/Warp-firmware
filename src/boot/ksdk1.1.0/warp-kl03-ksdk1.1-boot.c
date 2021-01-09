@@ -1084,6 +1084,9 @@ int td6;
 int df1;
 int disp_time_stored = 0;
 	
+devSSD1331symbols(8,1,3);
+devSSD1331symbols(6969,1,3);
+	
 for(int q=0; q<100; q++)
 {
 	//need to loop through
