@@ -1147,7 +1147,7 @@ for(int q=0; q<30; q++)
 		if(td3!=td3s)
 			{
 				//devSSD1331symbols(6969,8,3);			
-				devSSD1331symbols(td3,8,3);
+				//devSSD1331symbols(td3,8,3);
 				td3s = td3;
 			}
 		td5=disp_time-td6*60;
