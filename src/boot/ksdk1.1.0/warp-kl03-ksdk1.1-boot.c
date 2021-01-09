@@ -1119,7 +1119,6 @@ for(int q=0; q<30; q++)
 	
 	//convert to minutes
 	OSA_TimeDelay(400);
-	/*
 	if (disp_time != disp_time_stored)
 		{
 		devSSD1331symbols(6969,1,3);
@@ -1166,9 +1165,10 @@ for(int q=0; q<30; q++)
 		}
 	
 	//break
-
+	
+//func,for,if
 }
-*/
+}
 }
 
 
