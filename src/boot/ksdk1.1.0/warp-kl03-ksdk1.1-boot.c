@@ -1100,10 +1100,12 @@ for(int q=0; q<100; q++)
 		
 	if (disp_time != disp_time_stored)
 		{
+		/*
 		devSSD1331clear(7,3);
 		devSSD1331clear(8,3);
 		devSSD1331clear(9,3);
-		devSSD1331clear(10,3);	
+		devSSD1331clear(10,3);
+		*/
 		//display time		
 		td6 = disp_time/60;
 		td4 = td6/10;	
