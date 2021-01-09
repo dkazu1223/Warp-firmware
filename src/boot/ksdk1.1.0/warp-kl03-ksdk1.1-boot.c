@@ -1098,7 +1098,7 @@ devSSD1331symbols(8,1,3);
 for(int q=0; q<30; q++)
 {
 	//need to loop through
-	
+	/*
 	//get time in seconds
 	current_time = RTC->TSR;
 	disp_time = current_time - start_time;
@@ -1165,7 +1165,7 @@ for(int q=0; q<30; q++)
 		}
 	
 	//break
-	
+	*/
 //func,for,if
 }
 }
