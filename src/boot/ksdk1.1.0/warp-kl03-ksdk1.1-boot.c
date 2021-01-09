@@ -1104,7 +1104,9 @@ for(int q=0; q<100; q++)
 		
 	if (disp_time != disp_time_stored)
 		{
+		devSSD1331symbols(6969,7,3);devSSD1331symbols(6969,8,3);devSSD1331symbols(6969,10,3);devSSD1331symbols(6969,11,3);
 		/*
+		
 		devSSD1331clear(7,3);
 		devSSD1331clear(8,3);
 		devSSD1331clear(9,3);
