@@ -305,7 +305,7 @@ shiftx = xco * 8;
 shifty = yco * 16;
 	
 //clear
-if (symbolno == 01)
+if (symbolno == 6969)
 	{
 	writeCommand(kSSD1331CommandCLEAR);
 	writeCommand(0+shiftx);
