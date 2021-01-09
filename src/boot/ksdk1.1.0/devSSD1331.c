@@ -1706,11 +1706,17 @@ if (symbolno == 18)
         writeCommand(0x00);
 	writeCommand(0xFF);
         writeCommand(0x00);
-	
 	}
+
+else{
+
+    }
+	return 0;	
+	
+	
 int
 devSSD1331clear(int xco, int yco)
-{
+	{
 	int shiftx;
 	int shifty;
 	
@@ -1724,10 +1730,6 @@ devSSD1331clear(int xco, int yco)
 	writeCommand(16+shifty);
 	
 	return 0;
-}
+	}
 
-else{
-
-    }
-	return 0;
 }
