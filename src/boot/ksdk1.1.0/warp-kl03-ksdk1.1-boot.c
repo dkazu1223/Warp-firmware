@@ -1081,7 +1081,14 @@ int td3;
 int td4;
 int td5;
 int td6;
-int df1;
+	
+int td1s;
+int td2s;
+int td3s;
+int td4s;
+int td5s;
+int td6s;	
+
 int disp_time_stored = 0;
 	
 devSSD1331symbols(8,1,3);
