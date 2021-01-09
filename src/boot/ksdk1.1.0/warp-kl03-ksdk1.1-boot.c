@@ -1082,12 +1082,12 @@ int td4;
 int td5;
 int td6;
 	
-int td1s;
-int td2s;
-int td3s;
-int td4s;
-int td5s;
-int td6s;	
+int td1s = 0;
+int td2s = 0;
+int td3s = 0;
+int td4s = 0;
+int td5s = 0;
+int td6s = 0;	
 
 int disp_time_stored = 0;
 	
@@ -1098,7 +1098,7 @@ devSSD1331symbols(8,1,3);
 for(int q=0; q<30; q++)
 {
 	//need to loop through
-	/*
+	
 	//get time in seconds
 	current_time = RTC->TSR;
 	disp_time = current_time - start_time;
@@ -1119,8 +1119,11 @@ for(int q=0; q<30; q++)
 	
 	//convert to minutes
 	OSA_TimeDelay(400);
+	
 	if (disp_time != disp_time_stored)
 		{
+		
+		/*
 		devSSD1331symbols(6969,1,3);
 		
 		//cleartest
@@ -1161,11 +1164,13 @@ for(int q=0; q<30; q++)
 				devSSD1331symbols(td1,11,3);				
 				td1s = td1;
 			}
-		disp_time_stored = disp_time;			
+		disp_time_stored = disp_time;	
+		
+		*/
 		}
 	
 	//break
-	*/
+	
 //func,for,if
 }
 }
