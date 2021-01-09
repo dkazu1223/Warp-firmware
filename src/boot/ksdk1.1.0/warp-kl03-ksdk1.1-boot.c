@@ -1100,6 +1100,10 @@ for(int q=0; q<100; q++)
 		
 	if (disp_time != disp_time_stored)
 		{
+		devSSD1331clear(7,3);
+		devSSD1331clear(8,3);
+		devSSD1331clear(9,3);
+		devSSD1331clear(10,3);	
 		//display time		
 		td6 = disp_time/60;
 		td4 = td6/10;	
@@ -1108,9 +1112,9 @@ for(int q=0; q<100; q++)
 		devSSD1331symbols(td3,8,3);
 		td5=disp_time-td6*60;
 		td2= td5/10;
-		devSSD1331symbols(td2,9,3);
-		td1 = td5-td2*10;
 		devSSD1331symbols(td2,10,3);
+		td1 = td5-td2*10;
+		devSSD1331symbols(td2,11,3);
 		disp_time_stored = disp_time;
 		
 		}
