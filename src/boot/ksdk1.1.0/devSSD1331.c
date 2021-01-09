@@ -305,13 +305,13 @@ shiftx = xco * 8;
 shifty = yco * 16;
 	
 //clear
-	/*
+
 	writeCommand(kSSD1331CommandCLEAR);
 	writeCommand(0+shiftx);
 	writeCommand(0+shifty);
 	writeCommand(8+shiftx);
 	writeCommand(16+shifty);
-	*/
+	
 /*	
 //test 
 	writeCommand(0X22);
@@ -1016,7 +1016,7 @@ else if (symbolno == 8)
         writeCommand(0x00);
 	}
 
-if (symbolno == 9)
+else if (symbolno == 9)
 	{	
 	//1 top segment	
 	writeCommand(0X22);
@@ -1096,7 +1096,7 @@ if (symbolno == 9)
 	writeCommand(0xFF);
         writeCommand(0x00);
 	}
-if (symbolno == 10)
+else if (symbolno == 10)
 	{	
 	//1 top segment	
 	writeCommand(0X22);
@@ -1177,7 +1177,7 @@ if (symbolno == 10)
         writeCommand(0x00);
 	
 	}
-if (symbolno == 31)
+else if (symbolno == 31)
 	{	
 	
 	//2 left top segment	
@@ -1246,7 +1246,7 @@ if (symbolno == 31)
         writeCommand(0x00);
 	}
 
-if (symbolno == 16)
+else if (symbolno == 16)
 	{	
 	//1 top segment	
 	writeCommand(0X22);
@@ -1314,7 +1314,7 @@ if (symbolno == 16)
         writeCommand(0x00);
 	}
 	
-if (symbolno == 28)
+else if (symbolno == 28)
 	{	
 //s
 	//1 top segment	
@@ -1383,7 +1383,7 @@ if (symbolno == 28)
         writeCommand(0x00);
 	}
 	
-	if (symbolno == 29)
+	else if (symbolno == 29)
 	{	
 //t
 	//2 left top segment	
@@ -1439,7 +1439,7 @@ if (symbolno == 28)
         writeCommand(0x00);
 	}
 	
-	if (symbolno == 14)
+	else if (symbolno == 14)
 	{	
 //e
 	//1 top segment	
@@ -1508,7 +1508,7 @@ if (symbolno == 28)
         writeCommand(0x00);
 	}
 
-	if (symbolno == 25)
+	else if (symbolno == 25)
 	{	
 //p
 	//1 top segment	
@@ -1687,7 +1687,7 @@ if (symbolno == 28)
 	}
 	
 	
-if (symbolno == 18)
+else if (symbolno == 18)
 	{
 	//i
 	//2 left top segment	
@@ -1718,11 +1718,11 @@ if (symbolno == 18)
 	}
 
 else{
-	writeCommand(kSSD1331CommandCLEAR);
+	/*writeCommand(kSSD1331CommandCLEAR);
 	writeCommand(0+shiftx);
 	writeCommand(0+shifty);
 	writeCommand(8+shiftx);
-	writeCommand(16+shifty);
+	writeCommand(16+shifty);*/
 
     }
 	return 0;	
