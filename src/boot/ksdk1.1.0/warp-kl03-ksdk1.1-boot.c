@@ -1163,7 +1163,7 @@ for(int q=0; q<30; q++)
 		if(td1!=td1s)
 			{
 				//devSSD1331symbols(6969,11,3);
-				//devSSD1331symbols(td1,11,3);				
+				devSSD1331symbols(td1,11,3);				
 				td1s = td1;
 			}
 		
