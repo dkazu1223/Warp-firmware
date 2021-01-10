@@ -1095,7 +1095,7 @@ devSSD1331symbols(8,1,3);
 devSSD1331symbols(6969,1,3);
 devSSD1331symbols(8,1,3);
 	
-for(int q=0; q<30; q++)
+for(int q=0; q<100; q++)
 {
 	//need to loop through
 	
@@ -1118,7 +1118,7 @@ for(int q=0; q<30; q++)
 	
 	
 	//convert to minutes
-	OSA_TimeDelay(400);
+	OSA_TimeDelay(80);
 	
 	if (disp_time != disp_time_stored)
 		{
