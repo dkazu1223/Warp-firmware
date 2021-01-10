@@ -1122,8 +1122,7 @@ for(int q=0; q<30; q++)
 	
 	if (disp_time != disp_time_stored)
 		{
-		devSSD1331symbols(6969,11,3);
-		
+
 		//cleartest
 		
 		//devSSD1331symbols(6969,7,3);
@@ -1162,7 +1161,7 @@ for(int q=0; q<30; q++)
 			}
 		
 		td1 = td5-td2*10;
-		
+		devSSD1331symbols(6969,11,3);
 		devSSD1331symbols(td1,11,3);			
 		td1s = td1;
 		disp_time_stored = disp_time;	
