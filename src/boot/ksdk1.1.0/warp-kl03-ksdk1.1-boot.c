@@ -1136,7 +1136,7 @@ for(int q=0; q<30; q++)
 		td6 = disp_time/60;
 		td4 = td6/10;
 		
-		if(td4 != td4s)
+		if(td6!=td6s)
 			{
 				//devSSD1331symbols(6969,7,3);	
 				devSSD1331symbols(td4,7,3);
