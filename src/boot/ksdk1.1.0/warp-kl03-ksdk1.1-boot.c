@@ -1071,6 +1071,7 @@ void
 runPedometer(void)
 {
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
+//int for clock
 int start_time = RTC->TSR;
 int current_time;
 int disp_time;
@@ -1091,10 +1092,14 @@ int td6s = 0;
 
 int disp_time_stored = 0;
 	
-devSSD1331symbols(8,1,3);
-devSSD1331symbols(6969,1,3);
-devSSD1331symbols(8,1,3);
-	
+//for reading	
+int16_t		xreading;
+int16_t		yreading;
+int16_t		zreading;
+int		xyz = 0;
+int reading[3];
+int largestxyz
+		
 for(int q=0; q<100; q++)
 {
 	//need to loop through
@@ -1106,7 +1111,18 @@ for(int q=0; q<100; q++)
 	
 	//read from accelerometer all
 	
+	xyz = 0;
+	xreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
+	xyz = 1;
+	yreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
+	xyz = 2;
+	zreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
+	reading = {xreading, y reading, zreading}
 	//choose largest
+	for(d=0; d<2; d++)
+		
+		largestxyz = 
+	
 	
 	// add to array
 	
