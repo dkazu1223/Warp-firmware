@@ -1097,8 +1097,9 @@ int16_t		xreading;
 int16_t		yreading;
 int16_t		zreading;
 int		xyz = 0;
-int reading[3];
-int largestxyz
+int16_t reading[3];
+int16_t largestxyz
+int16_t accdata[150]
 		
 for(int q=0; q<100; q++)
 {
@@ -1117,25 +1118,30 @@ for(int q=0; q<100; q++)
 	yreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
 	xyz = 2;
 	zreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
-	reading = {xreading, y reading, zreading}
+	reading = {xreading, y reading, zreading};
 	//choose largest
-	for(d=0; d<2; d++)
-		
-		largestxyz = 
-	
-	
+	for(int d=0; d<2; d++)
+		{
+			if(reading[d]>largestxyz)
+				{
+				largestxyz = reading[d];
+				}
+		}
 	// add to array
+	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
+	accdata[q] = largestxyz;
 	
-	//filter
+	//filter?
 	
 	//count steps
+	
 	
 	//ten second chunks?
 	
 	
 	//convert to minutes
 	OSA_TimeDelay(80);
-	
+	/*
 	if (disp_time != disp_time_stored)
 		{
 
@@ -1183,7 +1189,7 @@ for(int q=0; q<100; q++)
 		disp_time_stored = disp_time;	
 		
 		}
-	
+	*/
 	//break
 	
 //func,for,if
