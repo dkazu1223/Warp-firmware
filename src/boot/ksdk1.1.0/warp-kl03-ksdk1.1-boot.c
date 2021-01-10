@@ -1122,7 +1122,7 @@ for(int q=0; q<30; q++)
 	
 	if (disp_time != disp_time_stored)
 		{
-		devSSD1331symbols(6969,11,3);
+		//devSSD1331symbols(6969,11,3);
 		
 		//cleartest
 		
