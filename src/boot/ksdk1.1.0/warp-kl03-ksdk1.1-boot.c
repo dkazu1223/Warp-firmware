@@ -1098,9 +1098,9 @@ int16_t		yreading;
 int16_t		zreading;
 int		xyz = 0;
 int16_t reading[3];
-int16_t largestxyz
-int16_t accdata[150]
-		
+int16_t largestxyz;
+int16_t accdata[150];
+bool hexModeFlag = 1;		
 for(int q=0; q<100; q++)
 {
 	//need to loop through
