@@ -1163,13 +1163,13 @@ for(int q=0; q<30; q++)
 			}
 		
 		td1 = td5-td2*10;
-		if(td1!=td1s)
+		/*if(td1!=td1s)
 			{
 				devSSD1331symbols(6969,11,3);
 				devSSD1331symbols(td1,11,3);				
 				td1s = td1;
 			}
-		
+		*/
 		disp_time_stored = disp_time;	
 		
 		}
