@@ -1145,7 +1145,7 @@ for(int q=0; q<30; q++)
 		*/
 		td4s = td4;
 		td3 = td6 - td4*10;
-		if(td2!=td2s)
+		if(td6!=td6s)
 			{	
 				devSSD1331symbols(6969,8,3);			
 				devSSD1331symbols(td2,8,3);
