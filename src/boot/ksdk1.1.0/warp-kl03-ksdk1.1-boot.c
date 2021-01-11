@@ -1115,7 +1115,7 @@ enableI2Cpins(menuI2cPullupValue);
 		);
 #endif
 
-/*
+
 //for filter
 //int16_t alpha; // 0.39 and means must be scale roughly = 0.4 = *2/5
 //int16_t filtdata[400];
@@ -1123,13 +1123,11 @@ enableI2Cpins(menuI2cPullupValue);
 for(int q=0; q<400; q++)
 {
 	//need to loop through
-	
+	/*
 	//get time in seconds
 	current_time = RTC->TSR;
 	disp_time = current_time - start_time;
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
-				
-	
 
 	//read from accelerometer all
 				xyz = 0;
@@ -1159,28 +1157,28 @@ for(int q=0; q<400; q++)
 	accdata[q] = largestxyz;
 	largestxyz = 0;
 	
-	*/ //comment out top
+	 //comment out top
 	//filter - descrete low pass filter with a 5Hz frequency cut off
-	/*
+	
 	filtdata[0] = alpha*accdata[0];
 	
 	for(int g=1; g<400; g++)
 		{
 		filtdata[g] = (2/5)*accdata[g] + (1-(2/5))*accdata[g-1];
 		}
-	*/
+	
 	//count steps
 
 	
 	//ten second chunks?
 	
-	
+	*/
 	//convert to minutes
 	OSA_TimeDelay(20);
 	/*
 	if (disp_time != disp_time_stored)
 		{
-
+		
 		//cleartest
 		
 		//devSSD1331symbols(6969,7,3);
@@ -1224,21 +1222,23 @@ for(int q=0; q<400; q++)
 		td1s = td1;
 		disp_time_stored = disp_time;	
 		
+		
+		
 		}
 	*/
 	//break
-//} // end of for
+} // end of for
 
 //printing data
 	for(int f=0; f<400; f++)
 		{
-		SEGGER_RTT_printf(0, "\r\t %d\n", 696969696996);
+		SEGGER_RTT_printf(0, "\r\t %d\n", 696);
 		//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
 /*
 	for(int f=0; f<400; f++)
 		{
-		SEGGER_RTT_printf(0, "\r\t %d\n", 696969696996);
+		SEGGER_RTT_printf(0, "\r\t %d\n", 696);
 		SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[f]);
 		}
 	
