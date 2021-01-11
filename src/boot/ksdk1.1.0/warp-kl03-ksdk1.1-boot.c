@@ -1244,7 +1244,7 @@ for(int q=0; q<400; q++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
-	
+/*
 //printing filtered data
 	SEGGER_RTT_printf(0, "\r\t------------- %d\n", 6969);
 	
@@ -1254,7 +1254,7 @@ for(int q=0; q<400; q++)
 		}
 	
 
-	
+*/	
 	
 	
 	
