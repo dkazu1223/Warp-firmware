@@ -1099,7 +1099,7 @@ int16_t		zreading;
 int		xyz = 0;
 int16_t reading[3];
 int16_t largestxyz = 0;
-int length = 10
+int length = 10;
 int16_t accdata[length];
 bool hexModeFlag = 1;
 	
