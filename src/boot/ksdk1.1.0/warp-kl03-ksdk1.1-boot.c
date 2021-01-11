@@ -1129,7 +1129,7 @@ for(int q=0; q<100; q++)
 	// add to array
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
 	accdata[q] = largestxyz;
-	
+	largestxyz = 0;
 	//filter?
 	
 	//count steps
@@ -1190,10 +1190,15 @@ for(int q=0; q<100; q++)
 		}
 	*/
 	//break
+} // end of for
 	
-//func,for,if
-}
-}
+//printing data
+	for(int f=0; f<100; f++)
+		{
+		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
+		}
+
+} //end of function
 
 
 
