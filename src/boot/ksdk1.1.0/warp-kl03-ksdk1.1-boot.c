@@ -1115,6 +1115,7 @@ enableI2Cpins(menuI2cPullupValue);
 		);
 #endif
 
+/*
 //for filter
 //int16_t alpha; // 0.39 and means must be scale roughly = 0.4 = *2/5
 //int16_t filtdata[400];
@@ -1158,7 +1159,7 @@ for(int q=0; q<400; q++)
 	accdata[q] = largestxyz;
 	largestxyz = 0;
 	
-	
+	*/ //comment out top
 	//filter - descrete low pass filter with a 5Hz frequency cut off
 	/*
 	filtdata[0] = alpha*accdata[0];
@@ -1169,7 +1170,7 @@ for(int q=0; q<400; q++)
 		}
 	*/
 	//count steps
-	
+
 	
 	//ten second chunks?
 	
@@ -1226,13 +1227,13 @@ for(int q=0; q<400; q++)
 		}
 	*/
 	//break
-} // end of for
-	
+//} // end of for
+
 //printing data
 	for(int f=0; f<400; f++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", 696969696996);
-		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
+		//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
 /*
 	for(int f=0; f<400; f++)
