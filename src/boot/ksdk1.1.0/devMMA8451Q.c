@@ -342,7 +342,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	}
 	else
 	{
-		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+	//	SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 		xreading = readSensorRegisterValueCombined;
 	}
 
@@ -364,7 +364,7 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	}
 	else
 	{
-		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+	//	SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 		yreading = readSensorRegisterValueCombined;
 
 	}
@@ -387,25 +387,25 @@ getSensorDataMMA8451Q(bool hexModeFlag, int xyz)
 	}
 	else
 	{
-		SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
+	//	SEGGER_RTT_printf(0, " %d,", readSensorRegisterValueCombined);
 		zreading = readSensorRegisterValueCombined;
 	}
 	int16_t		reading = 404;
 	if (xyz == 0)
 	{
 		reading = xreading;
-		SEGGER_RTT_WriteString(0, " xyz = 0");
+	//	SEGGER_RTT_WriteString(0, " xyz = 0");
 	}
 	else if (xyz == 1)
 	{
 	reading = yreading;
-	SEGGER_RTT_WriteString(0, " xyz = 1,");	
+	//SEGGER_RTT_WriteString(0, " xyz = 1,");	
 	}	
 		
 	else if (xyz == 2)
 	{
 	reading = zreading;
-	SEGGER_RTT_WriteString(0, " xyz = 2,");
+	//SEGGER_RTT_WriteString(0, " xyz = 2,");
 	}
 	else
 	{
