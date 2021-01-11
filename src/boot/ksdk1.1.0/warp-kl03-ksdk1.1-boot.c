@@ -1070,7 +1070,7 @@ SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 void
 runPedometer(void)
 {
-	
+enableI2Cpins(menuI2cPullupValue);	
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 //int for clock
 int start_time = RTC->TSR;
@@ -1127,7 +1127,7 @@ for(int q=0; q<10; q++)
 	disp_time = current_time - start_time;
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
 				
-	enableI2Cpins(menuI2cPullupValue);
+	
 
 	//read from accelerometer all
 				xyz = 0;
@@ -1136,7 +1136,7 @@ for(int q=0; q<10; q++)
 				yreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
 				xyz = 2;
 				zreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
-	disableI2Cpins();
+	
 	
 	reading[0] = xreading;
 	reading[1] = yreading;
@@ -1221,7 +1221,7 @@ for(int q=0; q<10; q++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
-
+disableI2Cpins();
 } //end of function
 
 
