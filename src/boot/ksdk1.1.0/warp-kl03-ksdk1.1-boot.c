@@ -1115,7 +1115,7 @@ enableI2Cpins(menuI2cPullupValue);
 
 //for filter
 int16_t alpha = 0.39;
-int16_t filtdata[400]
+int16_t filtdata[400];
 	
 for(int q=0; q<400; q++)
 {
@@ -1159,7 +1159,7 @@ for(int q=0; q<400; q++)
 	
 	//filter - descrete low pass filter with a 5Hz frequency cut off
 	
-	filtdata[0] = alpha*accdata[0]
+	filtdata[0] = alpha*accdata[0];
 	
 	for(int f=1; f<400; f++)
 		{
@@ -1227,7 +1227,7 @@ for(int q=0; q<400; q++)
 } // end of for
 	
 //printing data
-	for(int =a=0; a<400; a++)
+	for(int a=0; a<400; a++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", 696969696996);
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[a]);
