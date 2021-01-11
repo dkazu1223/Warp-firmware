@@ -1075,7 +1075,7 @@ SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 int start_time = RTC->TSR;
 int current_time;
 int disp_time;
-	
+
 int td1;
 int td2;
 int td3;
@@ -1100,7 +1100,22 @@ int		xyz = 0;
 int16_t reading[3];
 int16_t largestxyz = 0;
 int16_t accdata[150];
-bool hexModeFlag = 1;		
+bool hexModeFlag = 1;
+	
+	
+//Configure accelerometer
+enableI2Cpins(menuI2cPullupValue);
+#ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
+		configureSensorMMA8451Q(0x00,/* Payload: Disable FIFO */
+		0x01,/* Normal read 8bit, 800Hz, normal, active mode */
+		menuI2cPullupValue
+		);
+#endif
+
+
+	
+	
+	
 for(int q=0; q<100; q++)
 {
 	//need to loop through
@@ -1109,7 +1124,9 @@ for(int q=0; q<100; q++)
 	current_time = RTC->TSR;
 	disp_time = current_time - start_time;
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
+				
 	
+
 	//read from accelerometer all
 	xreading = getSensorDataMMA8451Q(hexModeFlag,0);
 	yreading = getSensorDataMMA8451Q(hexModeFlag,1);
@@ -1197,7 +1214,7 @@ for(int q=0; q<100; q++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
-
+disableI2Cpins();
 } //end of function
 
 
