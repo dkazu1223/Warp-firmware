@@ -1161,9 +1161,9 @@ for(int q=0; q<400; q++)
 	
 	filtdata[0] = alpha*accdata[0];
 	
-	for(int f=1; f<400; f++)
+	for(int g=1; g<400; g++)
 		{
-		filtdata[f] = alpha*accdata[f] + (1-alpha)*accdata[f-1];
+		filtdata[g] = alpha*accdata[g] + (1-alpha)*accdata[g-1];
 		}
 	
 	//count steps
