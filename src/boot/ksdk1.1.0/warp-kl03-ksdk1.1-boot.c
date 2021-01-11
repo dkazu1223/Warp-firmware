@@ -1098,7 +1098,7 @@ int16_t		yreading;
 int16_t		zreading;
 int		xyz = 0;
 int16_t reading[3];
-int16_t largestxyz;
+int16_t largestxyz = 0;
 int16_t accdata[150];
 bool hexModeFlag = 1;		
 for(int q=0; q<100; q++)
@@ -1111,18 +1111,17 @@ for(int q=0; q<100; q++)
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
 	
 	//read from accelerometer all
-	
-	xyz = 0;
-	xreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
-	xyz = 1;
-	yreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
-	xyz = 2;
-	zreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
-	reading = {xreading, y reading, zreading};
+	xreading = getSensorDataMMA8451Q(hexModeFlag,0);
+	yreading = getSensorDataMMA8451Q(hexModeFlag,1);
+	zreading = getSensorDataMMA8451Q(hexModeFlag,2);
+	reading[0] = xreading;
+	reading[1] = yreading;
+	reading[2] = zreading;
+		
 	//choose largest
 	for(int d=0; d<2; d++)
 		{
-			if(reading[d]>largestxyz)
+			if(reading[d]*reading[d]>largestxyz*largestxyz)
 				{
 				largestxyz = reading[d];
 				}
