@@ -1104,6 +1104,8 @@ int16_t accdata[400];
 bool hexModeFlag = 1;
 	
 uint16_t	menuI2cPullupValue = 32768;	
+	
+	
 //Configure accelerometer
 enableI2Cpins(menuI2cPullupValue);
 #ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
@@ -1227,10 +1229,10 @@ for(int q=0; q<400; q++)
 } // end of for
 	
 //printing data
-	for(int a=0; a<400; a++)
+	for(int f=0; f<400; f++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", 696969696996);
-		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[a]);
+		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
 /*
 	for(int f=0; f<400; f++)
