@@ -1142,7 +1142,7 @@ for(int q=0; q<10; q++)
 	reading[2] = zreading;
 		
 	//choose largest
-	for(int d=0; d<2; d++)
+	for(int d=0; d<3; d++)
 		{
 			SEGGER_RTT_printf(0, "\r\td reading HERE %d\n", d);
 			if(reading[d]*reading[d]>largestxyz*largestxyz)
