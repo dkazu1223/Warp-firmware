@@ -1099,7 +1099,7 @@ int16_t		zreading;
 int		xyz = 0;
 int16_t reading[3];
 int16_t largestxyz = 0;
-int length = 10;
+int length = 100;
 int16_t accdata[10];
 bool hexModeFlag = 1;
 	
@@ -1117,7 +1117,7 @@ enableI2Cpins(menuI2cPullupValue);
 	
 	
 	
-for(int q=0; q<10; q++)
+for(int q=0; q<100; q++)
 {
 	//need to loop through
 	
@@ -1218,7 +1218,7 @@ for(int q=0; q<10; q++)
 } // end of for
 	
 //printing data
-	for(int f=0; f<10; f++)
+	for(int f=0; f<100; f++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
