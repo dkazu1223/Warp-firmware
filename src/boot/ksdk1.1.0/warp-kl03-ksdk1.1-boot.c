@@ -1230,11 +1230,12 @@ for(int q=0; q<400; q++)
 } // end of for
 	
 	
-	filtdata[0] = (2/5)*accdata[0];
+	filtdata[0] = 2*accdata[0]/5;
 	
 	for(int g=1; g<400; g++)
 		{
-		filtdata[g] = (2/5)*accdata[g] + (1-(2/5))*accdata[g-1];
+		filtdata[g] = 2*accdata[g]/5 + 3*accdata[g-1]/5;
+		
 		}
 
 //printing data
