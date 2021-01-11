@@ -1099,8 +1099,8 @@ int16_t		zreading;
 int		xyz = 0;
 int16_t reading[3];
 int16_t largestxyz = 0;
-int length = 100;
-int16_t accdata[10];
+int length = 400;
+int16_t accdata[400];
 bool hexModeFlag = 1;
 	
 uint16_t	menuI2cPullupValue = 32768;	
@@ -1113,11 +1113,11 @@ enableI2Cpins(menuI2cPullupValue);
 		);
 #endif
 
-
+//for filter
+int16_t alpha = 0.39;
+int16_t filtdata[400]
 	
-	
-	
-for(int q=0; q<100; q++)
+for(int q=0; q<400; q++)
 {
 	//need to loop through
 	
@@ -1155,7 +1155,16 @@ for(int q=0; q<100; q++)
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
 	accdata[q] = largestxyz;
 	largestxyz = 0;
-	//filter?
+	
+	
+	//filter - descrete low pass filter with a 5Hz frequency cut off
+	
+	filtdata[0] = alpha*accdata[0]
+	
+	for(int f=1; f<400; f++)
+		{
+		filtdata[f] = alpha*accdata[f] + (1-alpha)*accdata[f-1];
+		}
 	
 	//count steps
 	
@@ -1164,7 +1173,7 @@ for(int q=0; q<100; q++)
 	
 	
 	//convert to minutes
-	OSA_TimeDelay(80);
+	OSA_TimeDelay(20);
 	/*
 	if (disp_time != disp_time_stored)
 		{
@@ -1218,10 +1227,23 @@ for(int q=0; q<100; q++)
 } // end of for
 	
 //printing data
-	for(int f=0; f<100; f++)
+	for(int =a=0; a<400; a++)
 		{
+		SEGGER_RTT_printf(0, "\r\t %d\n", 696969696996);
+		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[a]);
+		}
+
+	for(int f=0; f<400; f++)
+		{
+		SEGGER_RTT_printf(0, "\r\t %d\n", 696969696996);
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
+	
+	
+	
+	
+	
+	
 disableI2Cpins();
 } //end of function
 
