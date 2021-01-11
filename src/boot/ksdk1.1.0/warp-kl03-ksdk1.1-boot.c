@@ -1123,7 +1123,7 @@ enableI2Cpins(menuI2cPullupValue);
 for(int q=0; q<400; q++)
 {
 	//need to loop through
-	/*
+	
 	//get time in seconds
 	current_time = RTC->TSR;
 	disp_time = current_time - start_time;
@@ -1151,7 +1151,7 @@ for(int q=0; q<400; q++)
 				largestxyz = reading[d];
 				}
 		}
-	
+/*	
 	// add to array
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
 	accdata[q] = largestxyz;
