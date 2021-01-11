@@ -1149,6 +1149,7 @@ for(int q=0; q<10; q++)
 				largestxyz = reading[d];
 				}
 		}
+	
 	// add to array
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
 	accdata[q] = largestxyz;
