@@ -1128,9 +1128,12 @@ for(int q=0; q<100; q++)
 	
 
 	//read from accelerometer all
-	xreading = getSensorDataMMA8451Q(hexModeFlag,0);
-	yreading = getSensorDataMMA8451Q(hexModeFlag,1);
-	zreading = getSensorDataMMA8451Q(hexModeFlag,2);
+				xyz = 0;
+				xreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
+				xyz = 1;
+				yreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
+				xyz = 2;
+				zreading = getSensorDataMMA8451Q(hexModeFlag,xyz);
 	reading[0] = xreading;
 	reading[1] = yreading;
 	reading[2] = zreading;
