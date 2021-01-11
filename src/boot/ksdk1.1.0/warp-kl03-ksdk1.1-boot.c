@@ -1144,6 +1144,7 @@ for(int q=0; q<10; q++)
 	//choose largest
 	for(int d=0; d<2; d++)
 		{
+			SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", d);
 			if(reading[d]*reading[d]>largestxyz*largestxyz)
 				{
 				largestxyz = reading[d];
