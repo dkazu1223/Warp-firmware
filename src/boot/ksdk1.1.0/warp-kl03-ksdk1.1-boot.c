@@ -1234,6 +1234,8 @@ for(int q=0; q<400; q++)
 	
 	int g=1;
 	filtdata[g] = 2*accdata[g]/5 + 3*accdata[g-1]/5;
+	
+	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[2]);
 	/*
 	for(int g=1; g<400; g++)
 		{
