@@ -1102,7 +1102,7 @@ int16_t largestxyz = 0;
 int16_t accdata[150];
 bool hexModeFlag = 1;
 	
-	
+uint16_t	menuI2cPullupValue = 32768;	
 //Configure accelerometer
 enableI2Cpins(menuI2cPullupValue);
 #ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
