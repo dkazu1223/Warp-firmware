@@ -1114,7 +1114,7 @@ enableI2Cpins(menuI2cPullupValue);
 #endif
 
 //for filter
-int16_t alpha = 0.39;
+int16_t alpha; // 0.39 and means must be scale roughly = 0.4 = *2/5
 int16_t filtdata[400];
 	
 for(int q=0; q<400; q++)
@@ -1163,7 +1163,7 @@ for(int q=0; q<400; q++)
 	
 	for(int g=1; g<400; g++)
 		{
-		filtdata[g] = alpha*accdata[g] + (1-alpha)*accdata[g-1];
+		filtdata[g] = (2/5)*accdata[g] + (1-(2/5))*accdata[g-1];
 		}
 	
 	//count steps
