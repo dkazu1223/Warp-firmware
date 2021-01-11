@@ -1117,8 +1117,8 @@ enableI2Cpins(menuI2cPullupValue);
 
 
 //for filter
-//int16_t alpha; // 0.39 and means must be scale roughly = 0.4 = *2/5
-//int16_t filtdata[400];
+int16_t alpha; // 0.39 and means must be scale roughly = 0.4 = *2/5
+int16_t filtdata[400];
 	
 for(int q=0; q<400; q++)
 {
@@ -1230,7 +1230,7 @@ for(int q=0; q<400; q++)
 } // end of for
 	
 	
-	filtdata[0] = alpha*accdata[0];
+	filtdata[0] = (2/5)*accdata[0];
 	
 	for(int g=1; g<400; g++)
 		{
