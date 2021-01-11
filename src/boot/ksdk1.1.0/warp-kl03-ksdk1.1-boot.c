@@ -1070,6 +1070,7 @@ SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 void
 runPedometer(void)
 {
+	
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 //int for clock
 int start_time = RTC->TSR;
@@ -1100,7 +1101,7 @@ int		xyz = 0;
 int16_t reading[3];
 int16_t largestxyz = 0;
 int length = 10;
-int16_t accdata[length];
+int16_t accdata[10];
 bool hexModeFlag = 1;
 	
 uint16_t	menuI2cPullupValue = 32768;	
@@ -1117,7 +1118,7 @@ uint16_t	menuI2cPullupValue = 32768;
 	
 	
 	
-for(int q=0; q<length; q++)
+for(int q=0; q<10; q++)
 {
 	//need to loop through
 	
@@ -1216,7 +1217,7 @@ for(int q=0; q<length; q++)
 } // end of for
 	
 //printing data
-	for(int f=0; f<length; f++)
+	for(int f=0; f<10; f++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
