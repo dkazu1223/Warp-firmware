@@ -1145,7 +1145,7 @@ for(int q=0; q<400; q++)
 	//choose largest
 	for(int d=0; d<3; d++)
 		{
-			SEGGER_RTT_printf(0, "\r\td reading HERE %d\n", d);
+			//SEGGER_RTT_printf(0, "\r\td reading HERE %d\n", d);
 			if(reading[d]*reading[d]>largestxyz*largestxyz)
 				{
 				largestxyz = reading[d];
@@ -1228,7 +1228,7 @@ for(int q=0; q<400; q++)
 	*/
 	//break
 } // end of for
-	
+	/*
 	filtdata[0] = 2*accdata[0]/5;
 	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[0]);
 	
@@ -1236,6 +1236,8 @@ for(int q=0; q<400; q++)
 	filtdata[g] = 2*accdata[g]/5 + 3*accdata[g-1]/5;
 	
 	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[2]);
+	
+	*/
 	/*
 	for(int g=1; g<400; g++)
 		{
