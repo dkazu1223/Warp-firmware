@@ -1159,7 +1159,7 @@ for(int q=0; q<400; q++)
 	
 	 //comment out top
 	//filter - descrete low pass filter with a 5Hz frequency cut off
-	/*	
+		
 	filtdata[0] = alpha*accdata[0];
 	
 	for(int g=1; g<400; g++)
@@ -1172,7 +1172,7 @@ for(int q=0; q<400; q++)
 	
 	//ten second chunks?
 	
-	*/
+	
 	//convert to minutes
 	OSA_TimeDelay(20);
 	/*
