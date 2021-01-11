@@ -1069,8 +1069,7 @@ SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 
 void
 runPedometer(void)
-{
-enableI2Cpins(menuI2cPullupValue);	
+{	
 SEGGER_RTT_printf(0, "\r\tRTC clock: %d\n", RTC->TSR);
 //int for clock
 int start_time = RTC->TSR;
@@ -1106,7 +1105,7 @@ bool hexModeFlag = 1;
 	
 uint16_t	menuI2cPullupValue = 32768;	
 //Configure accelerometer
-
+enableI2Cpins(menuI2cPullupValue);
 #ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
 		configureSensorMMA8451Q(0x00,/* Payload: Disable FIFO */
 		0x01,/* Normal read 8bit, 800Hz, normal, active mode */
