@@ -1154,7 +1154,7 @@ for(int q=0; q<400; q++)
 	// add to array
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
 	accdata[q] = largestxyz;
-	filtdata[q] = 2*largestxyz/5 + 3;
+	filtdata[q] = 2*largestxyz/5 + 3*largestxyz/5;
 	SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 
 	if(q==0)
