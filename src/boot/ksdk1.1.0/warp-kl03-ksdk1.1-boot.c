@@ -1659,9 +1659,9 @@ main(void)
 	devSSD1331symbols(22,2,2);
 	devSSD1331symbols(14,4,2);
 */
-	
+devSSD1331write(806,11,0);
 //test autoprint numbers on the top line
-	
+/*	
 int aut = 806;
 int d1;
 int d2;
@@ -1691,7 +1691,7 @@ if (df=1|| d2!=0)
 }
 d1 = (aut-d4*1000-d3*100-d2*10);	
 devSSD1331symbols(d1,11,0);
-		
+*/		
 	while (1)
 	{
 		/*
