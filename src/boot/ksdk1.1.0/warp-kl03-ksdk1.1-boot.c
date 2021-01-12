@@ -1161,7 +1161,7 @@ for(int q=0; q<400; q++)
 	storedxyz = accdata[q];
 	//SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
-	SEGGER_RTT_printf(0, "\r\taccdata %d\n", filtdata[q]);
+	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
 	
 	
 	//convert to minutes
