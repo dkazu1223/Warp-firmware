@@ -1159,7 +1159,7 @@ for(int q=0; q<400; q++)
 
 	if(q==0)
 		{
-		filtdata[q] = 2*largestxyz/5 + 3*largestxyz/5;
+		//filtdata[q] = 2*largestxyz/5 + 3*largestxyz/5;
 		}
 	
 	largestxyz = 0;
