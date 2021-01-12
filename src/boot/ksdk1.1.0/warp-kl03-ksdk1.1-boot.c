@@ -1153,10 +1153,11 @@ for(int q=0; q<400; q++)
 	
 	// add to array
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
-	accdata[q] = largestxyz/2;
+	accdata[q] = largestxyz;
+	filtdata[q] = 2*largestxyz/5
 	SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
-		
+	/*
 	if(q==0)
 		{
 		filtdata[0] = (2/5)*accdata[0];
@@ -1165,7 +1166,8 @@ for(int q=0; q<400; q++)
 		{
 		filtdata[q] = (2/5)*accdata[q] + (1-(2/5))*accdata[q-1];
 		}
-	//SEGGER_RTT_printf(0, "\r\taccdata %d\n", filtdata[q]);
+	*/
+	SEGGER_RTT_printf(0, "\r\taccdata %d\n", filtdata[q]);
 	//filter - descrete low pass filter with a 5Hz frequency cut off
 	/*	
 	filtdata[0] = (2/5)*accdata[0];
