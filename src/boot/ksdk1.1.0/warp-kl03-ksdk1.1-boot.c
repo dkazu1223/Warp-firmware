@@ -1127,7 +1127,7 @@ for(int q=0; q<400; q++)
 	//get time in seconds
 	current_time = RTC->TSR;
 	disp_time = current_time - start_time;
-	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
+	//SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
 
 	//read from accelerometer all
 				xyz = 0;
@@ -1220,7 +1220,7 @@ for(int q=0; q<400; q++)
 } // end of for
 	for(int g=0; g<400; g++)
 		{
-			SEGGER_RTT_printf(0, "\r\t %d\n", g);
+		//	SEGGER_RTT_printf(0, "\r\t %d\n", g);
 		}
 disableI2Cpins();
 } //end of function
