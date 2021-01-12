@@ -1156,9 +1156,7 @@ for(int q=0; q<400; q++)
 	accdata[q] = largestxyz/2;
 	SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
-	
-	int16_t
-	
+		
 	if(q==0)
 		{
 		filtdata[0] = (2/5)*accdata[0];
