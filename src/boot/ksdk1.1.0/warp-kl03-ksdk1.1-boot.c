@@ -1220,7 +1220,7 @@ for(int q=0; q<400; q++)
 } // end of for
 	for(int g=0; g<400; g++)
 		{
-			SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[g]);
+			SEGGER_RTT_printf(0, "\r\t %d\n", g);
 		}
 disableI2Cpins();
 } //end of function
