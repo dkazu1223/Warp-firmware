@@ -1229,7 +1229,7 @@ for(int q=0; q<400; q++)
 } // end of for
 	
 	//filtdata[0] = 2*accdata[0]/5;
-	SEGGER_RTT_printf(0, "\r\t %d\n", accdata[0]);
+	//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[0]);
 
 	for(int g=1; g<400; g++)
 		{
@@ -1242,13 +1242,13 @@ for(int q=0; q<400; q++)
 	
 	
 //printing data
-/*	
+	
 	SEGGER_RTT_printf(0, "\r\t------------- %d\n", 6969);
 	for(int f=0; f<400; f++)
 		{
 		SEGGER_RTT_printf(0, "\r\t %d\n", accdata[f]);
 		}
-*/
+
 //printing filtered data
 	
 	SEGGER_RTT_printf(0, "\r\t------------- %d\n", 6969);
