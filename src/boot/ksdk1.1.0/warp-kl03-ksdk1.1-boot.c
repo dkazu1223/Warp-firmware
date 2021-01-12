@@ -1099,6 +1099,7 @@ int16_t		zreading;
 int		xyz = 0;
 int16_t reading[3];
 int16_t largestxyz = 0;
+int16_t storedxyz = 0;	
 int length = 400;
 int16_t accdata[400];
 bool hexModeFlag = 1;
@@ -1154,7 +1155,8 @@ for(int q=0; q<400; q++)
 	// add to array
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
 	accdata[q] = largestxyz;
-	filtdata[q] = 2*largestxyz/5 + 3*largestxyz/5;
+	filtdata[q] = 2*largestxyz/5 + 3*storedxyz/5;
+	accdata[q] = storedxyz;
 	SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 
 	if(q==0)
