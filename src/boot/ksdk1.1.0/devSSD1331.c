@@ -1727,24 +1727,41 @@ else{
 
     }
 	return 0;	
-/*	
-	
+}
+
+
 int
-devSSD1331clear(int xco, int yco)
+devSSD1331write(int input,int xco, int yco)
 	{
-	int shiftx;
-	int shifty;
+int aut = input;
+int d1;
+int d2;
+int d3;
+int d4;
+int df = 0;
+d4 = aut/1000;
 	
-	shiftx = xco * 8;
-	shifty = yco * 16;
-	
-	writeCommand(kSSD1331CommandCLEAR);
-	writeCommand(0+shiftx);
-	writeCommand(0+shifty);
-	writeCommand(8+shiftx);
-	writeCommand(16+shifty);
+if (d4 != 0)
+{
+	df=1;
+	devSSD1331symbols(d4,xco-3,yco);
+}
+d3 = (aut-d4*1000)/100;		
+if (df=1 || d3!=0)
+{
+	df=1;
+	devSSD1331symbols(d3,xco-2,yco);
+}
+d2 = (aut-d4*1000-d3*100)/10;
+//SEGGER_RTT_printf(0, " %d,", 696969);	
+SEGGER_RTT_printf(0, " %d,", d2);	
+if (df=1|| d2!=0)
+{
+	df=1;
+	devSSD1331symbols(d2,xco-1,yco);	
+}
+d1 = (aut-d4*1000-d3*100-d2*10);	
+devSSD1331symbols(d1,xco,yco);
 	
 	return 0;
 	}
-*/
-}
