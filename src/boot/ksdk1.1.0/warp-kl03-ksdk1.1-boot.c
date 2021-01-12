@@ -1222,7 +1222,6 @@ for(int q=0; q<400; q++)
 		{
 			SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[g]);
 		}
-*/
 disableI2Cpins();
 } //end of function
 
