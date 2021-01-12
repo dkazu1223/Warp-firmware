@@ -1158,6 +1158,15 @@ for(int q=0; q<400; q++)
 	SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
 	
+	if(q==0)
+		{
+		filtdata[0] = (2/5)*accdata[0];
+		}
+	else
+		{
+		filtdata[q] = (2/5)*accdata[q] + (1-(2/5))*accdata[q-1];
+		}
+	SEGGER_RTT_printf(0, "\r\taccdata %d\n", filtdata[q]);
 	//filter - descrete low pass filter with a 5Hz frequency cut off
 	/*	
 	filtdata[0] = (2/5)*accdata[0];
@@ -1227,13 +1236,13 @@ for(int q=0; q<400; q++)
 		}
 	*/
 } // end of for
-	
+	/*
 	filtdata[0] = 2*accdata[0]/5;
 	for(int g=1; g<400; g++)
 		{
 		filtdata[g] = 2*accdata[g]/5 + 3*accdata[g-1]/5;
 		}
-
+*/
 disableI2Cpins();
 } //end of function
 
