@@ -1104,10 +1104,14 @@ int length = 400;
 int16_t accdata[400];
 bool hexModeFlag = 1;
 	
-uint16_t	menuI2cPullupValue = 32768;	
-	
+//For step count	
+int step_count=0;
+int up;
+int down;
 	
 //Configure accelerometer
+	
+uint16_t	menuI2cPullupValue = 32768;	
 enableI2Cpins(menuI2cPullupValue);
 #ifdef WARP_BUILD_ENABLE_DEVMMA8451Q
 		configureSensorMMA8451Q(0x00,/* Payload: Disable FIFO */
@@ -1162,8 +1166,20 @@ for(int q=0; q<400; q++)
 	//SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
 	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
-	
-	
+	if(filtdata[q]>4330)
+		{
+		up = 1;
+		}
+	if(filtdata[q]<3900)
+		{
+		down = 1;
+		}
+	if(up!=0 && down!=0)
+		{
+		step_count+=1;
+		up=0;
+		down=0;
+		}
 	//convert to minutes
 	OSA_TimeDelay(20);
 	/*
@@ -1222,6 +1238,7 @@ for(int q=0; q<400; q++)
 		{
 		//	SEGGER_RTT_printf(0, "\r\t %d\n", g);
 		}
+SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count);
 disableI2Cpins();
 } //end of function
 
