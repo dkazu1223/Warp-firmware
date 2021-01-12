@@ -1666,8 +1666,8 @@ main(void)
 	devSSD1331symbols(14,2,0);
 	devSSD1331symbols(25,3,0);
 	devSSD1331symbols(28,4,0);
-//avg steps on line 2
-	devSSD1331symbols(10,0,1);	
+//avg steps on line 2 
+/*	devSSD1331symbols(10,0,1);	
 	devSSD1331symbols(31,1,1);
 	devSSD1331symbols(16,2,1);
 	
@@ -1681,7 +1681,7 @@ main(void)
 	devSSD1331symbols(18,1,2);
 	devSSD1331symbols(22,2,2);
 	devSSD1331symbols(14,4,2);
-
+*/
 	
 //test autoprint numbers on the top line
 	
