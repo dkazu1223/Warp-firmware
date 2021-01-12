@@ -1155,6 +1155,7 @@ for(int q=0; q<400; q++)
 	// add to array
 	SEGGER_RTT_printf(0, "\r\tlargest acc %d\n", largestxyz);
 	accdata[q] = largestxyz;
+	SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
 	
 	//filter - descrete low pass filter with a 5Hz frequency cut off
@@ -1241,7 +1242,7 @@ for(int q=0; q<400; q++)
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
 	int test;
 	test = accdata[1];
-	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", test);
+	//SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", test);
 //printing filtered data
 	
 disableI2Cpins();
