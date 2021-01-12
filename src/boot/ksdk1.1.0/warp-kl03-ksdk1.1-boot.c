@@ -1226,25 +1226,14 @@ for(int q=0; q<400; q++)
 		
 		}
 	*/
-	//break
 } // end of for
 	
-	//filtdata[0] = 2*accdata[0]/5;
-	//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[0]);
-
+	filtdata[0] = 2*accdata[0]/5;
 	for(int g=1; g<400; g++)
 		{
 		filtdata[g] = 2*accdata[g]/5 + 3*accdata[g-1]/5;
 		}
-//printing data
-	
-	SEGGER_RTT_printf(0, "\r\t------------- %d\n", 6969);
-	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
-	int test;
-	test = accdata[1];
-	//SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", test);
-//printing filtered data
-	
+
 disableI2Cpins();
 } //end of function
 
