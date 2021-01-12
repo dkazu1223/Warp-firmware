@@ -1227,9 +1227,9 @@ for(int q=0; q<400; q++)
 	*/
 	//break
 } // end of for
-	
+	int filttest = 2*accdata[0]/5;
 	//filtdata[0] = 2*accdata[0]/5;
-	//SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[0]);
+	SEGGER_RTT_printf(0, "\r\t %d\n", filttest);
 	
 	int g=1;
 	//filtdata[g] = 2*accdata[g]/5 + 3*accdata[g-1]/5;
