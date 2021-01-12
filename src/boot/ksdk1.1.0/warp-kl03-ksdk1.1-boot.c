@@ -1240,7 +1240,7 @@ for(int q=0; q<400; q++)
 	SEGGER_RTT_printf(0, "\r\t------------- %d\n", 6969);
 	SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", disp_time);
 	int test;
-	test = accdata[1]
+	test = accdata[1];
 	//SEGGER_RTT_printf(0, "\r\tdisplay time: %d\n", accdata[20]);
 //printing filtered data
 	
