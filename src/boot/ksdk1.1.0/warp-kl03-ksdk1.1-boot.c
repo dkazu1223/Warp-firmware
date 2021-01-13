@@ -1650,6 +1650,11 @@ main(void)
 	devSSD1331symbols(22,2,2);
 	devSSD1331symbols(14,4,2);
 
+	
+//runPedometer function
+runPedometer();
+	
+
 //test autoprint function
 //devSSD1331write(806,11,0);
 //test autoprint numbers on the top line
