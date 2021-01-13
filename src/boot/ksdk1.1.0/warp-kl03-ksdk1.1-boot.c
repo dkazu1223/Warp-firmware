@@ -1166,7 +1166,7 @@ for(int q=0; q<400; q++)
 	//SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
 	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
-	if(filtdata[q]>4330)
+	if(filtdata[q]>4400)
 		{
 		up = 1;
 		}
@@ -1202,6 +1202,7 @@ for(int q=0; q<400; q++)
 				devSSD1331symbols(6969,8,3);			
 				devSSD1331symbols(td3,8,3);
 				td3s = td3;
+				devSSD1331write(step_count,11,0);
 			}
 		
 		
