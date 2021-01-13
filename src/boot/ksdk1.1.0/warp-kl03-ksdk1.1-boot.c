@@ -1108,7 +1108,7 @@ bool hexModeFlag = 1;
 int step_count=0;
 int up;
 int down;
-int avgcount
+int avgcount;
 //Configure accelerometer
 	
 uint16_t	menuI2cPullupValue = 32768;	
@@ -1227,7 +1227,7 @@ for(int q=0; q<400; q++)
 
 SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count);
 devSSD1331write(step_count,11,0);
-avg_count = step_count/disp_time
+avg_count = step_count/disp_time;
 devSSD1331write(avg_count,11,0);	
 disableI2Cpins();
 
