@@ -1759,7 +1759,7 @@ SEGGER_RTT_printf(0, " %d,", d2);
 if (df==1|| d2!=0)
 {
 	df=1;
-	devSSD1331symbols(6969,xco-1,yco);
+	//devSSD1331symbols(6969,xco-1,yco);
 	devSSD1331symbols(d2,xco-1,yco);	
 }
 d1 = (aut-d4*1000-d3*100-d2*10);	
