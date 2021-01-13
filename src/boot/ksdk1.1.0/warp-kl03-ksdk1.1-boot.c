@@ -1182,7 +1182,7 @@ for(int q=0; q<400; q++)
 		}
 	//convert to minutes
 	OSA_TimeDelay(20);
-	
+	/*
 	if (disp_time != disp_time_stored)
 		{
 		
@@ -1222,7 +1222,7 @@ for(int q=0; q<400; q++)
 		td1s = td1;
 		disp_time_stored = disp_time;	
 		
-		}
+		}*/
 } // end of for
 
 SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count);
