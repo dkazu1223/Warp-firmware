@@ -1742,8 +1742,6 @@ int df;
 df = 0;
 d4 = aut/1000;
 
-devSSD1331symbols(5,xco-3,yco);	
-
 if (d4 != 0)
 {
 	df=1;
