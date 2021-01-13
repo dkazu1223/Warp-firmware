@@ -1226,7 +1226,7 @@ for(int q=0; q<400; q++)
 } // end of for
 
 SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count);
-//devSSD1331write(step_count,11,0);
+devSSD1331write(step_count,11,0);
 disableI2Cpins();
 
 } //end of function
