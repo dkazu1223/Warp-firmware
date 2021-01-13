@@ -1234,12 +1234,11 @@ for(int q=0; q<400; q++)
 		}
 	*/
 } // end of for
-	for(int g=0; g<400; g++)
-		{
-		//	SEGGER_RTT_printf(0, "\r\t %d\n", g);
-		}
+
 SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count);
+devSSD1331write(step_count,11,0);
 disableI2Cpins();
+
 } //end of function
 
 
@@ -1644,7 +1643,7 @@ main(void)
 	devSSD1331symbols(25,3,0);
 	devSSD1331symbols(28,4,0);
 //avg steps on line 2 
-/*	devSSD1331symbols(10,0,1);	
+	devSSD1331symbols(10,0,1);	
 	devSSD1331symbols(31,1,1);
 	devSSD1331symbols(16,2,1);
 	
@@ -1658,8 +1657,9 @@ main(void)
 	devSSD1331symbols(18,1,2);
 	devSSD1331symbols(22,2,2);
 	devSSD1331symbols(14,4,2);
-*/
-devSSD1331write(806,11,0);
+
+//test autoprint function
+//devSSD1331write(806,11,0);
 //test autoprint numbers on the top line
 /*	
 int aut = 806;
