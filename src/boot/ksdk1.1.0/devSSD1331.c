@@ -1749,7 +1749,7 @@ if (d4 != 0)
 	devSSD1331symbols(d4,xco-3,yco);
 }
 d3 = (aut-d4*1000)/100;		
-if (d4!=0 || d3!=0)
+if (d3!=0 || d3!=0)
 {
 	df=1;
 	//devSSD1331symbols(6969,xco-2,yco);
