@@ -1108,7 +1108,7 @@ bool hexModeFlag = 1;
 int step_count=0;
 int up;
 int down;
-int avgcount;
+int avg_count;
 //Configure accelerometer
 	
 uint16_t	menuI2cPullupValue = 32768;	
