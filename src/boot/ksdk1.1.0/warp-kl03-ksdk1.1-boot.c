@@ -1211,8 +1211,8 @@ for(int q=0; q<400; q++)
 		td2= td5/10;
 		if(td2!=td2s)
 			{
-				devSSD1331symbols(6969,10,3);			
-				devSSD1331symbols(td2,10,3);
+				//devSSD1331symbols(6969,10,3);			
+				//devSSD1331symbols(td2,10,3);
 				td2s = td2;
 			}
 		
