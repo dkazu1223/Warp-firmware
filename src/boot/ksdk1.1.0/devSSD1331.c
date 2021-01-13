@@ -1741,11 +1741,13 @@ int d4;
 int df;
 df = 0;
 d4 = aut/1000;
-	
+
+devSSD1331symbols(6969,xco-3,yco);	
+
 if (d4 != 0)
 {
 	df=1;
-	devSSD1331symbols(6969,xco-3,yco);
+	//devSSD1331symbols(6969,xco-3,yco);
 	devSSD1331symbols(d4,xco-3,yco);
 }
 d3 = (aut-d4*1000)/100;		
