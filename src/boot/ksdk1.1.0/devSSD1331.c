@@ -1757,7 +1757,7 @@ if (d3!=0 || d4!=0)
 }
 d2 = (aut-d4*1000-d3*100)/10;
 SEGGER_RTT_printf(0, " %d,", d2);	
-if (d2!=0 || d3!=0 || d4!=0)
+if (d2!=0 || d3!=0)
 {
 	df=1;
 	//devSSD1331symbols(6969,xco-1,yco);
