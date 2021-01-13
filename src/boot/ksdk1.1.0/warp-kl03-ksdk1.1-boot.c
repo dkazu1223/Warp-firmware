@@ -1182,7 +1182,7 @@ for(int q=0; q<400; q++)
 		}
 	//convert to minutes
 	OSA_TimeDelay(20);
-	if (disp_time != disp_time_stored)
+	if (disp_time != disp_time_stored && disp_time%5 ==0)
 		{
 		
 		//display time		
