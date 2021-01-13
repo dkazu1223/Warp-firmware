@@ -1191,16 +1191,16 @@ for(int q=0; q<400; q++)
 		
 		if(td6!=td6s)
 			{
-				////devSSD1331symbols(6969,7,3);	
-				//devSSD1331symbols(td4,7,3);
+				devSSD1331symbols(6969,7,3);	
+				devSSD1331symbols(td4,7,3);
 			}
 	
 		td4s = td4;
 		td3 = td6 - td4*10;
 		if(td6!=td6s)
 			{			
-				//devSSD1331symbols(6969,8,3);			
-				//devSSD1331symbols(td3,8,3);
+				devSSD1331symbols(6969,8,3);			
+				devSSD1331symbols(td3,8,3);
 				td3s = td3;
 			}
 		
@@ -1210,14 +1210,14 @@ for(int q=0; q<400; q++)
 		td2= td5/10;
 		if(td2!=td2s)
 			{
-				//devSSD1331symbols(6969,10,3);			
-				//devSSD1331symbols(td2,10,3);
+				devSSD1331symbols(6969,10,3);			
+				devSSD1331symbols(td2,10,3);
 				td2s = td2;
 			}
 		
 		td1 = td5-td2*10;
-		//devSSD1331symbols(6969,11,3);
-		//devSSD1331symbols(td1,11,3);			
+		devSSD1331symbols(6969,11,3);
+		devSSD1331symbols(td1,11,3);			
 		td1s = td1;
 		disp_time_stored = disp_time;	
 		
