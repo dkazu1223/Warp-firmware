@@ -2498,7 +2498,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 			case 't':
 			{
 				//dumpProcessorState();
-				runPedometer();
+				//runPedometer();
 				break;
 			}
 
