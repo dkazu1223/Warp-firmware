@@ -1165,7 +1165,7 @@ for(int q=0; q<400; q++)
 	storedxyz = accdata[q];
 	//SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
 	largestxyz = 0;
-	//SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
+	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
 	if(filtdata[q]>4400)
 		{
 		up = 1;
@@ -1235,11 +1235,7 @@ for(int h=0; h<100; h++)
 	{
 	SEGGER_RTT_printf(0, "\r\t %d\n", accdata[h]);
 	}
-SEGGER_RTT_printf(0, "\r\t-------------------- %d\n", 1);
-for(int j=0; j<100; j++)
-	{
-	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[j]);
-	}
+
 } //end of function
 
 
@@ -1661,7 +1657,7 @@ main(void)
 
 	
 //runPedometer function
-runPedometer();
+//runPedometer();
 	
 
 //test autoprint function
@@ -2507,7 +2503,7 @@ SEGGER_RTT_WriteString(0, "\r\n\tMade a difference\n\n");
 			case 't':
 			{
 				//dumpProcessorState();
-				//runPedometer();
+				runPedometer();
 				break;
 			}
 
