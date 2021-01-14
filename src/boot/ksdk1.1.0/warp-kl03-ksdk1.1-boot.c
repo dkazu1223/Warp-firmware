@@ -1658,7 +1658,7 @@ main(void)
 
 	
 //runPedometer function
-//runPedometer();
+runPedometer();
 	
 
 //test autoprint function
