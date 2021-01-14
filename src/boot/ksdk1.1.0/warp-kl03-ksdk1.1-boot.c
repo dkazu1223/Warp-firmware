@@ -1224,7 +1224,7 @@ for(int q=0; q<400; q++)
 		
 		}
 } // end of for
-step_count = step_count/2
+step_count = step_count/2;
 SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count);
 devSSD1331write(step_count,11,0);
 avg_count = step_count*60/disp_time;
