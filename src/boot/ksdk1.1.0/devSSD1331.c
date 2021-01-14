@@ -296,8 +296,9 @@ devSSD1331init(void)
 int
 devSSD1331symbols(int symbolno, int xco, int yco)
 {
-//symbolnos = numbers from 1 to 9 then 10 - 35 are the letters abc, 36 is a comma, 37 is a dot.
-	
+//Segments are 8x16
+//symbolnos = numbers from 1 to 9 then 10 - 35 are the letters abc and 6969 is clear.
+//Not all letters are included
 int shiftx;
 int shifty;
 	
