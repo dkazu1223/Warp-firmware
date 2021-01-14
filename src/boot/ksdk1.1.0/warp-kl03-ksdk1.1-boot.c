@@ -1163,7 +1163,7 @@ for(int q=0; q<400; q++)
 	accdata[q] = largestxyz;
 	filtdata[q] = 2*largestxyz/5 + 3*storedxyz/5;
 	storedxyz = accdata[q];
-	//SEGGER_RTT_printf(0, "\r\taccdata %d\n", accdata[q]);
+	SEGGER_RTT_printf(0, "\r\t %d\n", accdata[q]);
 	largestxyz = 0;
 	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
 	if(filtdata[q]>4400)
@@ -1231,12 +1231,12 @@ avg_count = step_count*30/disp_time;
 devSSD1331write(avg_count,11,1);	
 disableI2Cpins();
 SEGGER_RTT_printf(0, "\r\t-------------------- %d\n", 1);
-	
-for(int h=299; h<400; h++)
+/*
+for(int h=0; h<400; h++)
 	{
-	//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[h]);
+	//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[h]); // this function crashes
 	}
-
+*/
 } //end of function
 
 
