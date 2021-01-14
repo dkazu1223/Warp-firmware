@@ -1231,9 +1231,10 @@ avg_count = step_count*30/disp_time;
 devSSD1331write(avg_count,11,1);	
 disableI2Cpins();
 SEGGER_RTT_printf(0, "\r\t-------------------- %d\n", 1);
+	
 for(int h=299; h<400; h++)
 	{
-	SEGGER_RTT_printf(0, "\r\t %d\n", accdata[h]);
+	//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[h]);
 	}
 
 } //end of function
