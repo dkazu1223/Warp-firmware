@@ -1163,9 +1163,9 @@ for(int q=0; q<400; q++)
 	accdata[q] = largestxyz;
 	filtdata[q] = 2*largestxyz/5 + 3*storedxyz/5;
 	storedxyz = accdata[q];
-	SEGGER_RTT_printf(0, "\r\t %d\n", accdata[q]);
+	//SEGGER_RTT_printf(0, "\r\t %d\n", accdata[q]);
 	largestxyz = 0;
-	SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
+	//SEGGER_RTT_printf(0, "\r\t %d\n", filtdata[q]);
 	if(filtdata[q]>4400)
 		{
 		up = 1;
