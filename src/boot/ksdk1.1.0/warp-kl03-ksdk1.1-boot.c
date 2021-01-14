@@ -1224,10 +1224,10 @@ for(int q=0; q<400; q++)
 		
 		}
 } // end of for
-
-SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count/2);
-devSSD1331write(step_count/2,11,0);
-avg_count = step_count*30/disp_time;
+step_count = step_count/2
+SEGGER_RTT_printf(0, "\r\t steps %d\n", step_count);
+devSSD1331write(step_count,11,0);
+avg_count = step_count*60/disp_time;
 devSSD1331write(avg_count,11,1);	
 disableI2Cpins();
 SEGGER_RTT_printf(0, "\r\t-------------------- %d\n", 1);
